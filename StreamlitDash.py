@@ -3,26 +3,22 @@ import pandas as pd
 import streamlit as st
 from datetime import datetime
 
-
-
-#df = 'C:\\Users\\Callum\\Documents\\Python\\filename.csv'
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Equipment'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 #Rename Best Bench/Deadlift/Squat
 #Add Wilks Score
-#
-#df['Year'] = str(df['Year'])
-print(df)
+#Add Dots 
+#print(df)
 df = pd.DataFrame(df)
 df_result_search = pd.DataFrame() 
 st.set_page_config(layout="wide")
 
 
 
-
-
+st.header(body='APU Australia 2018-2022')
+st.text('Placeholder')
 ####Button Filters###
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
@@ -66,4 +62,11 @@ df_delection = df.query(
 # )
 
 
-st.dataframe(df_delection,use_container_width=True)
+st.dataframe(df_delection,use_container_width=True,height=500)
+
+task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift','Remove Floats']
+
+st.header('To do')
+for i in range(len(task)):
+  st.checkbox(label=(task[i]))
+  
