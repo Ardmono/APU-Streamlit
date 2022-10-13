@@ -20,7 +20,7 @@ st.set_page_config(layout="wide")
 
 st.header(body='APU Australia 2018-2022')
 st.image(img,width=150)
-st.text('Placeholder')
+st.text('Placeholder 1 ')
 ####Button Filters###
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
