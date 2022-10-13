@@ -7,6 +7,7 @@ df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Equipment'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
+img = 'https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/305564434_2408090155999032_1724872612072231495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a26aad&_nc_ohc=JmGtrTla1M4AX_e2BTD&_nc_ht=scontent-syd2-1.xx&oh=00_AT98tkicuZfegT379kCrYFvZ-BNyJ8z8CJUrhljx6dZUDA&oe=634D6D7C'
 #Rename Best Bench/Deadlift/Squat
 #Add Wilks Score
 #Add Dots 
@@ -18,6 +19,7 @@ st.set_page_config(layout="wide")
 
 
 st.header(body='APU Australia 2018-2022')
+st.image(img,width=150)
 st.text('Placeholder')
 ####Button Filters###
 years = ['2018','2019','2020','2021','2022']
