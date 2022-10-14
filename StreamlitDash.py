@@ -63,7 +63,7 @@ st.header(body='APU Australia')
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
 
-st.sidebar.image(img,width=200)   
+#st.sidebar.image(img,width=200)   
 #st.sidebar.text('Strength Club')   
 #st.sidebar.header("Google.com")
 link = '[Join Strength Club](http://github.com)'
