@@ -18,7 +18,7 @@ if len(weight_input) == 0:
 equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
 if equpped == 'All':
     equpped = df['Equipment']
-wheres = st.sidebar.radio("Equipment",options =("All","State","National"))
+wheres = st.sidebar.radio("Comp Type",options =("All","State","National"))
 if wheres == 'All':
     wheres = df['MeetName']
 state = st.sidebar.multiselect("State",options=df['MeetState'].unique())
