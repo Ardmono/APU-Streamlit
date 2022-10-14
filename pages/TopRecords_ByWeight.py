@@ -29,7 +29,7 @@ if len(state) == 0:
     state = df['MeetState']
 
 df = df.query(
-   "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @MeetName & MeetName == @meetName "
+   "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @MeetName "
 )
 #split the table into two - Men and Women 
 task = df['WeightClassKg'].unique()
