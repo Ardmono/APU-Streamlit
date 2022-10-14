@@ -7,7 +7,7 @@ import numpy as np
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
-df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Equipment','meetid','MeetCountry'])
+df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 listy = ['BodyweightKg' , 'Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' , 'Best3SquatKg',  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg','Best3BenchKg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg' ,'Best3DeadliftKg'  ,'TotalKg']
@@ -44,6 +44,9 @@ page_names_to_funcs = {
     "Page 3": page3,
 }
 selected_page = st.selectbox("Select a page", page_names_to_funcs.keys())
+
+
+
 #st.header(body='APU Australia')
 #st.image(img,width=150)
 #st.text('Placeholder 1 ')
