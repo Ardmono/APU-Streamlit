@@ -93,7 +93,7 @@ if len(liftername) == 0:
 divison = st.sidebar.multiselect("Lifter Division",options=df['Division'].unique())
 if len(divison) == 0:
     divison = df['Division']
-event = st.sidebar.multiselect("Lifter Event",options=df['Event'].unique(),default='SBD')
+event = st.sidebar.multiselect("Lifter Event",options=df['Event'].unique())
 if len(divison) == 0:
     event = df['Event']
 
