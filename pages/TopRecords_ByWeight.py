@@ -21,7 +21,7 @@ if len(weight_input) == 0:
 equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
 if equpped == 'All':
     equpped = df['Equipment']
-wheres = st.sidebar.radio(label="Comp Type - Does not work, unsure how to fix",options =("All","State","National"),disabled=True)
+wheres = st.sidebar.radio(label="Comp Type - Does not work, unsure how to fix, disabling until can figure out resolution - Likely need to import ALL current APU State/National records and use that ",options =("All","State","National"),disabled=True)
 if wheres == 'All':
     wheres = df['MeetName']
 elif wheres == 'State':
