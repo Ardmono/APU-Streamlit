@@ -21,9 +21,9 @@ for i in range(len(task)):
     col4, col1, col2,col3,col5 = st.columns(5)
     col4.metric("Weight Class",task[i])
     col1.metric("Bench", (rslt_df['Best3BenchKg'].max()))
-    col2.metric("Wind", (rslt_df['Best3DeadliftKg'].max()))
+    col2.metric("Deadlift", (rslt_df['Best3DeadliftKg'].max()))
     col3.metric('Squat',(rslt_df['Best3SquatKg'].max()))
-    col5.metric('Squat',(rslt_df['TotalKg'].max()))
+    col5.metric('Total',(rslt_df['TotalKg'].max()))
 
 #print(df['WeightClassKg']=57.max)
 # maxClm = df['Best3BenchKg'].max()
