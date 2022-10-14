@@ -32,7 +32,7 @@ df_exec = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
 df = df.query(
-   "Sex==@sex_input"
+   "Sex==@sex_input &  WeightClassKg==@weight_input"
 )
 print(df)
 #split the table into two - Men and Women 
