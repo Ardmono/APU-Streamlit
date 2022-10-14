@@ -11,24 +11,24 @@ df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
-sex_input = st.sidebar.radio("Sex",options =("All","M","F"),disabled=True)
+sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
 st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/State Lifts and Weight Category on the side')
-weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique(),disabled=True)
+weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"),disabled=True)
+equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
 if equpped == 'All':
     equpped = df['Equipment']
-wheres = st.sidebar.radio("Comp Type",options =("All","State","National"),disabled=True)
+wheres = st.sidebar.radio("Comp Type",options =("All","State","National"))
 if wheres == 'All':
     wheres = df['MeetName']
-state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'),disabled=True)
+state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 if len(state) == 0:
     state = df['MeetState']
 
-df = df.query(
+df_exec = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
 print(df)
