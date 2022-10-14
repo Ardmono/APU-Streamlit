@@ -15,7 +15,7 @@ st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-equpped = st.sidebar.multiselect("Equipped",options=df['Equipped'].unique())
+equpped = st.sidebar.multiselect("Equipped",options=('Yes','No'))
 if len(equpped) == 0:
     weight_input = df['Equipped']
 state = st.sidebar.multiselect("State",options=df['MeetState'].unique())
