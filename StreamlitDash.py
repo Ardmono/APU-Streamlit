@@ -59,7 +59,7 @@ st.header(body='APU Australia')
 ####Button Filters###
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
-selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
+#selected_page = st.sidebar.selectbox("Select a page", page_names_to_funcs.keys())
 st.sidebar.image(img,width=200)   
 #st.sidebar.text('Strength Club')   
 #st.sidebar.header("Google.com")
