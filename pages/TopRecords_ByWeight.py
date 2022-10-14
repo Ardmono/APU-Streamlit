@@ -17,8 +17,12 @@ task = df['WeightClassKg'].unique()
 for i in range(len(task)):
     print(task[i])
     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
+    print(rslt_df)
     rslt_df['Best3BenchKg'].max()
-    st.metric(label=(task[i]),value=(rslt_df['Best3BenchKg'].max()))
+    #st.metric(label='Bench',value=(rslt_df['Best3BenchKg'].max()))
+    col4, col1, col2, col3 = st.columns(3)
+    col1.metric("Bench", (rslt_df['Best3BenchKg'].max()), "1.2 °F")
+    col2.metric("Wind", "9 mph", "-8%")
 
 #print(df['WeightClassKg']=57.max)
 # maxClm = df['Best3BenchKg'].max()
@@ -27,11 +31,11 @@ for i in range(len(task)):
 #print(rslt_df['Best3BenchKg'].max())
 #where weightclass = I = bestbench
 # for i in range(len(task)):
-#   col4, col1, col2, col3 = st.columns(3)
-#   col1.metric("Temperature", "70 °F", "1.2 °F")
-#   col2.metric("Wind", "9 mph", "-8%")
-#   col3.metric("Humidity", "86%", "4%")
-#   col4.metric("Humidity", "86%", "4%")
+# col4, col1, col2, col3 = st.columns(3)
+# col1.metric("Temperature", "70 °F", "1.2 °F")
+# col2.metric("Wind", "9 mph", "-8%")
+# col3.metric("Humidity", "86%", "4%")
+# col4.metric("Humidity", "86%", "4%")
 
 #for i in range(len(task)):
 #  st.checkbox(label=(task[i]))
