@@ -15,9 +15,16 @@ df.fillna(0, inplace=True)
 task = df['WeightClassKg'].unique()
 
 for i in range(len(task)):
-    st.metric(label=(task[i]),value=(min.task[i]))
+    rslt_df = df.loc[df['WeightClassKg'] == task[i]]
+    print(rslt_df)
+    #st.metric(label=(task[i]),value=(min.task[i]))
 
-
+#print(df['WeightClassKg']=57.max)
+# maxClm = df['Best3BenchKg'].max()
+# #print(maxClm)
+# rslt_df = df.loc[df['WeightClassKg'] == task[i]]
+# print(rslt_df['Best3BenchKg'].max())
+#where weightclass = I = bestbench
 # for i in range(len(task)):
 #   col4, col1, col2, col3 = st.columns(3)
 #   col1.metric("Temperature", "70 °F", "1.2 °F")
