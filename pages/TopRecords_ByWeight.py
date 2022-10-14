@@ -11,6 +11,9 @@ df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
+sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
+if sex_input == 'All':
+    sex_input = df['Sex']
 st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/State Lifts and Weight Category on the side')
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
@@ -24,10 +27,9 @@ if wheres == 'All':
 state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 if len(state) == 0:
     state = df['MeetState']
-# statenationallift = st.sidebar.multiselect("Weight Class",options=df['MeetName'].unique())
-# if len(statenationallift) == 0:
-#     statenationallift = df['MeetName']
 
+
+#split the table into two - Men and Women 
 
 task = df['WeightClassKg'].unique()
 #print(task)
