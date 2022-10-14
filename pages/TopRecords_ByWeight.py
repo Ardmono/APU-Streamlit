@@ -50,10 +50,10 @@ for i in range(len(task)):
     #print(task[i])
     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
     #print(rslt_df)
-    col4, col1, col2,col3,col5,col6 = st.columns(6)
+    col4, col1, col2,col3,col5 = st.columns(5)
     col4.metric("Weight Class",task[i])
     col1.metric("Bench", (rslt_df['Best3BenchKg'].max()))
-    col6.metric("Bench", (rslt_df['Best3BenchKg'].nlargest(2)()))
+    #col5.metric("Bench", (rslt_df['Best3BenchKg'].nlargest(2)()))
     col2.metric("Deadlift", (rslt_df['Best3DeadliftKg'].max()))
     col3.metric('Squat',(rslt_df['Best3SquatKg'].max()))
     col5.metric('Total',(rslt_df['TotalKg'].max()))
