@@ -13,17 +13,18 @@ df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
 task = df['WeightClassKg'].unique()
-
+#print(task)
 for i in range(len(task)):
+    print(task[i])
     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
-    print(rslt_df)
-    #st.metric(label=(task[i]),value=(min.task[i]))
+    rslt_df['Best3BenchKg'].max()
+    st.metric(label=(task[i]),value=(rslt_df['Best3BenchKg'].max()))
 
 #print(df['WeightClassKg']=57.max)
 # maxClm = df['Best3BenchKg'].max()
 # #print(maxClm)
 # rslt_df = df.loc[df['WeightClassKg'] == task[i]]
-# print(rslt_df['Best3BenchKg'].max())
+#print(rslt_df['Best3BenchKg'].max())
 #where weightclass = I = bestbench
 # for i in range(len(task)):
 #   col4, col1, col2, col3 = st.columns(3)
