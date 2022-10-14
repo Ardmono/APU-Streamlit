@@ -18,19 +18,20 @@ st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
+equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"),disabled=True)
 if equpped == 'All':
     equpped = df['Equipment']
-wheres = st.sidebar.radio("Comp Type",options =("All","State","National"))
+wheres = st.sidebar.radio("Comp Type",options =("All","State","National"),disabled=True)
 if wheres == 'All':
     wheres = df['MeetName']
-state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'),disabled=True)
 if len(state) == 0:
     state = df['MeetState']
 
 df = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
+print(df)
 #split the table into two - Men and Women 
 task = df['WeightClassKg'].unique()
 #print(task)
