@@ -20,7 +20,7 @@ for i in range(len(task)):
     print(rslt_df)
     rslt_df['Best3BenchKg'].max()
     #st.metric(label='Bench',value=(rslt_df['Best3BenchKg'].max()))
-    col4, col1, col2, col3 = st.columns(3)
+    col1, col2 = st.columns(3)
     col1.metric("Bench", (rslt_df['Best3BenchKg'].max()), "1.2 °F")
     col2.metric("Wind", "9 mph", "-8%")
 
