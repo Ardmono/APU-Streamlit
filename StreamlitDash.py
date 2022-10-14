@@ -30,12 +30,12 @@ st.set_page_config(layout="wide")
 #st.image(img,width=150)
 #st.text('Placeholder 1 ')
 
-st.markdown('''
-# Sections
-- [Section 1](#section-1)
-- [Section 2](#apu-australia)
-''', unsafe_allow_html=True)
-st.header('')
+# st.markdown('''
+# # Sections
+# - [Section 1](#section-1)
+# - [Section 2](#apu-australia)
+# ''', unsafe_allow_html=True)
+# st.header('')
 #st.image(img,width=2000)
 st.header(body='APU Australia')
 ####Button Filters###
