@@ -12,6 +12,10 @@ df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State',
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
+weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
+if len(weight_input) == 0:
+    weight_input = df['WeightClassKg']
+
 task = df['WeightClassKg'].unique()
 #print(task)
 for i in range(len(task)):
