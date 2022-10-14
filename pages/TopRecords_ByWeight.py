@@ -28,7 +28,7 @@ state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT'
 if len(state) == 0:
     state = df['MeetState']
 
-df_exec = df.query(
+df = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
 #split the table into two - Men and Women 
