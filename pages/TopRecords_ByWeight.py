@@ -11,11 +11,11 @@ df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
-sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
+sex_input = st.sidebar.radio("Sex",options =("All","M","F"),disabled=True)
 if sex_input == 'All':
     sex_input = df['Sex']
 st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/State Lifts and Weight Category on the side')
-weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
+weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique(),disabled=True)
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
 equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"),disabled=True)
