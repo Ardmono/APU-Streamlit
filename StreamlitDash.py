@@ -96,9 +96,12 @@ if len(divison) == 0:
 event = st.sidebar.multiselect("Lifter Event",options=df['Event'].unique())
 if len(event) == 0:
     event = df['Event']
+equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
+if equpped == 'All':
+    equpped = df['Equipment']
 
 df_delection = df.query(
-   "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison & Event == @event"
+   "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison & Event == @event & Equipment == @equpped"
 )
 
 
