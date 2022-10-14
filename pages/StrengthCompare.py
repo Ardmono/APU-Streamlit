@@ -8,7 +8,7 @@ import numpy as np
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
-df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Equipment','meetid','MeetCountry'])
+df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
@@ -17,9 +17,6 @@ df.fillna(0, inplace=True)
 st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 #st.metric('Best Bench', value, delta=None, delta_color="normal", help=None)
 
-task = df['BodyweightKg'].unique()
-for i in range(len(task)):
-  st.checkbox(label=(task[i]))
 bodyweight = st.number_input("Bodyweight")
 col1, col2, col3 = st.columns(3)
 col1.metric("Temperature", "70 °F", "1.2 °F")
