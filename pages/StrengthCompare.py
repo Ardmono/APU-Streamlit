@@ -12,9 +12,13 @@ df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State',
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
-benchtotal = st.number_input("Bench Best")
-deadlift = st.number_input("Deadlift Best")
-squat = st.number_input("Squat Best")
+
+
+st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
+col1, col2, col3 = st.columns(3)
+col1.benchtotal = st.number_input("Bench Best")
+col2.deadlift = st.number_input("Deadlift Best")
+col3.squat = st.number_input("Squat Best")
 bodyweight = st.number_input("Bodyweight")
 #if len(benchtotal) == 0:
 #    benchtotal = df['MeetState']
