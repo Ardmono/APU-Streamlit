@@ -18,11 +18,12 @@ for i in range(len(task)):
     #print(task[i])
     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
     print(rslt_df)
-    col4, col1, col2,col3 = st.columns(4)
-    col4.metric("Weight Class",task[i],"1.2f")
-    col1.metric("Bench", (rslt_df['Best3BenchKg'].max()), "1.2 °F")
-    col2.metric("Wind", (rslt_df['Best3DeadliftKg'].max()), "-8%")
-    col3.metric('Squat',(rslt_df['Best3SquatKg'].max()),'5')
+    col4, col1, col2,col3,col5 = st.columns(5)
+    col4.metric("Weight Class",task[i])
+    col1.metric("Bench", (rslt_df['Best3BenchKg'].max()))
+    col2.metric("Wind", (rslt_df['Best3DeadliftKg'].max()))
+    col3.metric('Squat',(rslt_df['Best3SquatKg'].max()))
+    col5.metric('Squat',(rslt_df['TotalKg'].max()))
 
 #print(df['WeightClassKg']=57.max)
 # maxClm = df['Best3BenchKg'].max()
