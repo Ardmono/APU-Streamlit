@@ -13,6 +13,8 @@ df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
 benchtotal = st.number_input("Bench Best")
+deadlift = st.number_input("Deadlift Best")
+squat = st.number_input("Squat Best")
 #if len(benchtotal) == 0:
 #    benchtotal = df['MeetState']
 
