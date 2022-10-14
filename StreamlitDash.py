@@ -94,7 +94,7 @@ divison = st.sidebar.multiselect("Lifter Division",options=df['Division'].unique
 if len(divison) == 0:
     divison = df['Division']
 event = st.sidebar.multiselect("Lifter Event",options=df['Event'].unique())
-if len(divison) == 0:
+if len(event) == 0:
     event = df['Event']
 
 df_delection = df.query(
