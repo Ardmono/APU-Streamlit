@@ -15,7 +15,7 @@ df.fillna(0, inplace=True)
 
 
 st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
-st.metric('Best Bench', value, delta=None, delta_color="normal", help=None)
+#st.metric('Best Bench', value, delta=None, delta_color="normal", help=None)
 
 
 bodyweight = st.number_input("Bodyweight")
