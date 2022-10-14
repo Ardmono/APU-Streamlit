@@ -11,8 +11,8 @@ df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State',
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 listy = ['BodyweightKg' , 'Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' , 'Best3SquatKg',  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg','Best3BenchKg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg' ,'Best3DeadliftKg'  ,'TotalKg']
-for i in range(len(listy)):
-  df[listy[i]] = df[listy[i]].astype(np.float32)
+#for i in range(len(listy)):
+#  df[listy[i]] = df[listy[i]].astype(np.float32)
 #df['BodyweightKg'] = df['BodyweightKg'].astype(np.float16)
 #df['BodyweightKg'] = 
 #df.round({'BodyweightKg': 4})
