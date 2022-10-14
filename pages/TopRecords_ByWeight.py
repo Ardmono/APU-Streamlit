@@ -28,9 +28,10 @@ state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT'
 if len(state) == 0:
     state = df['MeetState']
 
-
+df = df.query(
+   "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison"
+)
 #split the table into two - Men and Women 
-
 task = df['WeightClassKg'].unique()
 #print(task)
 for i in range(len(task)):
@@ -43,6 +44,22 @@ for i in range(len(task)):
     col2.metric("Deadlift", (rslt_df['Best3DeadliftKg'].max()))
     col3.metric('Squat',(rslt_df['Best3SquatKg'].max()))
     col5.metric('Total',(rslt_df['TotalKg'].max()))
+
+
+
+
+# task = df['WeightClassKg'].unique()
+# #print(task)
+# for i in range(len(task)):
+#     #print(task[i])
+#     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
+#     print(rslt_df)
+#     col4, col1, col2,col3,col5 = st.columns(5)
+#     col4.metric("Weight Class",task[i])
+#     col1.metric("Bench", (rslt_df['Best3BenchKg'].max()))
+#     col2.metric("Deadlift", (rslt_df['Best3DeadliftKg'].max()))
+#     col3.metric('Squat',(rslt_df['Best3SquatKg'].max()))
+#     col5.metric('Total',(rslt_df['TotalKg'].max()))
 
 #print(df['WeightClassKg']=57.max)
 # maxClm = df['Best3BenchKg'].max()
