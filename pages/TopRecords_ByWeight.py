@@ -21,7 +21,7 @@ if equpped == 'All':
 wheres = st.sidebar.radio("Comp Type",options =("All","State","National"))
 if wheres == 'All':
     wheres = df['MeetName']
-state = st.sidebar.multiselect("State",options=df['MeetState'].unique())
+state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 if len(state) == 0:
     state = df['MeetState']
 # statenationallift = st.sidebar.multiselect("Weight Class",options=df['MeetName'].unique())
