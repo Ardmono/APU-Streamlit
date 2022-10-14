@@ -24,6 +24,13 @@ if equpped == 'All':
 wheres = st.sidebar.radio("Comp Type",options =("All","State","National"))
 if wheres == 'All':
     wheres = df['MeetName']
+elif wheres == 'State':
+    wheres = df['MeetName'] # Need to subsect for keyword "State" 
+elif wheres == 'State':
+    wheres = df['MeetName'] # Need to subsect for keyword "National"
+else:
+    wheres = df['MeetName']
+    
 state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 if len(state) == 0:
     state = df['MeetState']
@@ -32,24 +39,25 @@ df_exec = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
 df = df.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped"
+   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state"
 )
-print(df)
+#print(df)
 #split the table into two - Men and Women 
 task = df['WeightClassKg'].unique()
 #print(task)
 for i in range(len(task)):
     #print(task[i])
     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
-    print(rslt_df)
+    #print(rslt_df)
     col4, col1, col2,col3,col5 = st.columns(5)
     col4.metric("Weight Class",task[i])
     col1.metric("Bench", (rslt_df['Best3BenchKg'].max()))
     col2.metric("Deadlift", (rslt_df['Best3DeadliftKg'].max()))
     col3.metric('Squat',(rslt_df['Best3SquatKg'].max()))
     col5.metric('Total',(rslt_df['TotalKg'].max()))
+### For Metrics need to indicate if they are national records 
 
-
+print(df['MeetName'].unique())
 
 
 # task = df['WeightClassKg'].unique()
