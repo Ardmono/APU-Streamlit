@@ -15,6 +15,16 @@ st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
+equpped = st.sidebar.selectbox("Equipped",options=df['Equipped'].unique())
+if len(equpped) == 0:
+    weight_input = df['Equipped']
+state = st.sidebar.multiselect("State",options=df['MeetState'].unique())
+if len(state) == 0:
+    state = df['MeetState']
+statenationallift = st.sidebar.multiselect("Weight Class",options=df['MeetName'].unique())
+if len(statenationallift) == 0:
+    statenationallift = df['MeetName']
+
 
 task = df['WeightClassKg'].unique()
 #print(task)
