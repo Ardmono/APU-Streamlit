@@ -17,10 +17,11 @@ task = df['WeightClassKg'].unique()
 for i in range(len(task)):
     print(task[i])
     rslt_df = df.loc[df['WeightClassKg'] == task[i]]
-    print(rslt_df)
+    #print(rslt_df)
     rslt_df['Best3BenchKg'].max()
     #st.metric(label='Bench',value=(rslt_df['Best3BenchKg'].max()))
-    col1, col2 = st.columns(2)
+    col4, col1, col2 = st.columns(3)
+    col4.metric('Weight Class',rslt_df)
     col1.metric("Bench", (rslt_df['Best3BenchKg'].max()), "1.2 °F")
     col2.metric("Wind", "9 mph", "-8%")
 
