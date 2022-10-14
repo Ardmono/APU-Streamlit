@@ -14,6 +14,7 @@ listy = ['BodyweightKg' , 'Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' , 'Best3SquatKg',
 for i in range(len(listy)):
   df[listy[i]] = df[listy[i]].astype(np.float32)
 df['BodyweightKg'] = df['BodyweightKg'].astype(np.float16)
+df.round({'BodyweightKg': 2})
 img = 'https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/305564434_2408090155999032_1724872612072231495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a26aad&_nc_ohc=JmGtrTla1M4AX_e2BTD&_nc_ht=scontent-syd2-1.xx&oh=00_AT98tkicuZfegT379kCrYFvZ-BNyJ8z8CJUrhljx6dZUDA&oe=634D6D7C'
 
 df = pd.DataFrame(df)
