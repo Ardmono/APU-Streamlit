@@ -24,9 +24,9 @@ if wheres == 'All':
 state = st.sidebar.multiselect("State",options=df['MeetState'].unique())
 if len(state) == 0:
     state = df['MeetState']
-statenationallift = st.sidebar.multiselect("Weight Class",options=df['MeetName'].unique())
-if len(statenationallift) == 0:
-    statenationallift = df['MeetName']
+# statenationallift = st.sidebar.multiselect("Weight Class",options=df['MeetName'].unique())
+# if len(statenationallift) == 0:
+#     statenationallift = df['MeetName']
 
 
 task = df['WeightClassKg'].unique()
