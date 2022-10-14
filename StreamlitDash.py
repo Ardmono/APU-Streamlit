@@ -93,6 +93,9 @@ if len(liftername) == 0:
 divison = st.sidebar.multiselect("Lifter Division",options=df['Division'].unique())
 if len(divison) == 0:
     divison = df['Division']
+event = st.sidebar.multiselect("Lifter Event",options=df['Event'].unique(),default='SBD')
+if len(divison) == 0:
+    divison = df['Event']
 
 df_delection = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison"
