@@ -21,7 +21,7 @@ df.fillna(0, inplace=True)
 # if X == 2:
 #     col1, col2 = st.columns(2)
 # if X == 3:
-#     col1, col2, col3 = st.columns(3)
+#     col1, col2, col3 = st.columns(    3)
 # else:
 #     pass
 X = 0
@@ -40,7 +40,8 @@ if deadlift > 0:
 if squat > 0:
     X += 1
 
-col1, col2, col3 = st.columns(3)
+X
+col1, col2, col3 = st.columns(X)
 
 col1.metric("Wind", "9 mph", "-8%")    
 col2.metric("Wind", "9 mph", "-8%")
