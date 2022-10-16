@@ -14,20 +14,17 @@ df.fillna(0, inplace=True)
 
 
 
+# X = 0
+# #bodyweight = st.number_input("Bodyweight")
+# if X == 1:
+#     col1 = st.columns(1)
+# if X == 2:
+#     col1, col2 = st.columns(2)
+# if X == 3:
+#     col1, col2, col3 = st.columns(3)
+# else:
+#     pass
 X = 0
-#bodyweight = st.number_input("Bodyweight")
-if X == 1:
-    col1 = st.columns(1)
-if X == 2:
-    col1, col2 = st.columns(2)
-if X == 3:
-    col1, col2, col3 = st.columns(3)
-else:
-    pass
-
-col1.metric("Wind", "9 mph", "-8%")    
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
 
 bodyweight = st.number_input("Bodyweight")
 sex = st.select_slider("Sex", options=['Male', 'Female'])
@@ -44,6 +41,10 @@ if squat > 0:
     X += 1
 
 col1, col2, col3 = st.columns(3)
+
+col1.metric("Wind", "9 mph", "-8%")    
+col2.metric("Wind", "9 mph", "-8%")
+col3.metric("Humidity", "86%", "4%")
 #bodyweight = st.number_input("Bodyweight")
 #if len(benchtotal) == 0:
 #    benchtotal = df['MeetState']
