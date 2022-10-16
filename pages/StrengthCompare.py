@@ -23,13 +23,13 @@ col1, col2, col3 = st.columns(3)
 
 
 bodyweight = st.number_input("Bodyweight")
-benchtotal = st.select_slider("Sex", options=['red', 'orange'])
+benchtotal = st.select_slider("Sex", options=['Male', 'Female'])
 benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
 squat = st.number_input("Squat Best")
-#if len(bodyweight) == 0:
-    
-col1.metric("Temperature", "70 °F", "1.2 °F")
+if len(bodyweight) == 0:
+    bodyweight = 'Enter bodyweight'
+col1.metric(bodyweight, "70 °F", "1.2 °F")
 col2.metric("Wind", "9 mph", "-8%")
 col3.metric("Humidity", "86%", "4%")
 #bodyweight = st.number_input("Bodyweight")
