@@ -28,17 +28,24 @@ else:
 
 
 bodyweight = st.number_input("Bodyweight")
-benchtotal = st.select_slider("Sex", options=['Male', 'Female'])
+sex = st.select_slider("Sex", options=['Male', 'Female'])
 benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
 squat = st.number_input("Squat Best")
 if len(bodyweight) > 0:
-    bodyweight = 0
-    col1.metric((bodyweight), "70 °F", "1.2 °F")
+    X += 1
+if len(benchtotal) > 0:
+    X += 1
+if len(deadlift) > 0:
+    X += 1
+if len(squat) > 0:
+    X += 1
+#col1.metric((bodyweight), "70 °F", "1.2 °F")
 else:
-    col1.metric("Windyy", "9 mph", "-8%")    
-    col2.metric("Wind", "9 mph", "-8%")
-    col3.metric("Humidity", "86%", "4%")
+    pass
+col1.metric("Windyy", "9 mph", "-8%")    
+col2.metric("Wind", "9 mph", "-8%")
+col3.metric("Humidity", "86%", "4%")
 #bodyweight = st.number_input("Bodyweight")
 #if len(benchtotal) == 0:
 #    benchtotal = df['MeetState']
