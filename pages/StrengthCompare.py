@@ -40,10 +40,9 @@ if deadlift > 0:
     X += 1
 if squat > 0:
     X += 1
-#col1.metric((bodyweight), "70 °F", "1.2 °F")
 else:
     pass
-col1.metric("Windyy", "9 mph", "-8%")    
+col1.metric("Wind", "9 mph", "-8%")    
 col2.metric("Wind", "9 mph", "-8%")
 col3.metric("Humidity", "86%", "4%")
 #bodyweight = st.number_input("Bodyweight")
