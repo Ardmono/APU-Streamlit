@@ -28,8 +28,10 @@ benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
 squat = st.number_input("Squat Best")
 if len(bodyweight) == 0:
-    bodyweight = 'Enter bodyweight'
-col1.metric(bodyweight, "70 °F", "1.2 °F")
+    #bodyweight = 'Enter bodyweight'
+    col1.metric(str(bodyweight), "70 °F", "1.2 °F")
+else:
+    col1.metric("Windyy", "9 mph", "-8%")    
 col2.metric("Wind", "9 mph", "-8%")
 col3.metric("Humidity", "86%", "4%")
 #bodyweight = st.number_input("Bodyweight")
