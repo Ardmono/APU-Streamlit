@@ -40,8 +40,8 @@ if deadlift > 0:
 if squat > 0:
     X += 1
 
-X
-col1, col2, col3 = st.columns(X)
+
+col1, col2, col3 = st.columns(spec=X)
 
 col1.metric("Wind", "9 mph", "-8%")    
 col2.metric("Wind", "9 mph", "-8%")
