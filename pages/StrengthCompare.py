@@ -16,9 +16,12 @@ df.fillna(0, inplace=True)
 
 #st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 #st.metric('Best Bench', value, delta=None, delta_color="normal", help=None)
-
+X = 0
 #bodyweight = st.number_input("Bodyweight")
-col1, col2, col3 = st.columns(3)
+if X == 1:
+    col1, col2, col3 = st.columns(3)
+else:
+    pass
 
 
 
