@@ -25,6 +25,11 @@ df.fillna(0, inplace=True)
 # else:
 #     pass
 X = 0
+Y = 0
+
+col1, col2, col3 = st.columns(3)
+    
+
 
 bodyweight = st.number_input("Bodyweight")
 sex = st.select_slider("Sex", options=['Male', 'Female'])
@@ -41,7 +46,7 @@ if squat > 0:
     X += 1
 
 
-col1, col2, col3 = st.columns(spec=X)
+
 
 col1.metric("Wind", "9 mph", "-8%")    
 col2.metric("Wind", "9 mph", "-8%")
