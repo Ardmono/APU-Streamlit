@@ -18,11 +18,16 @@ df.fillna(0, inplace=True)
 st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
 #st.metric('Best Bench', value, delta=None, delta_color="normal", help=None)
 
+b = 0
+d = 0
+s = 0
+
+
 
 col1, col2, col3 = st.columns(3)
-col1.metric("Temperature", "70 °F", "1.2 °F")
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+col1.metric(b, "70 °F", "1.2 °F")
+col2.metric(d, "9 mph", "-8%")
+col3.metric(s, "86%", "4%")
 
 bodyweight = st.number_input("Bodyweight")
 sex = st.select_slider("Sex", options=['Male', 'Female'])
