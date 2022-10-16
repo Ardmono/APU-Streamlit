@@ -14,11 +14,13 @@ df.fillna(0, inplace=True)
 
 
 
-#st.metric(label="Temperature", value="70 °F", delta="1.2 °F")
-#st.metric('Best Bench', value, delta=None, delta_color="normal", help=None)
 X = 0
 #bodyweight = st.number_input("Bodyweight")
 if X == 1:
+    col1= st.columns(1)
+if X == 2:
+    col1, col2 = st.columns(2)
+if X == 3:
     col1, col2, col3 = st.columns(3)
 else:
     pass
@@ -30,13 +32,13 @@ benchtotal = st.select_slider("Sex", options=['Male', 'Female'])
 benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
 squat = st.number_input("Squat Best")
-if len(bodyweight) == 0:
-    #bodyweight = 'Enter bodyweight'
-    col1.metric(str(bodyweight), "70 °F", "1.2 °F")
+if len(bodyweight) > 0:
+    bodyweight = 0
+    col1.metric((bodyweight), "70 °F", "1.2 °F")
 else:
     col1.metric("Windyy", "9 mph", "-8%")    
-col2.metric("Wind", "9 mph", "-8%")
-col3.metric("Humidity", "86%", "4%")
+    col2.metric("Wind", "9 mph", "-8%")
+    col3.metric("Humidity", "86%", "4%")
 #bodyweight = st.number_input("Bodyweight")
 #if len(benchtotal) == 0:
 #    benchtotal = df['MeetState']
