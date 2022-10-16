@@ -34,3 +34,7 @@ sex = st.select_slider("Sex", options=['Male', 'Female'])
 benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
 squat = st.number_input("Squat Best")
+
+b = benchtotal
+d = deadlift
+s = squat 
