@@ -25,9 +25,9 @@ s = 0
 
 
 col1, col2, col3 = st.columns(3)
-col1.metric(str(b), "70 °F", "1.2 °F")
-col2.metric(str(d), "9 mph", "-8%")
-col3.metric(str(s), "86%", "4%")
+col1.metric(str(b), str(b), "1.2 °F")
+col2.metric(str(d), str(d), "-8%")
+col3.metric(str(s), str(s), "4%")
 
 bodyweight = st.number_input("Bodyweight")
 sex = st.select_slider("Sex", options=['Male', 'Female'])
