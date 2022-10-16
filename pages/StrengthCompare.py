@@ -29,7 +29,7 @@ col1.metric('Bench', str(b), "1.2 °F")
 col2.metric('Squat', str(d), "-8%")
 col3.metric('Deadlift', str(s), "4%")
 
-bodyweight = st.number_input("Bodyweight")
+bodyweight = st.number_input("Bodyweight",)
 sex = st.select_slider("Sex", options=['Male', 'Female'])
 benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
