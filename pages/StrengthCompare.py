@@ -32,13 +32,13 @@ sex = st.select_slider("Sex", options=['Male', 'Female'])
 benchtotal = st.number_input("Bench Best")
 deadlift = st.number_input("Deadlift Best")
 squat = st.number_input("Squat Best")
-if len(bodyweight) > 0:
+if bodyweight > 0:
     X += 1
-if len(benchtotal) > 0:
+if benchtotal > 0:
     X += 1
-if len(deadlift) > 0:
+if deadlift > 0:
     X += 1
-if len(squat) > 0:
+if squat > 0:
     X += 1
 #col1.metric((bodyweight), "70 °F", "1.2 °F")
 else:
