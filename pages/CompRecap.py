@@ -27,9 +27,11 @@ for i in range(len(listy)):
         elif value < 0:
             result.append(value)
         else:
-            result.append('fail')
+            result.append(0)
     #print(listy[i]+'fail')
     df1[listy[i]+'fail'] = result
+    df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
+ 
 
 # result = []
 # for value in df1["Squat1Kg"]:
@@ -37,7 +39,7 @@ for i in range(len(listy)):
 #         result.append(0)
 #     elif value < 0:
 #         result.append(value)
-st.dataframe(df1,use_container_width=True,height=1200)
+#st.dataframe(df1,use_container_width=True,height=1200)
 
 
 task = df1['WeightClassKg'].unique()
@@ -54,12 +56,13 @@ for i in range(len(task)):
     
     
 
-
-     
+#df1['Squat3Kgfail'] = df1['Squat3Kgfail'].abs()
+#df1['Squat3Kgfail'].apply(abs)
+print(df1['Squat3Kgfail'])
 #df["Result"] = result  
 #print(df)
 ##df1 = df1.drop(columns=['Division', 'Equipment', 'Federation', 'Date','MeetState','MeetTown','MeetName','Name','Event','Year'])
-print(df1)
+#print(df1)
 #df1.lt(0).sum()
 
 
