@@ -14,11 +14,9 @@ df.fillna(0, inplace=True)
 df1 = df
 #df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 
-df1 = df1[df1['Event'] == 'SBD']
-#df1['Squat1Fail'] = df1[df1['Squat1Kg'] < 0]
+#df1 = df1[df1['Event'] == 'SBD']
 listy = ['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
 for i in range(len(listy)):
-    #df1[listy[i]] = df[listy[i]]
     result = []
     v = 'fail'
     for value in df1[listy[i]]:
@@ -70,10 +68,6 @@ col2.metric(label="Gender Ratios", value=len(df_exec.query('Bench3Kgfail < 1')))
 col3.metric(label="% Succesful Lifts", value=len(df_exec.query('Bench3Kgfail > -1')))
 col4.metric(label="Total KG of all lifted weights", value=len(df_exec.query('Bench3Kgfail > -1')))
 
-#How many lifters, genders, weights, lifts, 
-#col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
-#col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail < 1')))
-#col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail > -1')))
 
 data = [0,0,0]
 fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Succeed','Fail','Attempted'])
