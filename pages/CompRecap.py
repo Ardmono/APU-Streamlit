@@ -77,7 +77,7 @@ col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'
 totalweight = df_exec['TotalKg'].sum()
 print(totalweight)
 data = [0,0,0]
-fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Succeed','Fail','Attempted'])
+fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Succeed','Fail','Attempted','Percentage'])
 #fails = fails[['Succeed','Fail','Attempted']]
 print(fails)
 list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
@@ -87,45 +87,54 @@ list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench
 fails['Squat1'][0] = len(df_exec.query('Squat1Kgfail < 1'))
 fails['Squat1'][1] = len(df_exec.query('Squat1Kgfail > 0'))
 fails['Squat1'][2] = len(df_exec.query('Squat1Kgfail > -1'))
+fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
 fails['Squat2'][0] = len(df_exec.query('Squat2Kgfail < 1'))
 fails['Squat2'][1] = len(df_exec.query('Squat2Kgfail > 0'))
 fails['Squat2'][2] = len(df_exec.query('Squat2Kgfail > -1'))
+fails['Squat2'][3] = fails['Squat2'][0] / fails['Squat2'][2] * 100
 
 fails['Squat3'][0] = len(df_exec.query('Squat3Kgfail < 1'))
 fails['Squat3'][1] = len(df_exec.query('Squat3Kgfail > 0'))
 fails['Squat3'][2] = len(df_exec.query('Squat3Kgfail > -1'))
+fails['Squat3'][3] = fails['Squat3'][0] / fails['Squat3'][2] * 100
 ##Squats
 
 #Bench
 fails['Bench1'][0] = len(df_exec.query('Bench1Kgfail < 1'))
 fails['Bench1'][1] = len(df_exec.query('Bench1Kgfail > 0'))
 fails['Bench1'][2] = len(df_exec.query('Bench1Kgfail > -1'))
+fails['Bench1'][3] = fails['Bench1'][0] / fails['Bench1'][2] * 100
 
 fails['Bench2'][0] = len(df_exec.query('Bench2Kgfail < 1'))
 fails['Bench2'][1] = len(df_exec.query('Bench2Kgfail > 0'))
 fails['Bench2'][2] = len(df_exec.query('Bench2Kgfail > -1'))
+fails['Bench2'][3] = fails['Bench2'][0] / fails['Bench2'][2] * 100
 
 fails['Bench3'][0] = len(df_exec.query('Bench3Kgfail < 1'))
 fails['Bench3'][1] = len(df_exec.query('Bench3Kgfail > 0'))
 fails['Bench3'][2] = len(df_exec.query('Bench3Kgfail > -1'))
+fails['Bench3'][3] = fails['Bench3'][0] / fails['Bench3'][2] * 100
 #Bench
 
 #Deadlift
 fails['Deadlift1'][0] = len(df_exec.query('Deadlift1Kgfail < 1'))
 fails['Deadlift1'][1] = len(df_exec.query('Deadlift1Kgfail > 0'))
 fails['Deadlift1'][2] = len(df_exec.query('Deadlift1Kgfail > -1'))
+fails['Deadlift1'][3] = fails['Deadlift1'][0] / fails['Deadlift1'][2] * 100
 
 fails['Deadlift2'][0] = len(df_exec.query('Deadlift2Kgfail < 1'))
 fails['Deadlift2'][1] = len(df_exec.query('Deadlift2Kgfail > 0'))
 fails['Deadlift2'][2] = len(df_exec.query('Deadlift2Kgfail > -1'))
+fails['Deadlift2'][3] = fails['Deadlift2'][0] / fails['Deadlift2'][2] * 100
 
 fails['Deadlift3'][0] = len(df_exec.query('Deadlift3Kgfail < 1'))
 fails['Deadlift3'][1] = len(df_exec.query('Deadlift3Kgfail > 0'))
 fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
+fails['Deadlift3'][3] = fails['Deadlift3'][0] / fails['Deadlift3'][2] * 100
 #Deadlift
-newindex = ['Succeed','Fail','Attempted']
-fails.reindex(newindex)
+
+
 print(fails)
 
 st.dataframe(fails,use_container_width=True)
