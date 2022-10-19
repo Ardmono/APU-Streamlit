@@ -60,6 +60,7 @@ if len(state) == 0:
 df_exec = df1.query(
    "Sex==@sex_input "#& WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
+st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
