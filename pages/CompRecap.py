@@ -39,7 +39,7 @@ for i in range(len(listy)):
 #         result.append(0)
 #     elif value < 0:
 #         result.append(value)
-#st.dataframe(df1,use_container_width=True,height=1200)
+st.dataframe(df1,use_container_width=True,height=1200)
 
 
 task = df1['WeightClassKg'].unique()
