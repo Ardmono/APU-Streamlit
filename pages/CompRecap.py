@@ -32,6 +32,35 @@ for i in range(len(listy)):
     df1[listy[i]+'fail'] = result
     df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
  
+df = df1
+sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
+if sex_input == 'All':
+    sex_input = df['Sex']
+st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/State Lifts and Weight Category on the side')
+weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
+if len(weight_input) == 0:
+    weight_input = df['WeightClassKg']
+equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
+if equpped == 'All':
+    equpped = df['Equipment']
+wheres = st.sidebar.radio(label="Comp Type - Does not work, unsure how to fix, disabling until can figure out resolution - Likely need to import ALL current APU State/National records and use that ",options =("All","State","National"),disabled=True)
+if wheres == 'All':
+    wheres = df['MeetName']
+elif wheres == 'State':
+    wheres = df['MeetName'] # Need to subsect for keyword "State" 
+elif wheres == 'State':
+    wheres = df['MeetName'] # Need to subsect for keyword "National"
+else:
+    wheres = df['MeetName']
+    
+state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+if len(state) == 0:
+    state = df['MeetState']
+
+df_exec = df1.query(
+   "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
+)
+st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
 
@@ -47,12 +76,12 @@ rsf = df1.loc[df1['WeightClassKg'] == 57]
 
 #col6 = st.columns(1)
 st.metric(label="Count of failed Bench3",value=len(df1.query('Bench3Kgfail > 0')))
+st.metric(label="Count of failed Bench3",value=len(df1.query('Bench3Kgfail > 0')))
 # for value in df1["Squat1Kg"]:
 #     if value > 0:
 #         result.append(0)
 #     elif value < 0:
 #         result.append(value)
-st.dataframe(df1,use_container_width=True,height=1200)
 
 
 task = df1['WeightClassKg'].unique()
