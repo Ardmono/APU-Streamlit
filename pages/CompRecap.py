@@ -33,6 +33,9 @@ for i in range(len(listy)):
     df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
  
 df = df1
+meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique())
+if len(meetName) == 0:
+    meetName = df['MeetName']
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
@@ -58,7 +61,7 @@ if len(state) == 0:
     state = df['MeetState']
 
 df_exec = df.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state"
+   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
 )
 st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
 st.dataframe(df_exec,use_container_width=True,height=1200)
