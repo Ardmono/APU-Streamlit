@@ -44,7 +44,9 @@ for i in range(len(listy)):
 # # result = []
 
 rsf = df1.loc[df1['WeightClassKg'] == 57]
-print(len(df1.query('Bench3Kgfail > 0')))
+
+cols = st.columns(1)
+cols.metric('Count of failed Bench3',len(df1.query('Bench3Kgfail > 0')))
 # for value in df1["Squat1Kg"]:
 #     if value > 0:
 #         result.append(0)
