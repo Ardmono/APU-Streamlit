@@ -47,7 +47,7 @@ st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
+equpped = st.sidebar.radio("Equipment",options =("Raw","Single-ply","All"))
 if equpped == 'All':
     equpped = df['Equipment']
 wheres = st.sidebar.radio(label="Comp Type - Does not work, unsure how to fix, disabling until can figure out resolution - Likely need to import ALL current APU State/National records and use that ",options =("All","State","National"),disabled=True)
