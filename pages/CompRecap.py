@@ -64,11 +64,13 @@ df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
 )
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
-# col1, col2, col3 = st.columns(3)
-# col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
-# col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail < 1')))
-# col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail > -1')))
+col1, col2, col3,col4 = st.columns(4)
+col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
+col2.metric(label="Gender Ratios", value=len(df_exec.query('Bench3Kgfail < 1')))
+col3.metric(label="% Succesful Lifts", value=len(df_exec.query('Bench3Kgfail > -1')))
+col4.metric(label="Total KG of all lifted weights", value=len(df_exec.query('Bench3Kgfail > -1')))
 
+#How many lifters, genders, weights, lifts, 
 #col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
 #col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail < 1')))
 #col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail > -1')))
@@ -121,7 +123,7 @@ fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
 #Deadlift
 
 
-print(fails)
+#print(fails)
 
 st.dataframe(fails,use_container_width=True)
 #st.dataframe(df_exec,use_container_width=True,height=1200)
