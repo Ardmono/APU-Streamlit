@@ -58,7 +58,7 @@ if len(state) == 0:
     state = df['MeetState']
 
 df_exec = df1.query(
-   "Sex==@sex_input & WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
+   "Sex==@sex_input "#& WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetTown == @wheres "
 )
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
