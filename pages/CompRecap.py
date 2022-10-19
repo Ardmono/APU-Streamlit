@@ -33,7 +33,7 @@ for i in range(len(listy)):
     df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
  
 df = df1
-meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique())
+meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique(),default=["National Classic Sub-Junior Junior and Master Powerlifting and Bench Press Championships"])
 if len(meetName) == 0:
     meetName = df['MeetName']
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
