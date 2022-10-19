@@ -38,7 +38,7 @@ if len(meetName) == 0:
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
-eventy = st.sidebar.radio("Event",options=('All',df['Event'].unique()),default=['SBD'])
+eventy = st.sidebar.radio("Event",options=df['Event'].unique(),default=['SBD'])
 if eventy == 'All':
     eventy = df['Event']
 st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/State Lifts and Weight Category on the side')
