@@ -65,7 +65,7 @@ if len(state) == 0:
     state = df['MeetState']
 print(df1.iloc[:,26:35])
 df_exec = df.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
+   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
 )
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
 col1, col2, col3,col4 = st.columns(4)
