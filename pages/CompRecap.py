@@ -33,7 +33,18 @@ for i in range(len(listy)):
     df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
  
 
-# result = []
+# task = df1['WeightClassKg'].unique()
+
+# rslt_df = df1.loc[df1['WeightClassKg'] == 57]
+# col4, col1, col2,col3 = st.columns(4)
+# col4.metric("Weight Class",task[i])
+# col1.metric("Bench", (rslt_df[rslt_df['Bench3Kgfail' > 0]].count()))
+# col2.metric("Deadlift", (rslt_df['Deadlift3Kgfail'].count()))
+# col3.metric('Squat',(rslt_df['Squat3Kgfail'].count()))
+# # result = []
+
+rsf = df1.loc[df1['WeightClassKg'] == 57]
+print(len(df1.query('Bench3Kgfail > 0')))
 # for value in df1["Squat1Kg"]:
 #     if value > 0:
 #         result.append(0)
@@ -58,7 +69,7 @@ for i in range(len(task)):
 
 #df1['Squat3Kgfail'] = df1['Squat3Kgfail'].abs()
 #df1['Squat3Kgfail'].apply(abs)
-print(df1['Squat3Kgfail'])
+#print(df1['Squat3Kgfail'])
 #df["Result"] = result  
 #print(df)
 ##df1 = df1.drop(columns=['Division', 'Equipment', 'Federation', 'Date','MeetState','MeetTown','MeetName','Name','Event','Year'])
