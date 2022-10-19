@@ -76,7 +76,7 @@ col4.metric(label="Total KG of all lifted weights", value=len(df_exec.query('Ben
 
 
 data = [0,0,0]
-fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Succeed','Fail','Attempted'])
+fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Fail','Succeed','Attempted'])
 list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
 list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail']
 
@@ -123,7 +123,7 @@ fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
 #Deadlift
 
 
-#print(fails)
+print(fails)
 
 st.dataframe(fails,use_container_width=True)
 #st.dataframe(df_exec,use_container_width=True,height=1200)
