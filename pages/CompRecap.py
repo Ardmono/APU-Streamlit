@@ -59,17 +59,72 @@ else:
 state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 if len(state) == 0:
     state = df['MeetState']
-
+print(df1.iloc[:,26:35])
 df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
 )
-st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
-col1, col2, col3 = st.columns(3)
-col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
-col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail < 1')))
-col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail > -1')))
+# st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
+# col1, col2, col3 = st.columns(3)
+# col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
+# col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail < 1')))
+# col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail > -1')))
 
+#col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
+#col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail < 1')))
+#col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail > -1')))
 
+data = [0,0,0]
+fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Succeed','Fail','Attempted'])
+list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
+list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail']
+
+##Squats
+fails['Squat1'][0] = len(df_exec.query('Squat1Kgfail > 0'))
+fails['Squat1'][1] = len(df_exec.query('Squat1Kgfail < 1'))
+fails['Squat1'][2] = len(df_exec.query('Squat1Kgfail > -1'))
+
+fails['Squat2'][0] = len(df_exec.query('Squat2Kgfail > 0'))
+fails['Squat2'][1] = len(df_exec.query('Squat2Kgfail < 1'))
+fails['Squat2'][2] = len(df_exec.query('Squat2Kgfail > -1'))
+
+fails['Squat3'][0] = len(df_exec.query('Squat3Kgfail > 0'))
+fails['Squat3'][1] = len(df_exec.query('Squat3Kgfail < 1'))
+fails['Squat3'][2] = len(df_exec.query('Squat3Kgfail > -1'))
+##Squats
+
+#Bench
+fails['Bench1'][0] = len(df_exec.query('Bench1Kgfail > 0'))
+fails['Bench1'][1] = len(df_exec.query('Bench1Kgfail < 1'))
+fails['Bench1'][2] = len(df_exec.query('Bench1Kgfail > -1'))
+
+fails['Bench2'][0] = len(df_exec.query('Bench2Kgfail > 0'))
+fails['Bench2'][1] = len(df_exec.query('Bench2Kgfail < 1'))
+fails['Bench2'][2] = len(df_exec.query('Bench2Kgfail > -1'))
+
+fails['Bench3'][0] = len(df_exec.query('Bench3Kgfail > 0'))
+fails['Bench3'][1] = len(df_exec.query('Bench3Kgfail < 1'))
+fails['Bench3'][2] = len(df_exec.query('Bench3Kgfail > -1'))
+#Bench
+
+#Deadlift
+fails['Deadlift1'][0] = len(df_exec.query('Deadlift1Kgfail > 0'))
+fails['Deadlift1'][1] = len(df_exec.query('Deadlift1Kgfail < 1'))
+fails['Deadlift1'][2] = len(df_exec.query('Deadlift1Kgfail > -1'))
+
+fails['Deadlift2'][0] = len(df_exec.query('Deadlift2Kgfail > 0'))
+fails['Deadlift2'][1] = len(df_exec.query('Deadlift2Kgfail < 1'))
+fails['Deadlift2'][2] = len(df_exec.query('Deadlift2Kgfail > -1'))
+
+fails['Deadlift3'][0] = len(df_exec.query('Deadlift3Kgfail > 0'))
+fails['Deadlift3'][1] = len(df_exec.query('Deadlift3Kgfail < 1'))
+fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
+#Deadlift
+df_exec1 = fails.query(
+   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
+)
+
+print(fails)
+st.dataframe(df_exec1,use_container_width=True,height=1200)
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
