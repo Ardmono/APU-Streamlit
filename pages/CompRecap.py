@@ -122,7 +122,7 @@ fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
 
 
 print(fails)
-st.dataframe(fails,use_container_width=True,height=15)
+st.dataframe(fails,use_container_width=True,height=300)
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
