@@ -44,13 +44,13 @@ task = df1['WeightClassKg'].unique()
 #print(task)
 for i in range(len(task)):
     #print(task[i])
-    rslt_df = df.loc[df['WeightClassKg'] == task[i]]
+    rslt_df = df1.loc[df1['WeightClassKg'] == task[i]]
     #print(rslt_df)
     col4, col1, col2,col3 = st.columns(4)
     col4.metric("Weight Class",task[i])
-    col1.metric("Bench", (rslt_df['Bench3Kgfail'].sum()))
-    col2.metric("Deadlift", (rslt_df['Deadlift3Kgfail'].sum()))
-    col3.metric('Squat',(rslt_df['Squat3Kgfail'].sum()))
+    col1.metric("Bench", (rslt_df['Bench3Kgfail'].count()))
+    col2.metric("Deadlift", (rslt_df['Deadlift3Kgfail'].count()))
+    col3.metric('Squat',(rslt_df['Squat3Kgfail'].count()))
     
     
 
