@@ -65,9 +65,9 @@ df_exec = df.query(
 )
 st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
 col1, col2, col3 = st.columns(3)
-col1.metric("Fail", len(df_exec.query('Bench3Kgfail > 0')), "1.2 °F")
-col2.metric("Succeed", len(df_exec.query('Bench3Kgfail = 0')), "-8%")
-col3.metric("Count", len(df_exec.query('Bench3Kgfail')), "4%")
+col1.metric(label="Fail", value=len(df_exec.query('Bench3Kgfail > 0')))
+col2.metric(label="Succeed", value=len(df_exec.query('Bench3Kgfail = 0')))
+col3.metric(label="Count", value=len(df_exec.query('Bench3Kgfail')))
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
