@@ -15,8 +15,7 @@ df.fillna(0, inplace=True)
 df1 = df
 #df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 
-df_filtered = df.query('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0')
-st.metric('All good squats', df_filtered, delta=None, delta_color="normal", help=None)
+
 #df1 = df1[df1['Event'] == 'SBD']
 listy = ['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
 for i in range(len(listy)):
@@ -69,6 +68,10 @@ print(df1.iloc[:,26:35])
 df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
 )
+
+#df_filtered = df_exec.query(len('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0'))
+
+st.metric('All good squats', value=len(df_exec.query('Squat1Kg > 0')), delta=None, delta_color="normal", help=None)
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
 col1, col2, col3,col4 = st.columns(4)
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
