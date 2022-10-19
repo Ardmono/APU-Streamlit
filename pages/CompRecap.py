@@ -119,12 +119,10 @@ fails['Deadlift3'][0] = len(df_exec.query('Deadlift3Kgfail > 0'))
 fails['Deadlift3'][1] = len(df_exec.query('Deadlift3Kgfail < 1'))
 fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
 #Deadlift
-df_exec1 = fails.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
-)
+
 
 print(fails)
-st.dataframe(df_exec1,use_container_width=True,height=1200)
+st.dataframe(fails,use_container_width=True,height=1200)
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
