@@ -64,6 +64,10 @@ df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName"
 )
 st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
+col1, col2, col3 = st.columns(3)
+col1.metric("Fail", len(df_exec.query('Bench3Kgfail > 0')), "1.2 °F")
+col2.metric("Succeed", len(df_exec.query('Bench3Kgfail = 0')), "-8%")
+col3.metric("Count", len(df_exec.query('Bench3Kgfail')), "4%")
 st.dataframe(df_exec,use_container_width=True,height=1200)
 
 # task = df1['WeightClassKg'].unique()
@@ -76,16 +80,6 @@ st.dataframe(df_exec,use_container_width=True,height=1200)
 # col3.metric('Squat',(rslt_df['Squat3Kgfail'].count()))
 # # result = []
 
-rsf = df1.loc[df1['WeightClassKg'] == 57]
-
-#col6 = st.columns(1)
-st.metric(label="Count of failed Bench3",value=len(df1.query('Bench3Kgfail > 0')))
-st.metric(label="Count of failed Bench3",value=len(df1.query('Bench3Kgfail > 0')))
-# for value in df1["Squat1Kg"]:
-#     if value > 0:
-#         result.append(0)
-#     elif value < 0:
-#         result.append(value)
 
 
 task = df1['WeightClassKg'].unique()
