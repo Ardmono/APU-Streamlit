@@ -15,6 +15,8 @@ df.fillna(0, inplace=True)
 df1 = df
 #df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 
+df_filtered = df.query('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0')
+st.metric('All good squats', df_filtered, delta=None, delta_color="normal", help=None)
 #df1 = df1[df1['Event'] == 'SBD']
 listy = ['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
 for i in range(len(listy)):
@@ -83,6 +85,8 @@ print(fails)
 list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
 list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail']
 
+
+
 ##Squats
 fails['Squat1'][0] = len(df_exec.query('Squat1Kgfail < 1'))
 fails['Squat1'][1] = len(df_exec.query('Squat1Kgfail > 0'))
@@ -122,6 +126,7 @@ fails['Deadlift1'][0] = len(df_exec.query('Deadlift1Kgfail < 1'))
 fails['Deadlift1'][1] = len(df_exec.query('Deadlift1Kgfail > 0'))
 fails['Deadlift1'][2] = len(df_exec.query('Deadlift1Kgfail > -1'))
 fails['Deadlift1'][3] = fails['Deadlift1'][0] / fails['Deadlift1'][2] * 100
+fails['Deadlift1'][3] = float(fails['Deadlift1'][3])
 
 fails['Deadlift2'][0] = len(df_exec.query('Deadlift2Kgfail < 1'))
 fails['Deadlift2'][1] = len(df_exec.query('Deadlift2Kgfail > 0'))
