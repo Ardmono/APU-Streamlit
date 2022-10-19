@@ -72,7 +72,7 @@ col1, col2, col3,col4 = st.columns(4)
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
 col2.metric(label="Gender Ratios", value=len(df_exec.query('Bench3Kgfail < 1')))
 col3.metric(label="% Succesful Lifts", value=len(df_exec.query('Bench3Kgfail > -1')))
-col4.metric(label="Total KG of all lifted weights", value=df_exec['TotalKg'].sum())
+col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+'Kg'))
 
 totalweight = df_exec['TotalKg'].sum()
 print(totalweight)
