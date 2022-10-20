@@ -50,7 +50,7 @@ st.header('Competition Recape, defaults to latest comp - ')
 meeter = meetName
 if len(meeter) == 0:
     meeter = 'All Comps'
-st.text('Current Comp: '+str(meetName))
+st.text('Current Comp: '+str(meeter))
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
