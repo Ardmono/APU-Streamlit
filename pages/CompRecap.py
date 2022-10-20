@@ -47,6 +47,9 @@ eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
 if eventy == 'All':
     eventy = df['Event']
 st.header('Competition Recape, defaults to latest comp - ')
+meeter = meetName
+if len(meeter) == 0:
+    meeter = 'All Comps'
 st.text('Current Comp: '+str(meetName))
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
