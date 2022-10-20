@@ -8,7 +8,10 @@ from datetime import datetime
 import time
 import numpy as np
 #import plotly.express as px
-import plotly.graph_objects as go
+import plotly.figure_factory as ff
+
+
+
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
@@ -191,9 +194,9 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted']] = ['Deadlift3',(len(df_exec.q
 
 #animals=['giraffes', 'orangutans', 'monkeys']
 
-fig = go.Figure(data=[
-    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
-    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
+fig = ff.Figure(data=[
+    ff.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
+    ff.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
     #go.Bar(name='Attempted', x=fails.Lift, y=fails.Attempted,),
     
 ])
