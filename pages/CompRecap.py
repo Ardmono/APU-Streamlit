@@ -1,4 +1,5 @@
 from email.policy import default
+from re import A
 from time import strptime
 import pandas as pd 
 import streamlit as st
@@ -78,11 +79,11 @@ print(len(df_exec[df['Sex'] =='M']))
 #print(df_exec[df_exec['Sex'] =='F'].count())
 #st.metric('All good squats', value=len(df_exec.query('Sex == 'M'')), delta=None, delta_color="normal", help=None)
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
-col1, col2, col3,col4 = st.columns(4,gap='Medium')
-col1.metric(label="How Many Lifters", value=len(df_exec[df['Sex'] =='F']))
-col1.metric(label="How Many Lifters", value=len(df_exec[df['Sex'] =='M']))
-col1.metric(label="How Many Lifters", value=(len(df_exec[df['Sex'] =='F'])+len(df_exec[df['Sex'] =='F'])))
-col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
+a, b, c,d = st.columns(4,gap='Medium')
+a.metric(label="How Many Lifters", value=len(df_exec[df['Sex'] =='F']))
+b.metric(label="How Many Lifters", value=len(df_exec[df['Sex'] =='M']))
+c.metric(label="How Many Lifters", value=(len(df_exec[df['Sex'] =='F'])+len(df_exec[df['Sex'] =='F'])))
+d.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
 
 col1, col2, col3,col4,col5 = st.columns(5,gap='Medium')
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
