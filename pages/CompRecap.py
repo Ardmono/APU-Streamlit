@@ -2,7 +2,6 @@ from email.policy import default
 from operator import index
 from re import A
 from time import strptime
-from turtle import ycor
 import pandas as pd 
 import streamlit as st
 from datetime import datetime
