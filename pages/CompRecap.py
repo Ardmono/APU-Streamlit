@@ -7,7 +7,7 @@ import streamlit as st
 from datetime import datetime
 import time
 import numpy as np
-import plotly.express as px
+#import plotly.express as px
 import plotly.graph_objects as go
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
