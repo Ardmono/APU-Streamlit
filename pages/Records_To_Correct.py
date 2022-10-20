@@ -10,3 +10,5 @@ import plotly.graph_objects as go
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
+
+print(df)
