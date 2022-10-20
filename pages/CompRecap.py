@@ -35,6 +35,7 @@ for i in range(len(listy)):
  
 df = df1
 meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique(),default=["National Classic Sub-Junior Junior and Master Powerlifting and Bench Press Championships"])
+
 if len(meetName) == 0:
     meetName = df['MeetName']
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
@@ -45,7 +46,8 @@ eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
 #    eventy = 'SBD'
 if eventy == 'All':
     eventy = df['Event']
-st.header('Top Lifts by Weight Category - Filters for Equipped, State, National/State Lifts and Weight Category on the side')
+st.header('Competition Recape, defaults to latest comp - ')
+st.text('Current Comp: '+str(meetName))
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
