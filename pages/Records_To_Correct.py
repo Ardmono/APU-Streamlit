@@ -26,6 +26,7 @@ df1 = df[(df.MeetState == 'Unknown') | (df.MeetTown == 'Unknown') | (df.MeetStat
 df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Name', 'WeightClassKg', 'BodyweightKg', 'Division', 'Squat1Kg', 'Squat2Kg', 'Squat3Kg', 'Best3SquatKg','Bench1Kg', 'Bench2Kg', 'Bench3Kg' ,'Best3BenchKg' ,'Deadlift1Kg', 'Deadlift2Kg' ,'Deadlift3Kg', 'Best3DeadliftKg','TotalKg'])
 ##a = df.query('a.isnull()', engine='python')
 
-print(df1)
+st.metric('Records to correct',value=len(df['meetid'].unique()))
+#p#rint(df1)
 
 st.dataframe(df1,width=20000)
