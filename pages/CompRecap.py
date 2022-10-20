@@ -78,7 +78,8 @@ dfsex = df.query(
 )
 
 
-lifters = len(dfsex[dfsex['Sex'] =='M']) + len(dfsex[dfsex['Sex'] =='M'])
+lifters = len(dfsex[dfsex['Sex'] =='F']) + len(dfsex[dfsex['Sex'] =='M'])
+#print(lifters)
 #print(df_exec[df_exec['Sex'] =='F'].count())
 #st.metric('All good squats', value=len(df_exec.query('Sex == 'M'')), delta=None, delta_color="normal", help=None)
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
