@@ -70,8 +70,8 @@ df_exec = df.query(
 )
 
 #df_filtered = df_exec.query(len('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0'))
-
-st.metric('All good squats', value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1')), delta=None, delta_color="normal", help=None)
+#['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
+st.metric('All good squats', value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1 & Bench1Kg > 1 & Bench2Kg > 1 & Bench3Kg > 1 & Deadlift1Kg > 1 & Deadlift2Kg > 1 & Deadlift3Kg > 1')), delta=None, delta_color="normal", help=None)
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
 col1, col2, col3,col4 = st.columns(4)
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
