@@ -49,7 +49,7 @@ if eventy == 'All':
 st.header('Competition Recape, defaults to latest comp - ')
 maxmeet = max(df.MeetName.apply(len))
 meeter = meetName
-if len(meeter) > meeter+1 :
+if len(meeter) > maxmeet+1 :
     meeter = 'All Comps'
 st.text('Current Comp: '+str(meeter))
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
