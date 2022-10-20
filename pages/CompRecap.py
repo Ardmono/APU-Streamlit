@@ -73,16 +73,16 @@ df_exec = df.query(
 #df_filtered = df_exec.query(len('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0'))
 #['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
 #st.metric('All good squats', value=len(df_exec.query('Sex == 'F'')), delta=None, delta_color="normal", help=None)
-print(len(df_exec[df['Sex'] =='F']))
-print(len(df_exec[df['Sex'] =='M']))
-print(len(df_exec[df['Sex'] =='M']))
+
+
+lifters = len(df_exec[df['Sex'] =='M']) + len(df_exec[df['Sex'] =='M'])
 #print(df_exec[df_exec['Sex'] =='F'].count())
 #st.metric('All good squats', value=len(df_exec.query('Sex == 'M'')), delta=None, delta_color="normal", help=None)
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
-a, b = st.columns(2,gap='Medium')
+a, b,c = st.columns(3,gap='Medium')
 a.metric(label="How Many Lifters", value=len(df_exec[df['Sex'] =='F']))
 b.metric(label="How Many Lifters", value=len(df_exec[df['Sex'] =='M']))
-#c.metric(label="How Many Lifters", value=(len(df_exec[df['Sex'] =='F'])+len(df_exec[df['Sex'] =='F'])))
+c.metric(label="How Many Lifters", value=lifters)
 #d.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
 
 col1, col2, col3,col4,col5 = st.columns(5,gap='Medium')
