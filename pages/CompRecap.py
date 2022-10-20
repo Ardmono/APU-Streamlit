@@ -200,15 +200,15 @@ fig = go.Figure(data=[
 ])
 # Change the bar mode
 fig.update_layout(barmode='stack')
-fig.update_layout(yaxis_range=[0,(len(fails.Attempted))])
+fig.update_layout(yaxis_range=[0,180])
 
 #fig.show()
 
 # fig = px.bar(fails, x="Lift", y="Attempted", color="Fail",barmode='overlay')
 #fig = px.bar(fails, x=fails.index.values, y='Attempted', title="Long-Form Input")
 fig.show()
-st.plotly_chart(fig, use_container_width=True)
 
+st.plotly_chart(fig, use_container_width=True)
 print(fails)
 
 st.dataframe(fails,use_container_width=True)
