@@ -74,7 +74,7 @@ else:
 state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 if len(state) == 0:
     state = df['MeetState']
-print(df1.iloc[:,26:35])
+#print(df1.iloc[:,26:35])
 df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
 )
@@ -106,7 +106,7 @@ col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'
 col5.metric(label="Count of 9/9 Lifts",value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1 & Bench1Kg > 1 & Bench2Kg > 1 & Bench3Kg > 1 & Deadlift1Kg > 1 & Deadlift2Kg > 1 & Deadlift3Kg > 1')))
 
 totalweight = df_exec['TotalKg'].sum()
-print(totalweight)
+#print(totalweight)
 data = [0,0,0]
 
 fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
@@ -121,21 +121,23 @@ list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench
 
 ##Squats
 #fails.at[1,'Succeed']= len(df_exec.query('Squat1Kgfail < 1'))
-fails.loc[0,['Lift','Succeed','Fail','Attempted']] =  ['Squat1',(len(df_exec.query('Squat1Kgfail < 1'))),(len(df_exec.query('Squat1Kgfail > 0'))),(len(df_exec.query('Squat1Kgfail > -1')))]
-fails.loc[1,['Lift','Succeed','Fail','Attempted']] = ['Squat2',(len(df_exec.query('Squat2Kgfail < 1'))),(len(df_exec.query('Squat2Kgfail > 0'))),(len(df_exec.query('Squat2Kgfail > -1')))]
-fails.loc[2,['Lift','Succeed','Fail','Attempted']] = ['Squat3',(len(df_exec.query('Squat3Kgfail < 1'))),(len(df_exec.query('Squat3Kgfail > 0'))),(len(df_exec.query('Squat3Kgfail > -1')))]
+fails.loc[0,['Lift','Succeed','Fail','Attempted','Percentage']] =  ['Squat1',(len(df_exec.query('Squat1Kgfail < 1'))),(len(df_exec.query('Squat1Kgfail > 0'))),(len(df_exec.query('Squat1Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
 
-fails.loc[3,['Lift','Succeed','Fail','Attempted']] = ['Bench1',(len(df_exec.query('Bench1Kgfail < 1'))),(len(df_exec.query('Bench1Kgfail > 0'))),(len(df_exec.query('Bench1Kgfail > -1')))]
-fails.loc[4,['Lift','Succeed','Fail','Attempted']] = ['Bench2',(len(df_exec.query('Bench2Kgfail < 1'))),(len(df_exec.query('Bench2Kgfail > 0'))),(len(df_exec.query('Bench2Kgfail > -1')))]
-fails.loc[5,['Lift','Succeed','Fail','Attempted']] = ['Bench3',(len(df_exec.query('Bench3Kgfail < 1'))),(len(df_exec.query('Bench3Kgfail > 0'))),(len(df_exec.query('Bench3Kgfail > -1')))]
+fails.loc[1,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Squat2',(len(df_exec.query('Squat2Kgfail < 1'))),(len(df_exec.query('Squat2Kgfail > 0'))),(len(df_exec.query('Squat2Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
+fails.loc[2,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Squat3',(len(df_exec.query('Squat3Kgfail < 1'))),(len(df_exec.query('Squat3Kgfail > 0'))),(len(df_exec.query('Squat3Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
 
-fails.loc[6,['Lift','Succeed','Fail','Attempted']] = ['Deadlift1',(len(df_exec.query('Deadlift1Kgfail < 1'))),(len(df_exec.query('Deadlift1Kgfail > 0'))),(len(df_exec.query('Deadlift1Kgfail > -1')))]
-fails.loc[7,['Lift','Succeed','Fail','Attempted']] = ['Deadlift2',(len(df_exec.query('Deadlift2Kgfail < 1'))),(len(df_exec.query('Deadlift2Kgfail > 0'))),(len(df_exec.query('Deadlift2Kgfail > -1')))]
-fails.loc[8,['Lift','Succeed','Fail','Attempted']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1')))]
+fails.loc[3,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Bench1',(len(df_exec.query('Bench1Kgfail < 1'))),(len(df_exec.query('Bench1Kgfail > 0'))),(len(df_exec.query('Bench1Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
+fails.loc[4,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Bench2',(len(df_exec.query('Bench2Kgfail < 1'))),(len(df_exec.query('Bench2Kgfail > 0'))),(len(df_exec.query('Bench2Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
+fails.loc[5,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Bench3',(len(df_exec.query('Bench3Kgfail < 1'))),(len(df_exec.query('Bench3Kgfail > 0'))),(len(df_exec.query('Bench3Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
 
+fails.loc[6,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift1',(len(df_exec.query('Deadlift1Kgfail < 1'))),(len(df_exec.query('Deadlift1Kgfail > 0'))),(len(df_exec.query('Deadlift1Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
+fails.loc[7,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift2',(len(df_exec.query('Deadlift2Kgfail < 1'))),(len(df_exec.query('Deadlift2Kgfail > 0'))),(len(df_exec.query('Deadlift2Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
+fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1'))),(len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100]
 
+#fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
-
+#ails.loc[0,['Percentage']] = 0 
+#print((len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100)
 fig = go.Figure(data=[
     go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
     go.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
@@ -148,10 +150,10 @@ lengthy = len(df_exec.query('Deadlift3Kgfail > -1'))
 fig.update_layout(barmode='stack')
 fig.update_layout(yaxis_range=[0,lengthy])
 
-fig.show()
+#fig.show()
 
 st.plotly_chart(fig, use_container_width=True)
-print(fails)
+#print(fails)
 
 st.dataframe(fails,use_container_width=True)
 
