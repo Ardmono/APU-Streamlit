@@ -142,8 +142,8 @@ fig = go.Figure(data=[
     #go.Bar(name='Attempted', x=fails.Lift, y=fails.Attempted,),
     
 ])
-# Change the bar mode
-#lengthy = len(len(fails.index)) # Change this to just "Rows" 
+## Need to add labels 
+
 lengthy = len(df_exec.query('Deadlift3Kgfail > -1'))
 fig.update_layout(barmode='stack')
 fig.update_layout(yaxis_range=[0,lengthy])
@@ -157,10 +157,10 @@ st.dataframe(fails,use_container_width=True)
 
 
 
-#How many lifters, genders, weights, lifts, 
+#How many lifters, genders, weights, lifts, ----------------5/10
 
-#Failed Lifts % Breakdown
+#Failed Lifts % Breakdown ---------------8/10 
 
-#Number of lifters who went 9/9
+#Number of lifters who went 9/9--------------------6/10
 
-#BW Stats 
+#BW Stats -------------------- 0/10
