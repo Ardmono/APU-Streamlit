@@ -199,8 +199,9 @@ fig = go.Figure(data=[
     
 ])
 # Change the bar mode
+lengthy = len(df_exec.query('Deadlift3Kgfail > -1'))
 fig.update_layout(barmode='stack')
-fig.update_layout(yaxis_range=[0,180])
+fig.update_layout(yaxis_range=[0,lengthy])
 
 #fig.show()
 
