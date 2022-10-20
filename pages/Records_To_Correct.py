@@ -28,4 +28,4 @@ df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State
 
 print(df1)
 
-st.dataframe(df1,use_container_width=True)
+st.dataframe(df1,use_container_width=True,width=1500)
