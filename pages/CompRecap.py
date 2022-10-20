@@ -46,12 +46,12 @@ eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
 #    eventy = 'SBD'
 if eventy == 'All':
     eventy = df['Event']
-st.header('Competition Recape, defaults to latest comp - ')
+st.header('Competition Recape, defaults is latest comp ')
 maxmeet = max(df.MeetName.apply(len))
 meeter = meetName
 if len(meeter) > maxmeet+1 :
     meeter = 'All Comps'
-st.text('Current Comp: '+str(meeter))
+
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
@@ -94,7 +94,7 @@ a.metric(label="How Many Female Lifters", value=len(dfsex[df['Sex'] =='F']))
 b.metric(label="How Many Male Lifters", value=len(dfsex[df['Sex'] =='M']))
 c.metric(label="How Many Total Lifters", value=lifters)
 #d.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
-
+st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5 = st.columns(5,gap='Medium')
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
 col2.metric(label="Gender Ratios", value=len(df_exec.query('Bench3Kgfail < 1')))
