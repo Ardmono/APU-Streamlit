@@ -100,16 +100,15 @@ c.metric(label="How Many Total Lifters", value=lifters)
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5 = st.columns(5,gap='Medium')
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
-col2.metric(label="Gender Ratios", value=len(df_exec.query('Bench3Kgfail < 1')))
-col3.metric(label="% Succesful Lifts", value=len(df_exec.query('Bench3Kgfail > -1')))
+col2.metric(label="Gender Ratios", value='Bleh')
+col3.metric(label="% Succesful Lifts", value='Bleh')
 col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
 col5.metric(label="Count of 9/9 Lifts",value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1 & Bench1Kg > 1 & Bench2Kg > 1 & Bench3Kg > 1 & Deadlift1Kg > 1 & Deadlift2Kg > 1 & Deadlift3Kg > 1')))
 
 totalweight = df_exec['TotalKg'].sum()
 print(totalweight)
 data = [0,0,0]
-#fails = pd.DataFrame(columns=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],index=['Succeed','Fail','Attempted','Percentage'])
-#fails = pd.DataFrame(index=['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3'],columns=['Succeed','Fail','Attempted','Percentage'])
+
 fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
 
 lifts = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
@@ -135,62 +134,7 @@ fails.loc[7,['Lift','Succeed','Fail','Attempted']] = ['Deadlift2',(len(df_exec.q
 fails.loc[8,['Lift','Succeed','Fail','Attempted']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1')))]
 
 
-# fails['Squat1'][0] = len(df_exec.query('Squat1Kgfail < 1'))
-# fails['Squat1'][1] = (len(df_exec.query('Squat1Kgfail > 0')))
-# fails['Squat1'][2] = len(df_exec.query('Squat1Kgfail > -1'))
-# fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
-# fails['Squat2'][0] = len(df_exec.query('Squat2Kgfail < 1'))
-# fails['Squat2'][1] = len(df_exec.query('Squat2Kgfail > 0'))
-# fails['Squat2'][2] = len(df_exec.query('Squat2Kgfail > -1'))
-# fails['Squat2'][3] = fails['Squat2'][0] / fails['Squat2'][2] * 100
-
-# fails['Squat3'][0] = len(df_exec.query('Squat3Kgfail < 1'))
-# fails['Squat3'][1] = len(df_exec.query('Squat3Kgfail > 0'))
-# fails['Squat3'][2] = len(df_exec.query('Squat3Kgfail > -1'))
-# fails['Squat3'][3] = fails['Squat3'][0] / fails['Squat3'][2] * 100
-# ##Squats
-
-# #Bench
-# fails['Bench1'][0] = len(df_exec.query('Bench1Kgfail < 1'))
-# fails['Bench1'][1] = len(df_exec.query('Bench1Kgfail > 0'))
-# fails['Bench1'][2] = len(df_exec.query('Bench1Kgfail > -1'))
-# fails['Bench1'][3] = fails['Bench1'][0] / fails['Bench1'][2] * 100
-
-# fails['Bench2'][0] = len(df_exec.query('Bench2Kgfail < 1'))
-# fails['Bench2'][1] = len(df_exec.query('Bench2Kgfail > 0'))
-# fails['Bench2'][2] = len(df_exec.query('Bench2Kgfail > -1'))
-# fails['Bench2'][3] = fails['Bench2'][0] / fails['Bench2'][2] * 100
-
-# fails['Bench3'][0] = len(df_exec.query('Bench3Kgfail < 1'))
-# fails['Bench3'][1] = len(df_exec.query('Bench3Kgfail > 0'))
-# fails['Bench3'][2] = len(df_exec.query('Bench3Kgfail > -1'))
-# fails['Bench3'][3] = fails['Bench3'][0] / fails['Bench3'][2] * 100
-# #Bench
-
-# #Deadlift
-# fails['Deadlift1'][0] = len(df_exec.query('Deadlift1Kgfail < 1'))
-# fails['Deadlift1'][1] = len(df_exec.query('Deadlift1Kgfail > 0'))
-# fails['Deadlift1'][2] = len(df_exec.query('Deadlift1Kgfail > -1'))
-# fails['Deadlift1'][3] = fails['Deadlift1'][0] / fails['Deadlift1'][2] * 100
-# fails['Deadlift1'][3] = float(fails['Deadlift1'][3])
-
-# fails['Deadlift2'][0] = len(df_exec.query('Deadlift2Kgfail < 1'))
-# fails['Deadlift2'][1] = len(df_exec.query('Deadlift2Kgfail > 0'))
-# fails['Deadlift2'][2] = len(df_exec.query('Deadlift2Kgfail > -1'))
-# fails['Deadlift2'][3] = fails['Deadlift2'][0] / fails['Deadlift2'][2] * 100
-
-# fails['Deadlift3'][0] = len(df_exec.query('Deadlift3Kgfail < 1'))
-# fails['Deadlift3'][1] = len(df_exec.query('Deadlift3Kgfail > 0'))
-# fails['Deadlift3'][2] = len(df_exec.query('Deadlift3Kgfail > -1'))
-# fails['Deadlift3'][3] = fails['Deadlift3'][0] / fails['Deadlift3'][2] * 100
-# #Deadlift
-#long_df = px.data.medals_long()
-
-
-#fig = px.bar(fails, x='Lift', color='Attempted',y='Fail', title="Wide-Form Input")
-
-#animals=['giraffes', 'orangutans', 'monkeys']
 
 fig = go.Figure(data=[
     go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
@@ -199,56 +143,18 @@ fig = go.Figure(data=[
     
 ])
 # Change the bar mode
+lengthy = len(len(fails.index)) # Change this to just "Rows" 
 lengthy = len(df_exec.query('Deadlift3Kgfail > -1'))
 fig.update_layout(barmode='stack')
 fig.update_layout(yaxis_range=[0,lengthy])
 
-#fig.show()
-
-# fig = px.bar(fails, x="Lift", y="Attempted", color="Fail",barmode='overlay')
-#fig = px.bar(fails, x=fails.index.values, y='Attempted', title="Long-Form Input")
 fig.show()
 
 st.plotly_chart(fig, use_container_width=True)
 print(fails)
 
 st.dataframe(fails,use_container_width=True)
-#st.dataframe(df_exec,use_container_width=True,height=1200)
 
-# task = df1['WeightClassKg'].unique()
-
-# rslt_df = df1.loc[df1['WeightClassKg'] == 57]
-# col4, col1, col2,col3 = st.columns(4)
-# col4.metric("Weight Class",task[i])
-# col1.metric("Bench", (rslt_df[rslt_df['Bench3Kgfail' > 0]].count()))
-# col2.metric("Deadlift", (rslt_df['Deadlift3Kgfail'].count()))
-# col3.metric('Squat',(rslt_df['Squat3Kgfail'].count()))
-# # result = []
-
-
-
-# task = df1['WeightClassKg'].unique()
-# #print(task)
-# for i in range(len(task)):
-#     #print(task[i])
-#     rslt_df = df1.loc[df1['WeightClassKg'] == task[i]]
-#     #print(rslt_df)
-#     col4, col1, col2,col3 = st.columns(4)
-#     col4.metric("Weight Class",task[i])
-#     col1.metric("Bench", (rslt_df['Bench3Kgfail'].count()))
-#     col2.metric("Deadlift", (rslt_df['Deadlift3Kgfail'].count()))
-#     col3.metric('Squat',(rslt_df['Squat3Kgfail'].count()))
-    
-    
-
-#df1['Squat3Kgfail'] = df1['Squat3Kgfail'].abs()
-#df1['Squat3Kgfail'].apply(abs)
-#print(df1['Squat3Kgfail'])
-#df["Result"] = result  
-#print(df)
-##df1 = df1.drop(columns=['Division', 'Equipment', 'Federation', 'Date','MeetState','MeetTown','MeetName','Name','Event','Year'])
-#print(df1)
-#df1.lt(0).sum()
 
 
 #How many lifters, genders, weights, lifts, 
