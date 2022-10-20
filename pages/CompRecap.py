@@ -5,8 +5,9 @@ import streamlit as st
 from datetime import datetime
 import time
 import numpy as np
+#import plotly.express as px
 import plotly.figure_factory as ff
-
+import plotly.graph_objects as go
 
 
 
@@ -191,9 +192,9 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted']] = ['Deadlift3',(len(df_exec.q
 
 #animals=['giraffes', 'orangutans', 'monkeys']
 
-fig = ff.Figure(data=[
-    ff.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
-    ff.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
+fig = go.Figure(data=[
+    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
+    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
     #go.Bar(name='Attempted', x=fails.Lift, y=fails.Attempted,),
     
 ])
