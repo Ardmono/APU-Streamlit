@@ -137,8 +137,8 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted']] = ['Deadlift3',(len(df_exec.q
 
 
 fig = go.Figure(data=[
-    go.Barh(name='Succeed', x=fails.Lift, y=fails.Succeed),
-    go.Barh(name='Fail', x=fails.Lift, y=fails.Fail),
+    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed,orientation='h'),
+    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail,orientation='h'),
     #go.Bar(name='Attempted', x=fails.Lift, y=fails.Attempted,),
     
 ])
