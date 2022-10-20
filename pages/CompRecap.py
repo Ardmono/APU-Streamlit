@@ -5,8 +5,6 @@ import streamlit as st
 from datetime import datetime
 import time
 import numpy as np
-#import plotly.express as px
-#import plotly.figure_factory as ff
 import plotly.graph_objects as go
 
 
@@ -92,10 +90,10 @@ lifters = len(dfsex[dfsex['Sex'] =='F']) + len(dfsex[dfsex['Sex'] =='M'])
 #print(df_exec[df_exec['Sex'] =='F'].count())
 #st.metric('All good squats', value=len(df_exec.query('Sex == 'M'')), delta=None, delta_color="normal", help=None)
 # st.metric(label="Count of failed Bench3",value=len(df_exec.query('Bench3Kgfail > 0')))
-a, b,c = st.columns(3,gap='Medium')
-a.metric(label="How Many Female Lifters", value=len(dfsex[df['Sex'] =='F']))
-b.metric(label="How Many Male Lifters", value=len(dfsex[df['Sex'] =='M']))
-c.metric(label="How Many Total Lifters", value=lifters)
+a, b,c = st.columns(3,gap='Small')
+a.metric(label="Female Lifters", value=len(dfsex[df['Sex'] =='F']))
+b.metric(label="Male Lifters", value=len(dfsex[df['Sex'] =='M']))
+c.metric(label="Total Lifters", value=lifters)
 #d.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5 = st.columns(5,gap='Medium')
