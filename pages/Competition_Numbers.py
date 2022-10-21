@@ -27,8 +27,6 @@ st.header('Filter by')
 col1, col2,col3 = st.columns(3)
 with col1:
     meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
-    #if len(col1) == 0:
-    #    col1 = df['MeetState']
     if len(meetState) == 0:
         meetState = df['MeetState']
 with col2:
