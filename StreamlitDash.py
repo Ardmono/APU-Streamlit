@@ -111,7 +111,7 @@ if selected_page == 'True':
     df_delection = df_delection.drop(columns=['Squat1Kg', 'Squat2Kg' , 'Squat3Kg', 'Bench1Kg', 'Bench2Kg' , 'Bench3Kg', 'Deadlift1Kg','Deadlift2Kg','Deadlift3Kg'])
 elif selected_page == 'False':
     pass
-df_delection = df_delection.reset_index()
+df_delection = df_delection.reset_index(inplace=True)
 #df_delection = df_delection.drop(columns=['index'])
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
