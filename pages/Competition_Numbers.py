@@ -25,7 +25,7 @@ if len(meetState) == 0:
     
 col1, col2,col4,col5 = st.columns(4)
 with col1:
-    st.selectbox("City", ["City1", "City2"])
+    st.selectbox("State", ["NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS"])
 with col2:
     st.selectbox("District", ["District1", "District2"])
 with col4:
@@ -80,6 +80,7 @@ df_exec['count'] = df_exec.groupby('MeetState')['MeetState'].transform('count')
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 st.dataframe(df1,width=20000)
+st.metric('Test',value=str(col1))
 #Failed Lifts % Breakdown ---------------8/10 
 
 #Number of lifters who went 9/9--------------------6/10
