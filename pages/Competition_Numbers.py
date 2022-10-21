@@ -19,16 +19,18 @@ df1 = df
 
  
 df = df1
-meetState = st.sidebar.multiselect("Filter State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
-if len(meetState) == 0:
-    meetState = df['MeetState']
+# meetState = st.sidebar.multiselect("Filter State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
+# if len(meetState) == 0:
+#     meetState = df['MeetState']
 
 st.header('Filter by')
 col1, col2,col4,col5 = st.columns(4)
 with col1:
-    st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
+    meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     #if len(col1) == 0:
     #    col1 = df['MeetState']
+    if len(meetState) == 0:
+        meetState = df['MeetState']
 with col2:
     st.selectbox("Filter District", ["District1", "District2"])
 with col4:
