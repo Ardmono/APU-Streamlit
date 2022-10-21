@@ -108,8 +108,8 @@ df1.drop_duplicates(subset="MeetName",
 
 county = len(df1.index)
 bleh = county
-county = int(county) * 42
-st.dataframe(df1,width=20000,height=county)
+county = int(county) * 51
+st.dataframe(df1,width=20000,height=102)
 print(col1)
 st.metric('Test',value=str(col1))
 st.text(bleh)
