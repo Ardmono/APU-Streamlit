@@ -50,7 +50,7 @@ with a:
     #if len(col1) == 0:
     #    col1 = df['MeetState']
 with b:
-    st.selectbox("District", ["District1", "District2"])
+    st.radio("Group by State: ", ["True", "False"])
 with c:
     st.selectbox("c", ["c", "c"])
 with d:
