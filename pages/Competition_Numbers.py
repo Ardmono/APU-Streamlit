@@ -50,11 +50,11 @@ with a:
     #if len(col1) == 0:
     #    col1 = df['MeetState']
 with b:
-    st.radio("Group by State: ", ["True", "False"])
+    grpst = st.radio("Group by State: ", ["True", "False"])
 with c:
-    st.radio("Group by Year: ", ["True", "False"])
+    grpyr =st.radio("Group by Year: ", ["True", "False"])
 with d:
-    st.radio("Group by Town: ", ["True", "False"])
+    grpto =st.radio("Group by Town: ", ["True", "False"])
 
 
 
@@ -98,8 +98,17 @@ df_exec = df.query(
 )
 
 
+#grpyr
+#grpto
+
 print(df_exec)
 df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+
+if grpst == 'True':
+    df_exec['count'] = df.groupby(['MeetState'])['count'].transform('sum')
+elif grpst == 'False':
+    pass
+
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 
