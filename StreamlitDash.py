@@ -113,7 +113,7 @@ if selected_page == 'True':
 elif selected_page == 'False':
     pass
 
-df_delection = df_delection.reset_index(drop=True)
+#df_delection = df_delection.reset_index(drop=True)
 df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
 #df_delection = df_delection.drop(columns=['index'])
 st.dataframe(df_delection,use_container_width=True,height=1200)
