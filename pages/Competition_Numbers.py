@@ -23,10 +23,10 @@ meetName = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'A
 if len(meetName) == 0:
     meetName = df['MeetName']
     
-h, j,k = st.columns(3,gap='Small')
+h, j = st.columns(2,gap='Small')
 h.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-j.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-k.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+j.multiselect("State1",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+#k.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 
 tab1, tab2 = st.tabs(["tab1", "tab2"])
 
@@ -71,16 +71,16 @@ else:
 # if len(state) == 0:
 #     state = df['MeetState']
 #print(df1.iloc[:,26:35])
-df_exec = df.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
-)
+# df_exec = df.query(
+#    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
+# )
 
-#df_filtered = df_exec.query(len('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0'))
-#['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
-#st.metric('All good squats', value=len(df_exec.query('Sex == 'F'')), delta=None, delta_color="normal", help=None)
-dfsex = df.query(
-   "WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
-)
+# #df_filtered = df_exec.query(len('Squat1Kg > 0 & Squat2Kg > 0 & Squat3Kg > 0'))
+# #['Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' ,  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg']
+# #st.metric('All good squats', value=len(df_exec.query('Sex == 'F'')), delta=None, delta_color="normal", help=None)
+# dfsex = df.query(
+#    "WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
+# )
 
 
 # lifters = len(dfsex[dfsex['Sex'] =='F']) + len(dfsex[dfsex['Sex'] =='M'])
