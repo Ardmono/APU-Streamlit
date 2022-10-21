@@ -25,7 +25,7 @@ if len(meetState) == 0:
     
 col1, col2,col4,col5 = st.columns(4)
 with col1:
-    st.selectbox("State", ["NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS"])
+    st.multiselect("State", options=(["NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS"]))
 with col2:
     st.selectbox("District", ["District1", "District2"])
 with col4:
