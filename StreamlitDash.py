@@ -108,8 +108,7 @@ df_delection = df.query(
 )
 
 if selected_page == 'True':
-    #df_delection =df_delection[['Squat1Kg', 'Squat2Kg' , 'Squat3Kg']]
-    df_delection = df_delection.drop(columns=['Squat1Kg', 'Squat2Kg' , 'Squat3Kg'])
+    df_delection = df_delection.drop(columns=['Squat1Kg', 'Squat2Kg' , 'Squat3Kg', 'Bench1Kg', 'Bench2Kg' , 'Bench3Kg', 'Deadlift1Kg','Deadlift2Kg','Deadlift3Kg'])
 elif selected_page == 'False':
     pass
 
