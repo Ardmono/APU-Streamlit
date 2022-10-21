@@ -94,7 +94,7 @@ else:
 #     state = df['MeetState']
 #print(df1.iloc[:,26:35])
 df_exec = df.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @meetState & MeetName == @meetName & Event == @eventy"
+   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @meetState & MeetName == @meetName & Event == @eventy, MeetTown == @meetTown"
 )
 
 df_exec['count'] = df_exec.groupby('MeetState')['MeetState'].transform('count')
