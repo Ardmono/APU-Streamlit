@@ -16,7 +16,7 @@ df['Year'] = pd.DatetimeIndex(df['Date']).year
 #df.fillna(0, inplace=True)
 df1 = df
 
-st.title('Competition Numbers - You can group by State or Year')
+st.title('Competition Numbers - You can filter & group by State, Town or Year')
  
 df = df1
 # meetState = st.sidebar.multiselect("Filter State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
