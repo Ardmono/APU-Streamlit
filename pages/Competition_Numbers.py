@@ -107,8 +107,8 @@ df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
 
 county = len(df1.index)
-
-st.dataframe(df1,width=20000,height=2000)
+county = int(county)
+st.dataframe(df1,width=20000,height=county)
 print(col1)
 st.metric('Test',value=str(col1))
 st.text(county)
