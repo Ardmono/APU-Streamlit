@@ -24,7 +24,7 @@ df = df1
 #     meetState = df['MeetState']
 
 st.header('Filter by')
-col1, col2,col4,col5 = st.columns(4)
+col1, col2,col4,col5 = st.columns(2)
 with col1:
     meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     #if len(col1) == 0:
@@ -32,11 +32,14 @@ with col1:
     if len(meetState) == 0:
         meetState = df['MeetState']
 with col2:
-    st.selectbox("Filter District", ["District1", "District2"])
-with col4:
-    st.selectbox("Filter c", ["c", "c"])
-with col5:
-    st.selectbox("Filter B", ["b", "b"])
+    meetTown = st.multiselect("Meet Town",options=df['MeetTown'].unique())
+    if len(meetTown) == 0:
+        meetTown = df['MeetTown']
+    #st.selectbox("Filter District", ["District1", "District2"])
+# with col4:
+#     st.selectbox("Filter c", ["c", "c"])
+# with col5:
+#     st.selectbox("Filter B", ["b", "b"])
 
 st.header('Group by')
 a, b,c,d = st.columns(4)
