@@ -23,7 +23,7 @@ meetName = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'A
 if len(meetName) == 0:
     meetName = df['MeetName']
     
-col1, col2 = st.columns(3)
+col1, col2 = st.columns(2)
 with col1:
     st.selectbox("City", ["City1", "City2"])
 with col2:
