@@ -37,16 +37,16 @@ with col5:
     st.selectbox("B", ["b", "b"])
 
 st.header('Group by')
-col1, col2,col4,col5 = st.columns(4)
-with col1:
+a, b,c,d = st.columns(4)
+with a:
     st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     #if len(col1) == 0:
     #    col1 = df['MeetState']
-with col2:
+with b:
     st.selectbox("District", ["District1", "District2"])
-with col4:
+with c:
     st.selectbox("c", ["c", "c"])
-with col5:
+with d:
     st.selectbox("B", ["b", "b"])
 
 
