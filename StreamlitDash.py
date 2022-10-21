@@ -1,3 +1,4 @@
+from select import select
 from time import strptime
 import pandas as pd 
 import streamlit as st
@@ -43,8 +44,10 @@ page_names_to_funcs = {
     "Page 2": page2,
     "Page 3": page3,
 }
-selected_page = st.selectbox("Select a page", page_names_to_funcs.keys())
+selected_page = st.radio("Show best lifts only: ", ["True", "False"])
 
+    
+#st.radio("Group by Year: ", ["True", "False"])
 
 
 #st.header(body='APU Australia')
@@ -104,6 +107,11 @@ df_delection = df.query(
    "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison & Event == @event & Equipment == @equpped"
 )
 
+if selected_page == 'True':
+    #df_delection =df_delection[['Squat1Kg', 'Squat2Kg' , 'Squat3Kg']]
+    df_delection = df_delection.drop(columns=['Squat1Kg', 'Squat2Kg' , 'Squat3Kg'])
+elif selected_page == 'False':
+    pass
 
 st.dataframe(df_delection,use_container_width=True,height=1200)
 

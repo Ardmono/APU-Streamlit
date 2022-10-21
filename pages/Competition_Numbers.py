@@ -52,9 +52,9 @@ with a:
 with b:
     st.radio("Group by State: ", ["True", "False"])
 with c:
-    st.selectbox("c", ["c", "c"])
+    st.radio("Group by Year: ", ["True", "False"])
 with d:
-    st.selectbox("B", ["b", "b"])
+    st.radio("Group by Town: ", ["True", "False"])
 
 
 
