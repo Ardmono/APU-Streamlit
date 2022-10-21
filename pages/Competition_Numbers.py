@@ -110,10 +110,7 @@ county = len(df1.index)
 bleh = county
 county = int(county) * 42
 st.dataframe(df1,width=20000,height=county)
-print(col1)
-st.metric('Test',value=str(col1))
-st.text(bleh)
-st.text(county)
+
 #Failed Lifts % Breakdown ---------------8/10 
 
 #Number of lifters who went 9/9--------------------6/10
