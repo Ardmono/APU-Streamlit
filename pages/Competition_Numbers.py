@@ -7,7 +7,7 @@ import time
 import numpy as np
 import plotly.graph_objects as go
 
-
+st.set_page_config(layout="wide")
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
