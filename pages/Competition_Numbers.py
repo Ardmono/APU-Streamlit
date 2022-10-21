@@ -97,6 +97,10 @@ df_exec = df.query(
 df_exec['count'] = df_exec.groupby('MeetState')['MeetState'].transform('count')
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
+
+df1.drop_duplicates(subset="MeetName",
+                     keep='first', inplace=True)
+
 st.dataframe(df1,width=20000)
 print(col1)
 st.metric('Test',value=str(col1))
