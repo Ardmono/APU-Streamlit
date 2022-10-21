@@ -19,10 +19,24 @@ df1 = df
 
  
 df = df1
-meetState = st.sidebar.multiselect("State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
+meetState = st.sidebar.multiselect("State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
 if len(meetState) == 0:
     meetState = df['MeetState']
-    
+
+st.header('Filter by')
+col1, col2,col4,col5 = st.columns(4)
+with col1:
+    st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
+    #if len(col1) == 0:
+    #    col1 = df['MeetState']
+with col2:
+    st.selectbox("District", ["District1", "District2"])
+with col4:
+    st.selectbox("c", ["c", "c"])
+with col5:
+    st.selectbox("B", ["b", "b"])
+
+st.header('Group by')
 col1, col2,col4,col5 = st.columns(4)
 with col1:
     st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
@@ -82,6 +96,7 @@ df_exec['count'] = df_exec.groupby('MeetState')['MeetState'].transform('count')
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 st.dataframe(df1,width=20000)
+print(col1)
 st.metric('Test',value=str(col1))
 #Failed Lifts % Breakdown ---------------8/10 
 
