@@ -97,8 +97,10 @@ df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @meetState & MeetName == @meetName & Event == @eventy & MeetTown == @meetTown"
 )
 
-df_exec['count'] = df_exec.groupby('MeetState')['MeetState'].transform('count')
-df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','count']]
+
+
+df_exec['count'] = df_exec.groupby('MeetName')['MeetName'].transform('count')
+df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 
 df1.drop_duplicates(subset="MeetName",
