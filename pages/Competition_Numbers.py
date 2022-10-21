@@ -108,9 +108,10 @@ df1.drop_duplicates(subset="MeetName",
 
 county = len(df1.index)
 
-st.dataframe(df1,width=20000,height=df1)
+st.dataframe(df1,width=20000,height=2000)
 print(col1)
 st.metric('Test',value=str(col1))
+st.text(county)
 #Failed Lifts % Breakdown ---------------8/10 
 
 #Number of lifters who went 9/9--------------------6/10
