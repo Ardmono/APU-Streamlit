@@ -23,10 +23,10 @@ meetName = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'A
 if len(meetName) == 0:
     meetName = df['MeetName']
     
-# h, j,k = st.columns(3,gap='Small')
-# h.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-# j.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-# k.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+h, j,k = st.columns(3,gap='Small')
+h.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+j.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+k.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
 
 tab1, tab2 = st.tabs(["tab1", "tab2"])
 
@@ -67,9 +67,9 @@ elif wheres == 'State':
 else:
     wheres = df['MeetName']
     
-state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-if len(state) == 0:
-    state = df['MeetState']
+# state = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+# if len(state) == 0:
+#     state = df['MeetState']
 #print(df1.iloc[:,26:35])
 df_exec = df.query(
    "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @state & MeetName == @meetName & Event == @eventy"
