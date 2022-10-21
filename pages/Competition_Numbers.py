@@ -25,7 +25,7 @@ if len(meetState) == 0:
     
 col1, col2,col4,col5 = st.columns(4)
 with col1:
-    st.sidebar.multiselect("State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
+    st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     #if len(col1) == 0:
     #    col1 = df['MeetState']
 with col2:
