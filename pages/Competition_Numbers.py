@@ -61,9 +61,7 @@ with d:
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
-eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
-#if len(eventy) == 0:
-#    eventy = 'SBD'
+eventy = st.sidebar.radio("Event",options=('All','SBD', 'B', 'BD', 'D'))
 if eventy == 'All':
     eventy = df['Event']
 
@@ -78,7 +76,7 @@ if len(meeter) > maxmeet+1 :
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-equpped = st.sidebar.radio("Equipment",options =("Raw","Single-ply","All"))
+equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
 if equpped == 'All':
     equpped = df['Equipment']
 wheres = st.sidebar.radio(label="Comp Type - Does not work, unsure how to fix, disabling until can figure out resolution - Likely need to import ALL current APU State/National records and use that ",options =("All","State","National"),disabled=True)
