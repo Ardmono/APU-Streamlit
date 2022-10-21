@@ -16,7 +16,7 @@ df['Year'] = pd.DatetimeIndex(df['Date']).year
 #df.fillna(0, inplace=True)
 df1 = df
 
-
+st.title('Competition Numbers - You can group by State or Year')
  
 df = df1
 # meetState = st.sidebar.multiselect("Filter State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
@@ -64,7 +64,7 @@ eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
 #    eventy = 'SBD'
 if eventy == 'All':
     eventy = df['Event']
-st.header('Competition Numbers - You can group by State or Year')
+
 meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique())
 if len(meetName) == 0:
     meetName = df['MeetName']
