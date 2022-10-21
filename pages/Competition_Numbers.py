@@ -11,7 +11,7 @@ import plotly.graph_objects as go
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
-df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','meetid','MeetCountry'])
+df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 #df.fillna(0, inplace=True)
 df1 = df
@@ -98,7 +98,7 @@ df_exec = df.query(
 )
 
 
-
+print(df_exec)
 df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
