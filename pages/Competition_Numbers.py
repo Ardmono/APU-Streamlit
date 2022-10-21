@@ -99,7 +99,7 @@ df_exec = df.query(
 
 
 
-df_exec['count'] = df_exec.groupby('MeetName')['MeetName'].transform('count')
+df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 
