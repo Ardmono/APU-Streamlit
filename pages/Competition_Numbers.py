@@ -25,9 +25,9 @@ if len(meetState) == 0:
     
 col1, col2,col4,col5 = st.columns(4)
 with col1:
-    st.multiselect("State", options=(["NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS"]))
-    if len(col1) == 0:
-        col1 = df['MeetState']
+    st.multiselect("State", options=(["'All', 'NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'"]))
+    #if len(col1) == 0:
+    #    col1 = df['MeetState']
 with col2:
     st.selectbox("District", ["District1", "District2"])
 with col4:
