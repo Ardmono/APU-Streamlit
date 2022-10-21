@@ -13,7 +13,7 @@ df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','meetid','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
-df.fillna(0, inplace=True)
+#df.fillna(0, inplace=True)
 df1 = df
 #df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','meetid','MeetCountry'])
 

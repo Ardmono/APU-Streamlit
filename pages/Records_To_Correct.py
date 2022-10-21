@@ -29,6 +29,6 @@ df1.drop_duplicates(subset="meetid",
                      keep='first', inplace=True)
 
 st.metric('Records to correct',value=len(df1['meetid'].unique()))
-print(df1)
+print(df1['meetid'])
 
 st.dataframe(df1,width=20000)
