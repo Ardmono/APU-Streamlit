@@ -112,6 +112,7 @@ if selected_page == 'True':
 elif selected_page == 'False':
     pass
 df_delection = df_delection.reset_index()
+df_delection.drop(columns=['index'])
 st.dataframe(df_delection,use_container_width=True,height=1200)
 
 task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift']
