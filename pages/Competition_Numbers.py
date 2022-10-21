@@ -19,7 +19,7 @@ df1 = df
 
  
 df = df1
-meetState = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+meetState = st.sidebar.multiselect("State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
 if len(meetState) == 0:
     meetState = df['MeetState']
     
