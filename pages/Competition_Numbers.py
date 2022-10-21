@@ -19,22 +19,22 @@ df1 = df
 
  
 df = df1
-meetState = st.sidebar.multiselect("State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
+meetState = st.sidebar.multiselect("Filter State",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']),default='NSW')
 if len(meetState) == 0:
     meetState = df['MeetState']
 
 st.header('Filter by')
 col1, col2,col4,col5 = st.columns(4)
 with col1:
-    st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
+    st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     #if len(col1) == 0:
     #    col1 = df['MeetState']
 with col2:
-    st.selectbox("District", ["District1", "District2"])
+    st.selectbox("Filter District", ["District1", "District2"])
 with col4:
-    st.selectbox("c", ["c", "c"])
+    st.selectbox("Filter c", ["c", "c"])
 with col5:
-    st.selectbox("B", ["b", "b"])
+    st.selectbox("Filter B", ["b", "b"])
 
 st.header('Group by')
 a, b,c,d = st.columns(4)
