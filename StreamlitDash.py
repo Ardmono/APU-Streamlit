@@ -44,7 +44,7 @@ page_names_to_funcs = {
     "Page 2": page2,
     "Page 3": page3,
 }
-selected_page = st.radio("Show best lifts only: ", ["False", "True"])
+
 
     
 #st.radio("Group by Year: ", ["True", "False"])
@@ -61,7 +61,8 @@ selected_page = st.radio("Show best lifts only: ", ["False", "True"])
 # ''', unsafe_allow_html=True)
 # st.header('')
 #st.image(img,width=2000)
-st.header(body='APU Australia')
+st.header(body='APU Australia -     ')
+selected_page = st.radio("Show best lifts only: ", ["False", "True"])
 ####Button Filters###
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
@@ -112,7 +113,7 @@ if selected_page == 'True':
 elif selected_page == 'False':
     pass
 
-df_delection = df_delection.reset_index(inplace=False)
+df_delection = df_delection.reset_index(drop=True)
 #df_delection = df_delection.drop(columns=['index'])
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
