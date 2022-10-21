@@ -23,10 +23,19 @@ meetName = st.sidebar.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'A
 if len(meetName) == 0:
     meetName = df['MeetName']
     
-h, j,k = st.columns(3,gap='Small')
-h.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-j.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
-k.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+# h, j,k = st.columns(3,gap='Small')
+# h.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+# j.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+# k.multiselect("State",options=('NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS'))
+
+tab1, tab2 = st.tabs(["tab1", "tab2"])
+
+with tab1:
+    col1, col2 = st.columns(2)
+    with col1:
+        st.selectbox("City", ["City1", "City2"])
+    with col2:
+        st.selectbox("District", ["District1", "District2"])
 
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
