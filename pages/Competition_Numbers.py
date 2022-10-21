@@ -50,7 +50,7 @@ with a:
     #if len(col1) == 0:
     #    col1 = df['MeetState']
 with b:
-    grpst = st.radio("Group by State: ", ["True", "False"])
+    grpst = st.radio("Group by State: ", ["False", "True"])
 with c:
     grpyr =st.radio("Group by Year: ", ["True", "False"])
 with d:
@@ -106,15 +106,17 @@ df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
 if grpst == 'True':
     df_exec['count'] = df.groupby(['MeetState'])['count'].transform('sum')
+    pass
 elif grpst == 'False':
     pass
+
 
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 
 df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
-
+print(df1)
 county = len(df1.index)
 bleh = county
 county = int(county) * 42
