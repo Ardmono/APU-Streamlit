@@ -24,7 +24,7 @@ df = df1
 #     meetState = df['MeetState']
 
 st.header('Filter by')
-col1, col2 = st.columns(2)
+col1, col2,col3 = st.columns(2)
 with col1:
     meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     #if len(col1) == 0:
@@ -35,6 +35,10 @@ with col2:
     meetTown = st.multiselect("Meet Town",options=df['MeetTown'].unique())
     if len(meetTown) == 0:
         meetTown = df['MeetTown']
+with col3:
+    yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
+    if len(yer) == 0:
+        yer = df['Year']
     #st.selectbox("Filter District", ["District1", "District2"])
 # with col4:
 #     st.selectbox("Filter c", ["c", "c"])
@@ -94,7 +98,7 @@ else:
 #     state = df['MeetState']
 #print(df1.iloc[:,26:35])
 df_exec = df.query(
-   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @meetState & MeetName == @meetName & Event == @eventy & MeetTown == @meetTown"
+   "Sex==@sex_input &  WeightClassKg==@weight_input & Equipment == @equpped & MeetState == @meetState & MeetName == @meetName & Event == @eventy & MeetTown == @meetTown & Year == @yer"
 )
 
 
