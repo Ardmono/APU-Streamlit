@@ -44,7 +44,7 @@ page_names_to_funcs = {
     "Page 2": page2,
     "Page 3": page3,
 }
-selected_page = st.radio("Show best lifts only: ", ["True", "False"])
+selected_page = st.radio("Show best lifts only: ", ["False", "True"])
 
     
 #st.radio("Group by Year: ", ["True", "False"])
