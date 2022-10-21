@@ -106,7 +106,9 @@ df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
 
-st.dataframe(df1,width=20000,height=2000)
+county = len(df1.index)
+
+st.dataframe(df1,width=20000,height=df1)
 print(col1)
 st.metric('Test',value=str(col1))
 #Failed Lifts % Breakdown ---------------8/10 
