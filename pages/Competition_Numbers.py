@@ -24,7 +24,7 @@ df = df1
 #     meetState = df['MeetState']
 
 st.header('Filter by')
-col1, col2,col3 = st.columns(3)
+col1, col2, col3 = st.columns(3)
 with col1:
     meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     if len(meetState) == 0:
@@ -34,7 +34,7 @@ with col2:
     if len(meetTown) == 0:
         meetTown = df['MeetTown']
 with col3:
-    yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
+    yer = st.multiselect("Year",options=df['Year'].unique())
     if len(yer) == 0:
         yer = df['Year']
     #st.selectbox("Filter District", ["District1", "District2"])
