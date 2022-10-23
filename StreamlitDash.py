@@ -6,6 +6,10 @@ from datetime import datetime
 import time
 import numpy as np
 
+st.set_page_config(
+        page_title="My Page Title",
+)
+
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','MeetCountry'])
@@ -17,7 +21,7 @@ listy = ['BodyweightKg' , 'Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' , 'Best3SquatKg',
 #df['BodyweightKg'] = df['BodyweightKg'].astype(np.float16)
 #df['BodyweightKg'] = 
 #df.round({'BodyweightKg': 4})
-img = 'https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/305564434_2408090155999032_1724872612072231495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a26aad&_nc_ohc=JmGtrTla1M4AX_e2BTD&_nc_ht=scontent-syd2-1.xx&oh=00_AT98tkicuZfegT379kCrYFvZ-BNyJ8z8CJUrhljx6dZUDA&oe=634D6D7C'
+#img = 'https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/305564434_2408090155999032_1724872612072231495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a26aad&_nc_ohc=JmGtrTla1M4AX_e2BTD&_nc_ht=scontent-syd2-1.xx&oh=00_AT98tkicuZfegT379kCrYFvZ-BNyJ8z8CJUrhljx6dZUDA&oe=634D6D7C'
 
 df = pd.DataFrame(df)
 df_result_search = pd.DataFrame() 
