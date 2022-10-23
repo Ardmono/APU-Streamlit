@@ -24,7 +24,7 @@ df = pd.DataFrame(df)
 df_result_search = pd.DataFrame() 
 sst = time.time()
 
-st.set_page_config(page_title="My Page Title",layout="wide")
+st.set_page_config(page_title="Main APU Database Page",layout="wide")
 
 
 
