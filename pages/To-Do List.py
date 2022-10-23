@@ -34,7 +34,7 @@ st.metric('Records to correct',value=len(df1['meetid'].unique()))
 
 st.dataframe(df1,width=20000)
 
-task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift']
+task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift','Records']
 
 st.header('To do')
 for i in range(len(task)):
