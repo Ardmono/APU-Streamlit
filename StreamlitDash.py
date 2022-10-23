@@ -6,9 +6,6 @@ from datetime import datetime
 import time
 import numpy as np
 
-st.set_page_config(
-        page_title="My Page Title",
-)
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
@@ -27,7 +24,7 @@ df = pd.DataFrame(df)
 df_result_search = pd.DataFrame() 
 sst = time.time()
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title="My Page Title",layout="wide")
 
 
 
@@ -71,7 +68,7 @@ selected_page = st.radio("Show best lifts only: ", ["False", "True"])
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
 
-st.sidebar.image(img,width=200)   
+#st.sidebar.image(img,width=200)   
 #st.sidebar.text('Strength Club')   
 #st.sidebar.header("Google.com")
 link = '[Join Strength Club](http://github.com)'
