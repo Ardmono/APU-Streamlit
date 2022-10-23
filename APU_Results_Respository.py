@@ -99,7 +99,7 @@ elif selected_page == 'False':
 df_delection = df_delection.reset_index(drop=True).sort_values(by = ['TotalKg'], ascending = [False])
 
 #df_delection = df_delection.drop(columns=['index'])
-df = df_delection
+#df = df_delection
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
 task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift']
