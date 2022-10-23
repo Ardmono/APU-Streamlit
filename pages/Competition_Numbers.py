@@ -105,7 +105,7 @@ print(df_exec)
 #df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
 if grpst == 'True':
-    df_exec['count'] = df_exec.groupby('meetid')['MeetState'].transform('count')
+    df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
     #@pass
 elif grpst == 'False':
     df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
