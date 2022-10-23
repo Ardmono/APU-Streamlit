@@ -102,13 +102,13 @@ df_exec = df.query(
 #grpto
 
 print(df_exec)
-df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+#df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
 if grpst == 'True':
-    df_exec['test'] = df.groupby(['MeetState'])['MeetState'].sum('count')
-    pass
+    df_exec['count'] = df_exec.groupby('meetid')['MeetState'].transform('count')
+    #@pass
 elif grpst == 'False':
-    pass
+    df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
 
 df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','test']]
