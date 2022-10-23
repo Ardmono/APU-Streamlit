@@ -13,12 +13,6 @@ df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State',
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 listy = ['BodyweightKg' , 'Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' , 'Best3SquatKg',  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg','Best3BenchKg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg' ,'Best3DeadliftKg'  ,'TotalKg']
-#for i in range(len(listy)):
-#  df[listy[i]] = df[listy[i]].astype(np.float32)
-#df['BodyweightKg'] = df['BodyweightKg'].astype(np.float16)
-#df['BodyweightKg'] = 
-#df.round({'BodyweightKg': 4})
-#img = 'https://scontent-syd2-1.xx.fbcdn.net/v/t39.30808-6/305564434_2408090155999032_1724872612072231495_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=a26aad&_nc_ohc=JmGtrTla1M4AX_e2BTD&_nc_ht=scontent-syd2-1.xx&oh=00_AT98tkicuZfegT379kCrYFvZ-BNyJ8z8CJUrhljx6dZUDA&oe=634D6D7C'
 
 df = pd.DataFrame(df)
 df_result_search = pd.DataFrame() 
@@ -47,21 +41,7 @@ page_names_to_funcs = {
 }
 
 
-    
-#st.radio("Group by Year: ", ["True", "False"])
 
-
-#st.header(body='APU Australia')
-#st.image(img,width=150)
-#st.text('Placeholder 1 ')
-
-# st.markdown('''
-# # Sections
-# - [Section 1](#section-1)
-# - [Section 2](#apu-australia)
-# ''', unsafe_allow_html=True)
-# st.header('')
-#st.image(img,width=2000)
 st.header(body='APU Australia -     ')
 selected_page = st.radio("Show best lifts only: ", ["False", "True"])
 ####Button Filters###
@@ -119,6 +99,7 @@ elif selected_page == 'False':
 df_delection = df_delection.reset_index(drop=True).sort_values(by = ['TotalKg'], ascending = [False])
 
 #df_delection = df_delection.drop(columns=['index'])
+df = df_delection
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
 task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift']
