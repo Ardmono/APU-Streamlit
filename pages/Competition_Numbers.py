@@ -113,12 +113,12 @@ if grpst == 'True':
 elif grpst == 'False':
     df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
     df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
-
+    df1.drop_duplicates(subset="MeetName",
+                     keep='first', inplace=True)
 
 #How many lifters, genders, weights, lifts, ----------------5/10
 
-df1.drop_duplicates(subset="MeetName",
-                     keep='first', inplace=True)
+
 print(df1)
 county = len(df1.index)
 bleh = county
