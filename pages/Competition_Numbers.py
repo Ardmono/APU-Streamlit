@@ -108,12 +108,13 @@ if grpst == 'True':
     df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
     df_exec.drop_duplicates(subset="MeetState",
                      keep='first', inplace=True)
+    df1 =df_exec[['MeetState', 'MeetTown','Year','count']]
     #@pass
 elif grpst == 'False':
     df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+    df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 
 
-df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 
 df1.drop_duplicates(subset="MeetName",
