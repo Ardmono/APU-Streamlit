@@ -30,7 +30,7 @@ df1.drop_duplicates(subset="meetid",
 
 st.text('Records with missing or unknown data')
 st.metric('Records to correct',value=len(df1['meetid'].unique()))
-print(df1['meetid'])
+#print(df1['meetid'])
 
 st.dataframe(df1,width=20000)
 
@@ -39,5 +39,6 @@ task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift']
 st.header('To do')
 for i in range(len(task)):
   st.checkbox(label=(task[i]))
+  print(st.checkbox)
 if st.checkbox(label='Remove Floats'):
     value=True

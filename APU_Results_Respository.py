@@ -51,9 +51,13 @@ test = df['Date'].min
 #st.sidebar.image(img,width=200)   
 #st.sidebar.text('Strength Club')   
 #st.sidebar.header("Google.com")
-link = '[Join Strength Club](http://github.com)'
-st.sidebar.markdown(link, unsafe_allow_html=True)
-unsafe_allow_html=True
+
+###Keep this ####
+# link = '[Join Strength Club](http://github.com)'
+# st.sidebar.markdown(link, unsafe_allow_html=True)
+# unsafe_allow_html=True
+###Keep this ####
+
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
@@ -102,13 +106,7 @@ df_delection = df_delection.reset_index(drop=True).sort_values(by = ['TotalKg'],
 #df = df_delection
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
-task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift']
 
-st.header('To do')
-for i in range(len(task)):
-  st.checkbox(label=(task[i]))
-if st.checkbox(label='Remove Floats'):
-    value=True
    
 et1 = time.time()
 elapsed_time = et1 - sst
