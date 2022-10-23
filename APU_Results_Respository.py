@@ -47,8 +47,8 @@ selected_page = st.radio("Show best lifts only: ", ["False", "True"])
 ####Button Filters###
 years = ['2018','2019','2020','2021','2022']
 test = df['Date'].min
-
-#st.sidebar.image(img,width=200)   
+img = 'https://github.com/Ardmono/APU-Streamlit/blob/main/picture.jpg'
+st.sidebar.image(img,width=200)   
 #st.sidebar.text('Strength Club')   
 #st.sidebar.header("Google.com")
 
