@@ -44,11 +44,11 @@ with col3:
 #     st.selectbox("Filter B", ["b", "b"])
 
 st.header('Group by')
-a, b,c,d = st.columns(4)
-with a:
-    st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
-    #if len(col1) == 0:
-    #    col1 = df['MeetState']
+b,c,d = st.columns(3)
+# with a:
+#     st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
+#     #if len(col1) == 0:
+#     #    col1 = df['MeetState']
 with b:
     grpst = st.radio("Group by State: ", ["False", "True"])
 with c:
@@ -105,7 +105,7 @@ print(df_exec)
 df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
 if grpst == 'True':
-    df_exec['count'] = df.groupby(['MeetState'])['count'].transform('sum')
+    df_exec['count'] = df.groupby(['MeetState'])['MeetState'].transform('count')
     pass
 elif grpst == 'False':
     pass
