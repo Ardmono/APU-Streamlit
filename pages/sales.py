@@ -1,7 +1,8 @@
 import pandas as pd
 from ipyvizzu import Chart, Data, Config, Style, DisplayTarget
 
-data_frame = pd.read_csv("./sales.csv", dtype={"tenure": str})
+raw = 'https://raw.githubusercontent.com/vizzuhq/ipyvizzu/main/docs/examples/stories/sales/sales.csv'
+data_frame = pd.read_csv(raw, dtype={"tenure": str})
 data = Data()
 data.add_data_frame(data_frame)
 
