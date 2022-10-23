@@ -111,7 +111,7 @@ elif grpst == 'False':
     pass
 
 
-df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
+df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','test']]
 #How many lifters, genders, weights, lifts, ----------------5/10
 
 df1.drop_duplicates(subset="MeetName",
