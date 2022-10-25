@@ -110,7 +110,7 @@ if grpst == 'True':
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     else:
         df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
-        df_exec.drop_duplicates(subset="MeetState",
+        df_exec.drop_duplicates(subset="State_Year",
                         keep='first', inplace=True)
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     #@pass
