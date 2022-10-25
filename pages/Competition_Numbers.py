@@ -43,14 +43,15 @@ with col3:
 # with col5:
 #     st.selectbox("Filter B", ["b", "b"])
 
-st.header('Group by')
+#st.header('Group by')
 #b = st.columns(1)
 # with a:
 #     st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
 #     #if len(col1) == 0:
 #     #    col1 = df['MeetState']
 #with b:
-grpst = st.radio("Group by State: ", ["False", "True"])
+#grpst = st.radio("Group by State: ", ["False", "True"])
+grpst = 0
 # with c:
 #     grpyr =st.radio("Group by Year: ", ["True", "False"])
 # with d:
