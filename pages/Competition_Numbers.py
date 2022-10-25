@@ -96,7 +96,7 @@ df_exec = df.query(
 print(df_exec)
 #df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
-df_exec['State-Year'] = df_exec[['MeetState','Year']]
+df_exec['State-Year'] = df_exec[['MeetState']]+df[['Year']]
 if grpst == 'True':
     if grpyr == 'True':
         df_exec['count'] = df_exec.groupby('MeetState','Year')['meetid'].transform('count')
