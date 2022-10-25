@@ -96,15 +96,19 @@ df_exec = df.query(
 print(df_exec)
 #df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
+df_exec['State-Year'] = df_exec[['MeetState','Year']]
 if grpst == 'True':
-    df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
-    df_exec.drop_duplicates(subset="MeetState",
-                     keep='first', inplace=True)
-    df1 =df_exec[['MeetState', 'MeetTown','Year','count']]
+    if grpyr == 'True':
+        df_exec['count'] = df_exec.groupby('MeetState','Year')['meetid'].transform('count')
+    else:
+        df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
+        df_exec.drop_duplicates(subset="MeetState",
+                        keep='first', inplace=True)
+        df1 =df_exec[['MeetState', 'MeetTown','Year','count']]
     #@pass
 elif grpst == 'False':
     df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
-    df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
+    df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State-Year']]
     df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
 
