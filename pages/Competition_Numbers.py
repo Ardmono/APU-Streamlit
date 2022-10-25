@@ -94,7 +94,7 @@ df_exec = df.query(
 #grpto
 #df_exec['State_Year'] = (df_exec[['MeetState']]+df_exec[['Year']])
 df_exec["State_Year"] = df_exec["Year"].astype(str) + df_exec["MeetState"]
-print(df_exec)
+#print(df_exec)
 #df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
 #
@@ -109,7 +109,7 @@ if grpst == 'True':
                         keep='first', inplace=True)
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     elif grpyr == 'False':
-        df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+        df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
         df_exec.drop_duplicates(subset="MeetState",keep='first', inplace=True)
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     #@pass
@@ -124,6 +124,7 @@ elif grpst == 'False':
         df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
         df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
+        
 dc = df_exec
 dc['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 dc.drop_duplicates(subset="MeetState",keep='first', inplace=True)
@@ -146,7 +147,7 @@ print(dc)
 #How many lifters, genders, weights, lifts, ----------------5/10
 
 
-print(df1)
+#print(df1)
 county = len(df1.index)
 bleh = county
 county = int(county) * 42
