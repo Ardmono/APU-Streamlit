@@ -50,9 +50,9 @@ b,c = st.columns(2)
 #     #if len(col1) == 0:
 #     #    col1 = df['MeetState']
 with b:
-    grpst = st.radio("Group by State: ", ["False", "True"])
+    grpst = st.radio("Group by State: ", ["True", "False"])
 with c:
-    grpyr =st.radio("Group by Year: ", ["True", "False"])
+    grpyr =st.radio("Group by Year: ", ["False", "True"])
 # with d:
 #     grpto =st.radio("Group by Town: ", ["True", "False"])
 
@@ -110,7 +110,7 @@ if grpst == 'True':
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     elif grpyr == 'False':
         df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
-        #df_exec.drop_duplicates(subset="MeetState",keep='first', inplace=True)
+        df_exec.drop_duplicates(subset="MeetState",keep='first', inplace=True)
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     #@pass
 elif grpst == 'False':
@@ -124,10 +124,12 @@ elif grpst == 'False':
         df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
         df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
-    
-    
-    
-    
+dc = df_exec
+dc['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+dc.drop_duplicates(subset="MeetState",keep='first', inplace=True)
+df1 =dc[['MeetState', 'MeetTown','Year','count','State_Year']]  
+print(dc)  
+
     # df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
     # df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
     # df1.drop_duplicates(subset="MeetName",
