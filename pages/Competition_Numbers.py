@@ -44,7 +44,7 @@ with col3:
 #     st.selectbox("Filter B", ["b", "b"])
 
 st.header('Group by')
-b,c,d = st.columns(3)
+b,c = st.columns(2)
 # with a:
 #     st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
 #     #if len(col1) == 0:
@@ -53,8 +53,8 @@ with b:
     grpst = st.radio("Group by State: ", ["False", "True"])
 with c:
     grpyr =st.radio("Group by Year: ", ["True", "False"])
-with d:
-    grpto =st.radio("Group by Town: ", ["True", "False"])
+# with d:
+#     grpto =st.radio("Group by Town: ", ["True", "False"])
 
 
 
@@ -115,10 +115,26 @@ if grpst == 'True':
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     #@pass
 elif grpst == 'False':
-    df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
-    df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
-    df1.drop_duplicates(subset="MeetName",
+    if grpyr == 'True':
+        df_exec['count'] = df_exec.groupby('State_Year')['State_Year'].transform('count')
+        df_exec.drop_duplicates(subset="MeetState",
+                        keep='first', inplace=True)
+        df_exec.drop_duplicates(subset="State_Year",
+                        keep='first', inplace=True)
+        df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
+    else:
+        df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+        df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
+        df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
+    
+    
+    
+    
+    # df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+    # df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
+    # df1.drop_duplicates(subset="MeetName",
+    #                  keep='first', inplace=True)
 
 # if grpyr == 'True':
 #     df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
