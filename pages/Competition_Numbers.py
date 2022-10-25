@@ -125,11 +125,7 @@ elif grpst == 'False':
         df1.drop_duplicates(subset="MeetName",
                      keep='first', inplace=True)
         
-dc = df_exec
-dc['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
-dc.drop_duplicates(subset="MeetState",keep='first', inplace=True)
-df1 =dc[['MeetState', 'MeetTown','Year','count','State_Year']]  
-print(dc)  
+
 
     # df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
     # df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
