@@ -109,10 +109,9 @@ if grpst == 'True':
                         keep='first', inplace=True)
         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     elif grpyr == 'False':
-        df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
-        df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count','State_Year']]
+        df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
         df_exec.drop_duplicates(subset="MeetState",keep='first', inplace=True)
-        #df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
+        df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
     #@pass
 elif grpst == 'False':
     if grpyr == 'True':
