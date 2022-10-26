@@ -46,5 +46,7 @@ if st.checkbox(label='Remove Floats'):
     
     
 
-df2 = dfx[(df.Sex != 'M') | (dfx.Sex != 'F')]
-st.dataframe(df2,width=2000)
+df2 = dfx[(df.Sex != 'M') & (dfx.Sex != 'F')]
+df2 =df2[['Sex', 'MeetTown']]
+#st.dataframe(df2,width=2000)
+print(df2)

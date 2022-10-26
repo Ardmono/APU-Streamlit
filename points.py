@@ -47,7 +47,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     # The IPF formula is only defined for some parameters.
     if equipment not in ['Raw', 'Single-ply']:
         return 0
-    if event not in ['SBD', 'S', 'B', 'D']:
+    if event not in ['SBD', 'B']: #removed , 'D'
         return 0
     if sex not in ['M', 'F']:
         return 0    
@@ -59,40 +59,12 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     p = totalKg
     e_pow = math.exp(-c * bwt)
     denominator = a - b * e_pow
-    print(denominator)
+    #print(denominator)
     return (p*(100/denominator))
    
 
-a = 610.32796
-b = 1045.59282
-c = 0.03048
-#e = 
-bwt = 70.2
-p = 122.5
-e_pow = math.exp(-c * bwt)
-denominator = a - b * e_pow
-#print(p*)
-#print(e_pow)
-##440\cdot \frac{100}{610.32796-1045.59282\cdot \:0.11769062}
-#print(440*100/a-(b*e_pow))
-#print(e_pow)
-#print(math.e*)
-# #print(e_pow)
-# s = math.exp(-c*bwt)
 
-# print(s)
-
-# #print(a - b * e **(-c*bwt))
-# denominator = a - (b * e_pow)
-# #if denominator == 0.0:
-#     #return Points::from_i32(0);
-# e = math.exp(-c*bwt)
-# s = a - (b * (math.exp(-c*bwt)))
-#print(s)   
-#print(p*(100/denominator))
-#b = round(p*(100/denominator),3)
-
-print(ipf1('F','Raw','SBD',70.2,440))
+#print(ipf1('F','Raw','SBD',70.2,440))
 #print(p*(100/a-(b*)))
 #385 @75.1
 #print(ipf1('M','Raw','SBD',73.5,742.5))
