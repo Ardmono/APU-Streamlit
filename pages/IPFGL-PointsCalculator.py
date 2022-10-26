@@ -75,3 +75,6 @@ with col4:
 
 if result:
     st.write(round(ipf1(sex,equip,event,bw,totalkg),2))
+
+if result:
+    st.write(ipf1(sex,equip,event,bw,totalkg))
