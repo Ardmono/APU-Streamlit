@@ -80,15 +80,16 @@ if result:
 if result:
     st.write(ipf1(sex,equip,event,bw,totalkg))
 
-s, b, d = st.columns(3,gap='Medium')
+sq, be, de = st.columns(3,gap='Medium')
 with col1:
-    s = st.slider('Squat', 0, 500)
+    sq = st.slider('Squat', 0, 500)
 with col2:
-    b = st.slider('Bench', 0, 500)
+    be = st.slider('Bench', 0, 500)
 with col3:
-    d = st.slider('Deadlift', 0, 500)
+    de = st.slider('Deadlift', 0, 500)
 
 if result:
-    st.write(s+b+d)
+    total = sq+be+de
+    st.write(total)
 
 
