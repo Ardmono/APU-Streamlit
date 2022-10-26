@@ -12,6 +12,9 @@ df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State',
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
-print(df)
-print(df[df['meetid']==2235])
+
 #Years/comps in review for athletes 
+
+liftername = st.multiselect("Lifter Name",options=df['Name'].unique())
+if len(liftername) == 0:
+    liftername = df['Name']
