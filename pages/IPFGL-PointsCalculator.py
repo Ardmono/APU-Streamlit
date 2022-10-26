@@ -93,3 +93,4 @@ if result:
     st.write(total)
 
 
+st.set_page_config(layout="wide")
