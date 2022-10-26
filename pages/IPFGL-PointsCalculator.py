@@ -103,7 +103,7 @@ elif selected_page == 'False':
     with col44:
         tot = sq+be+de
         if tot > 1:
-            tot = int(tot)
+            tot = float(tot)
             st.metric(label='Total',value=tot)
     if tot > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
