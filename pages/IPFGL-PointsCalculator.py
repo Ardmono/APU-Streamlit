@@ -84,6 +84,15 @@ if selected_page == 'True':
     #if result:
         #st.write(ipf1(sex,equip,event,bw,totalkg))
 elif selected_page == 'False':
+    col23, col32, col43,col34 = st.columns(4)
+    with col23:
+        bw = st.number_input('Bodyweight')
+    with col32:
+        sex = st.radio(label='Gender',options=('M','F'))
+    with col43:
+        equip = st.radio(label='Equipment',options=('Raw','Single-ply'))
+    with col34:
+        event = st.radio(label='Event',options=('SBD',  'B'))
     col11, col22, col33,col44 = st.columns(4,gap='Medium')
     with col11:
         sq = st.slider('Squat', 0, 500)
@@ -96,12 +105,9 @@ elif selected_page == 'False':
         if tot > 1:
             tot = int(tot)
             st.metric(label='Total',value=tot)
-    if sq > 1 | be > 0:
-        st.text('Test')
-
-    if sq > 0:
-        total = sq+be+de
-        st.write(total)
+    if tot > 1:
+            st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
+        
     
 
 
