@@ -10,6 +10,7 @@ import plotly.graph_objects as go
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
+dfx = df
 
 #print(df)
 
@@ -45,5 +46,5 @@ if st.checkbox(label='Remove Floats'):
     
     
 
-df2 = df[(df.Sex != 'M') | (df.Sex != 'F')]
+df2 = dfx[(df.Sex != 'M') | (dfx.Sex != 'F')]
 st.dataframe(df2,width=2000)
