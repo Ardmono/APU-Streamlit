@@ -6,7 +6,7 @@ import streamlit as st
 
 st.set_page_config(layout="wide")
 
-selected_page = st.radio("Simple Calculator: ", ["True", "False"])
+selected_page = st.radio("Calculator Type: ", ["Simple", "Complicated"])
 IPF_COEFFICIENTS1 = {
     'M': {
         'Raw': {
@@ -64,7 +64,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     #print(p*(100/denominator))
     return (p*(100/denominator))
    
-if selected_page == 'True':
+if selected_page == 'Simple':
     col1, col2, col3,col5,col6,col4 = st.columns(6,gap='Medium')
     with col1:
         bw = st.number_input('Bodyweight')
@@ -83,7 +83,7 @@ if selected_page == 'True':
 
     #if result:
         #st.write(ipf1(sex,equip,event,bw,totalkg))
-elif selected_page == 'False':
+elif selected_page == 'Complicated':
     col23, col32, col43,col34 = st.columns(4)
     with col23:
         bw = st.number_input('Bodyweight')
