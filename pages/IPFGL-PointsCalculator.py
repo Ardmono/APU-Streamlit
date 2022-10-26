@@ -86,12 +86,6 @@ if result:
 
 
 st.markdown('##')
-st.markdown('##')
-st.header('Blank Space')
-st.header('Blank Space1')
-st.header('Blank Space2')
-st.header('Blank Space3')
-st.text('Lorem Ipsum')
 
 col11, col22, col33,col44 = st.columns(4,gap='Medium')
 with col11:
