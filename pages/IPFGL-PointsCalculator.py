@@ -59,15 +59,19 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     #print(p*(100/denominator))
     return (p*(100/denominator))
    
-col1, col2, col3,col4 = st.columns(4)
+col1, col2, col3,col5,col6,col4 = st.columns(6)
 with col1:
-    st.number_input('Bodyweight')
+    bw = st.number_input('Bodyweight')
 with col2:
-    st.number_input('Total(KG)')
+    totalkg = st.number_input('Total(KG)')
 with col3:
-    st.radio(label='Gender',options=('M','F'))
+    sex = st.radio(label='Gender',options=('M','F'))
+with col5:
+    equip = st.radio(label='Gender',options=('Raw','Single-ply'))
+with col6:
+    event = st.radio(label='Gender',options=('SBD', 'S', 'B', 'D'))
 with col4:
     result = st.button('Go')
 
 if result:
-    st.write('Test')
+    st.write(ipf1(sex,equip,event,bw,totalkg))
