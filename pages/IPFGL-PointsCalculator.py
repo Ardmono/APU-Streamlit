@@ -90,14 +90,18 @@ st.header('Blank Space2')
 st.header('Blank Space3')
 st.text('Lorem Ipsum')
 
-sq, be, de = st.columns(3,gap='Medium')
+sq, be, de,tot = st.columns(4,gap='Medium')
 with col1:
     sq = st.slider('Squat', 0, 500)
 with col2:
     be = st.slider('Bench', 0, 500)
 with col3:
     de = st.slider('Deadlift', 0, 500)
-
+with col4:
+    tot = sq+be+de
+    if tot > 1:
+        st.metric(tot)
+    
 if sq > 1 | be > 0:
     st.text('Test')
 
