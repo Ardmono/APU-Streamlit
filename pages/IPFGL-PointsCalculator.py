@@ -3,7 +3,10 @@ import pandas as pd
 
 import math
 import streamlit as st
+
 st.set_page_config(layout="wide")
+
+selected_page = st.radio("Simple Calculator: ", ["True", "False"])
 IPF_COEFFICIENTS1 = {
     'M': {
         'Raw': {
