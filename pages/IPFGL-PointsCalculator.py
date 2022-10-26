@@ -67,6 +67,7 @@ with col2:
 with col3:
     st.radio(label='Gender',options=('M','F'))
 with col4:
-    go = st.button('Go')
+    result = st.button('Go')
 
-st.write(go)
+if result:
+    st.write('Test')
