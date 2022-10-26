@@ -4,6 +4,7 @@ from datetime import datetime
 import time
 import numpy as np
 import plotly.graph_objects as go
+from points import ipf1
 
 csv = 'C:\\Users\\Callum\\Documents\\Python\\APU-Streamlit\\filename.csv'
 
@@ -35,4 +36,8 @@ df.loc[df["meetid"] == 2019, "MeetState"] = 'UNK'
 df.loc[df["meetid"] == 2130, "MeetTown"] = 'Collate'
 df.loc[df["meetid"] == 2130, "MeetState"] = 'Collate'
 
+
+df['IPFGL'] = df.apply(lambda row: ipf1(row['Sex'],row['Equipment'],row['Event'],row['BodyweightKg'],row['TotalKg']),axis=1)
+print(df)
+#ipfpoints = ipf(sex, row[indexEquipment], row[indexEvent], bodyweight, total)
 df.to_csv('C:\\Users\\Callum\\Documents\\Python\\APU-Streamlit\\filename.csv',index=False)

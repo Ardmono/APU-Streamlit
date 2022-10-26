@@ -34,6 +34,8 @@ st.metric('Records to correct',value=len(df1['meetid'].unique()))
 
 st.dataframe(df1,width=20000)
 
+df2 = df[(df.Sex != 'M') | (df.Sex != 'F')]
+st.dataframe(df2,width=2000)
 task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift','Records']
 
 st.header('To do')
