@@ -3,7 +3,7 @@ import pandas as pd
 
 import math
 import streamlit as st
-
+st.set_page_config(layout="wide")
 IPF_COEFFICIENTS1 = {
     'M': {
         'Raw': {
@@ -93,4 +93,3 @@ if result:
     st.write(total)
 
 
-st.set_page_config(layout="wide")
