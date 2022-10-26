@@ -80,7 +80,7 @@ if result:
 if result:
     st.write(ipf1(sex,equip,event,bw,totalkg))
 
-col1, col2, col3 = st.columns(3,gap='Medium')
+s, b, d = st.columns(3,gap='Medium')
 with col1:
     s = st.slider('Squat', 0, 500)
 with col2:
