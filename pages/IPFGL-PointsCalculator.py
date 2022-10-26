@@ -84,6 +84,7 @@ st.header('Blank Space')
 st.header('Blank Space1')
 st.header('Blank Space2')
 st.header('Blank Space3')
+st.text('Lorem Ipsum')
 sq, be, de = st.columns(3,gap='Medium')
 with col1:
     sq = st.slider('Squat', 0, 500)
