@@ -54,7 +54,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     # Calculate the properties of the normal distribution.
     bwt = bodyweightKg
     p = totalKg
-    e_pow = math.exp(-1.0 * c * bwt)
+    e_pow = math.exp(-c * bwt)
     denominator = a - (b * e_pow)
     #print(p*(100/denominator))
     return (p*(100/denominator))
