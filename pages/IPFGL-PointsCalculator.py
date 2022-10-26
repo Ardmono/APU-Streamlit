@@ -78,8 +78,8 @@ if selected_page == 'Simple':
         event = st.radio(label='Event',options=('SBD',  'B'))
     with col4:
         result = st.button('Go')
-    if result:
-        st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
+    if totalkg > 1 and bw > 1:
+            st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
 
     #if result:
         #st.write(ipf1(sex,equip,event,bw,totalkg))
