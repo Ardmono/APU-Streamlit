@@ -42,3 +42,8 @@ for i in range(len(task)):
   print(st.checkbox)
 if st.checkbox(label='Remove Floats'):
     value=True
+    
+    
+
+df2 = df[(df.Sex != 'M') | (df.Sex != 'F')]
+st.dataframe(df2,width=2000)
