@@ -69,7 +69,7 @@ if selected_page == 'Simple':
     with col1:
         bw = st.number_input('Bodyweight')
     with col2:
-        totalkg = st.number_input('Total(KG)')
+        totalkg = st.number_input('Total(KG)',step=0.25)
     with col3:
         sex = st.radio(label='Gender',options=('M','F'))
     with col5:
