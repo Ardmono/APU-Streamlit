@@ -64,48 +64,69 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     #print(p*(100/denominator))
     return (p*(100/denominator))
    
-col1, col2, col3,col5,col6,col4 = st.columns(6,gap='Medium')
-with col1:
-    bw = st.number_input('Bodyweight')
-with col2:
-    totalkg = st.number_input('Total(KG)')
-with col3:
-    sex = st.radio(label='Gender',options=('M','F'))
-with col5:
-    equip = st.radio(label='Equipment',options=('Raw','Single-ply'))
-with col6:
-    event = st.radio(label='Event',options=('SBD',  'B'))
-with col4:
-    result = st.button('Go')
+if selected_page == 'True':
+    col1, col2, col3,col5,col6,col4 = st.columns(6,gap='Medium')
+    with col1:
+        bw = st.number_input('Bodyweight')
+    with col2:
+        totalkg = st.number_input('Total(KG)')
+    with col3:
+        sex = st.radio(label='Gender',options=('M','F'))
+    with col5:
+        equip = st.radio(label='Equipment',options=('Raw','Single-ply'))
+    with col6:
+        event = st.radio(label='Event',options=('SBD',  'B'))
+    with col4:
+        result = st.button('Go')
+    if result:
+        st.write(round(ipf1(sex,equip,event,bw,totalkg),2))
 
-if result:
-    st.write(round(ipf1(sex,equip,event,bw,totalkg),2))
+    if result:
+        st.write(ipf1(sex,equip,event,bw,totalkg))
+elif selected_page == 'False':
+    col11, col22, col33,col44 = st.columns(4,gap='Medium')
+    with col11:
+        sq = st.slider('Squat', 0, 500)
+    with col22:
+        be = st.slider('Bench', 0, 500)
+    with col33:
+        de = st.slider('Deadlift', 0, 500)
+    with col44:
+        tot = sq+be+de
+        if tot > 1:
+            tot = int(tot)
+            st.metric(label='Total',value=tot)
+    if sq > 1 | be > 0:
+        st.text('Test')
 
-if result:
-    st.write(ipf1(sex,equip,event,bw,totalkg))
+    if sq > 0:
+        total = sq+be+de
+        st.write(total)
+    
 
 
-st.markdown('##')
 
-col11, col22, col33,col44 = st.columns(4,gap='Medium')
-with col11:
-    sq = st.slider('Squat', 0, 500)
-with col22:
-    be = st.slider('Bench', 0, 500)
-with col33:
-    de = st.slider('Deadlift', 0, 500)
-with col44:
-    tot = sq+be+de
-    if tot > 1:
-        tot = int(tot)
-        st.metric(label='Total',value=tot)
+# st.markdown('##')
+
+# col11, col22, col33,col44 = st.columns(4,gap='Medium')
+# with col11:
+#     sq = st.slider('Squat', 0, 500)
+# with col22:
+#     be = st.slider('Bench', 0, 500)
+# with col33:
+#     de = st.slider('Deadlift', 0, 500)
+# with col44:
+#     tot = sq+be+de
+#     if tot > 1:
+#         tot = int(tot)
+#         st.metric(label='Total',value=tot)
      
     
-if sq > 1 | be > 0:
-    st.text('Test')
+# if sq > 1 | be > 0:
+#     st.text('Test')
 
-if sq > 0:
-    total = sq+be+de
-    st.write(total)
+# if sq > 0:
+#     total = sq+be+de
+#     st.write(total)
 
 
