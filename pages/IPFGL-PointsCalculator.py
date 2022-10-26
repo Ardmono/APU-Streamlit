@@ -74,4 +74,4 @@ with col4:
     result = st.button('Go')
 
 if result:
-    st.write(ipf1(sex,equip,event,bw,totalkg))
+    st.write(round(ipf1(sex,equip,event,bw,totalkg),2))
