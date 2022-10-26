@@ -5,7 +5,7 @@
 #
 
 import math
-
+import pandas as pd
 
 def wilksCoeff(a, b, c, d, e, f, x):
     return 500 / (a + b * x + c * x**2 + d * x**3 + e * x**4 + f * x**5)
@@ -241,7 +241,7 @@ def schwartzmalone(isMale, bodyweightKg, totalKg):
 def glossbrenner(isMale, bodyweightKg, totalKg):
     if isMale:
         return glossCoeffMen(bodyweightKg) * totalKg
-    return glossCoeffWomen(bodyweightKg) * totalKg
+    return glossCoeffWomen(bodyweishtKg) * totalKg
 
 
 IPF_COEFFICIENTS = {
@@ -310,3 +310,9 @@ def ipf(sex, equipment, event, bodyweightKg, totalKg):
         return 0
 
     return max(0, 500 + 100 * (totalKg - mean) / dev)
+
+
+d = ipf('M','Raw','SBD',73.5,742.5)
+
+#ipfpoints = ipf(sex, row[indexEquipment], row[indexEvent], bodyweight, total)
+print(d)
