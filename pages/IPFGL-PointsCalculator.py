@@ -95,11 +95,11 @@ elif selected_page == 'False':
         event = st.radio(label='Event',options=('SBD',  'B'))
     col11, col22, col33,col44 = st.columns(4,gap='Medium')
     with col11:
-        sq = st.slider('Squat', 0, 500)
+        sq = st.number_input('Squat', 0, 500)
     with col22:
-        be = st.slider('Bench', 0, 500)
+        be = st.number_input('Bench', 0, 500)
     with col33:
-        de = st.slider('Deadlift', 0, 500)
+        de = st.number_input('Deadlift', 0, 500)
     with col44:
         tot = sq+be+de
         if tot > 1:
