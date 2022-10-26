@@ -155,7 +155,7 @@ st.plotly_chart(fig, use_container_width=True)
 
 st.dataframe(fails,use_container_width=True)
 
-
+st.text('Need to add IPFGL Point Calculation/Scoring')
 
 #How many lifters, genders, weights, lifts, ----------------5/10
 
