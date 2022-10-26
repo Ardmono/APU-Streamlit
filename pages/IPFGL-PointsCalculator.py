@@ -65,7 +65,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     return (p*(100/denominator))
    
 if selected_page == 'Simple':
-    col1, col2, col3,col5,col6,col4 = st.columns(6,gap='Medium')
+    col1, col2, col3,col5,col6 = st.columns(5,gap='Medium')
     with col1:
         bw = st.number_input('Bodyweight')
     with col2:
@@ -76,8 +76,8 @@ if selected_page == 'Simple':
         equip = st.radio(label='Equipment',options=('Raw','Single-ply'))
     with col6:
         event = st.radio(label='Event',options=('SBD',  'B'))
-    with col4:
-        result = st.button('Go')
+    #with col4:
+    #   result = st.button('Go')
     if totalkg > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
 
