@@ -81,6 +81,9 @@ if result:
 if result:
     st.write(ipf1(sex,equip,event,bw,totalkg))
 
+
+st.markdown('##')
+st.markdown('##')
 st.header('Blank Space')
 st.header('Blank Space1')
 st.header('Blank Space2')
