@@ -101,7 +101,7 @@ with col4:
     tot = sq+be+de
     if tot > 1:
         tot = int(tot)
-        st.metric(value=tot)
+        st.metric(label='Total',value=tot)
     
 if sq > 1 | be > 0:
     st.text('Test')
