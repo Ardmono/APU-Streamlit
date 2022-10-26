@@ -18,3 +18,9 @@ df.fillna(0, inplace=True)
 liftername = st.multiselect("Lifter Name",options=df['Name'].unique())
 if len(liftername) == 0:
     liftername = df['Name']
+    
+print(df['Name'].value_counts())
+
+# Max Bristow, Abbas Pordel
+#print(df)
+print(df[df['Name'] == 'Louise Sutton'])
