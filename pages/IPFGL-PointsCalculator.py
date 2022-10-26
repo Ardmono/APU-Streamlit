@@ -59,7 +59,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     #print(p*(100/denominator))
     return (p*(100/denominator))
    
-col1, col2, col3,col5,col6,col4 = st.columns(6)
+col1, col2, col3,col5,col6,col4 = st.columns(6,gap='Medium')
 with col1:
     bw = st.number_input('Bodyweight')
 with col2:
