@@ -79,10 +79,10 @@ if selected_page == 'True':
     with col4:
         result = st.button('Go')
     if result:
-        st.write(round(ipf1(sex,equip,event,bw,totalkg),2))
+        st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
 
-    if result:
-        st.write(ipf1(sex,equip,event,bw,totalkg))
+    #if result:
+        #st.write(ipf1(sex,equip,event,bw,totalkg))
 elif selected_page == 'False':
     col11, col22, col33,col44 = st.columns(4,gap='Medium')
     with col11:
