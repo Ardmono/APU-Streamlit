@@ -57,6 +57,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     p = totalKg
     e_pow = math.exp(-c * bwt)
     denominator = a - (b * e_pow)
+    coeff = (a,b,c)
     #print(p*(100/denominator))
     return (p*(100/denominator))
    
@@ -68,9 +69,9 @@ with col2:
 with col3:
     sex = st.radio(label='Gender',options=('M','F'))
 with col5:
-    equip = st.radio(label='Gender',options=('Raw','Single-ply'))
+    equip = st.radio(label='Equipment',options=('Raw','Single-ply'))
 with col6:
-    event = st.radio(label='Gender',options=('SBD', 'S', 'B', 'D'))
+    event = st.radio(label='Event',options=('SBD',  'B'))
 with col4:
     result = st.button('Go')
 
