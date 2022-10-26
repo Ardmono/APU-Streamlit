@@ -88,7 +88,7 @@ with col2:
 with col3:
     de = st.slider('Deadlift', 0, 500)
 
-if result:
+if sq > 0:
     total = sq+be+de
     st.write(total)
 
