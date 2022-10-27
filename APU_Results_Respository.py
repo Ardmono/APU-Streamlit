@@ -88,13 +88,16 @@ if len(event) == 0:
 equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
 if equpped == 'All':
     equpped = df['Equipment']
+fed = st.sidebar.radio("Sex",options =("APU","Other"))
+if fed == 'Other':
+    fed = df['Federation']
 
 df_delection = df.query(
-   "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison & Event == @event & Equipment == @equpped"
+   "Sex==@sex_input & WeightClassKg==@weight_input & Year == @yer & MeetState == @meetState & MeetTown == @meetTown & MeetName == @meetName & Name == @liftername & Division == @divison & Event == @event & Equipment == @equpped & Federation == @fed"
 )
 
 if selected_page == 'True':
-    df_delection = df_delection.drop(columns=['Squat1Kg', 'Squat2Kg' , 'Squat3Kg', 'Bench1Kg', 'Bench2Kg' , 'Bench3Kg', 'Deadlift1Kg','Deadlift2Kg','Deadlift3Kg','meetid','Federation'])
+    df_delection = df_delection.drop(columns=['Squat1Kg', 'Squat2Kg' , 'Squat3Kg', 'Bench1Kg', 'Bench2Kg' , 'Bench3Kg', 'Deadlift1Kg','Deadlift2Kg','Deadlift3Kg','meetid'])
 elif selected_page == 'False':
     pass
 
