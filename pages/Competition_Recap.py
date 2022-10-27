@@ -42,6 +42,7 @@ if len(meetName) == 0:
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
+    bleh = sex_input
 eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
 #if len(eventy) == 0:
 #    eventy = 'SBD'
@@ -173,10 +174,12 @@ st.text('Need to add IPFGL Point Calculation/Scoring')
 #Number of lifters who went 9/9--------------------6/10
 
 #BW Stats -------------------- 0/10
-if sex_input == 'All':
-    st.dataframe(df_delection,use_container_width=True,height=1200)
-    st.dataframe(df_delection,use_container_width=True,height=1200)
-elif sex_input == 'M':
-    pass
-elif sex_input == 'F':
-    pass
+if bleh == 'All':
+    st.text('bleh')
+#     st.dataframe(df_delection,use_container_width=True,height=1200)
+#     st.dataframe(df_delection,use_container_width=True,height=1200)
+# elif sex_input == 'M':
+#     pass
+# elif sex_input == 'F':
+#     pass
+    
