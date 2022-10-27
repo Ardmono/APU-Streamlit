@@ -118,10 +118,14 @@ county = 10 * 42
 county = int(county)
 if bleh == 'All':
     st.dataframe(df_delection,use_container_width=True,height=county)
-    st.dataframe(df_delection,use_container_width=True,height=county)
-elif bleh == 'M':
-    st.text('bleh')
 
+elif bleh == 'M':
+    
+        st.dataframe(df_delection,use_container_width=True,height=county)
+elif bleh == 'F':
+        st.dataframe(df_delection,use_container_width=True,height=county)
+else:
+    st.dataframe(df_delection,use_container_width=True,height=county)
 # elif sex_input == 'M':
 #     pass
 # elif sex_input == 'F':
