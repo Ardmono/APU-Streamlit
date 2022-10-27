@@ -116,10 +116,9 @@ df_delection = df_delection.head(10)
 
 county = 10 * 42
 county = int(county)
-if bleh == 'All':
-    st.dataframe(df_delection,use_container_width=True,height=county)
-
-elif bleh == 'M':
+# if bleh == 'All':
+#     st.dataframe(df_delection,use_container_width=True,height=county)
+if bleh == 'M':
     
         st.dataframe(df_delection,use_container_width=True,height=county)
 elif bleh == 'F':
