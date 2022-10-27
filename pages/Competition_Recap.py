@@ -107,6 +107,21 @@ totalweight = df_exec['TotalKg'].sum()
 #print(totalweight)
 data = [0,0,0]
 
+df_delection = df_exec.reset_index(drop=True).sort_values(by = ['IPFGL'], ascending = [False])
+df_delection = df_delection.reset_index(drop=True)
+df_delection.index += 1 
+df_delection.head(10)
+
+
+if sex_input == 'F':
+    pass
+    
+elif sex_input == 'M':
+    pass
+else:
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+
 fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
 
 lifts = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
@@ -149,6 +164,8 @@ fig.update_layout(barmode='stack')
 fig.update_layout(yaxis_range=[0,lengthy])
 
 #fig.show()
+
+
 
 st.plotly_chart(fig, use_container_width=True)
 #print(fails)
