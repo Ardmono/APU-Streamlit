@@ -111,27 +111,7 @@ totalweight = df_exec['TotalKg'].sum()
 #print(totalweight)
 data = [0,0,0]
 
-df_delection = df_exec.reset_index(drop=True).sort_values(by = ['IPFGL'], ascending = [False])
-df_delection = df_delection.reset_index(drop=True)
-df_delection.index += 1 
-df_delection = df_delection.head(10)
-df = df.drop(columns=['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail'])
 
-county = 10 * 42
-county = int(county)
-# if bleh == 'All':
-#     st.dataframe(df_delection,use_container_width=True,height=county)
-if bleh == 'M':
-    
-        st.dataframe(df_delection,use_container_width=True,height=county)
-elif bleh == 'F':
-        st.dataframe(df_delection,use_container_width=True,height=county)
-else:
-    st.dataframe(df_delection,use_container_width=True,height=county)
-# elif sex_input == 'M':
-#     pass
-# elif sex_input == 'F':
-#     pass
     
 
 fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
@@ -177,6 +157,22 @@ fig.update_layout(yaxis_range=[0,lengthy])
 
 #fig.show()
 
+df_delection = df_exec.reset_index(drop=True).sort_values(by = ['IPFGL'], ascending = [False])
+df_delection = df_delection.reset_index(drop=True)
+df_delection.index += 1 
+df_delection = df_delection.head(10)
+df = df.drop(columns=['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail'])
+
+county = 10 * 42
+county = int(county)
+# if bleh == 'All':
+#     st.dataframe(df_delection,use_container_width=True,height=county)
+if bleh == 'M':
+        st.dataframe(df_delection,use_container_width=True,height=county)
+elif bleh == 'F':
+        st.dataframe(df_delection,use_container_width=True,height=county)
+else:
+    st.dataframe(df_delection,use_container_width=True,height=county)
 
 
 st.plotly_chart(fig, use_container_width=True)
