@@ -113,14 +113,13 @@ df_delection.index += 1
 df_delection.head(10)
 
 
-if sex_input == 'F':
-    pass
-    
+if sex_input == 'All':
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+    st.dataframe(df_delection,use_container_width=True,height=1200)
 elif sex_input == 'M':
     pass
-else:
-    st.dataframe(df_delection,use_container_width=True,height=1200)
-    st.dataframe(df_delection,use_container_width=True,height=1200)
+elif sex_input == 'F':
+    pass
 
 fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
 
