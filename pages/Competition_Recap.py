@@ -114,7 +114,17 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 df_delection.head(10)
 
+if bleh == 'All':
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+elif bleh == 'M':
+    st.text('bleh')
 
+# elif sex_input == 'M':
+#     pass
+# elif sex_input == 'F':
+#     pass
+    
 
 fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
 
@@ -175,14 +185,3 @@ st.text('Need to add IPFGL Point Calculation/Scoring')
 #Number of lifters who went 9/9--------------------6/10
 
 #BW Stats -------------------- 0/10
-if bleh == 'All':
-    st.dataframe(df_delection,use_container_width=True,height=1200)
-    st.dataframe(df_delection,use_container_width=True,height=1200)
-elif bleh == 'M':
-    st.text('bleh')
-
-# elif sex_input == 'M':
-#     pass
-# elif sex_input == 'F':
-#     pass
-    
