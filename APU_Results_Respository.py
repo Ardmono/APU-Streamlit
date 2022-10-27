@@ -88,7 +88,7 @@ if len(event) == 0:
 equpped = st.sidebar.radio("Equipment",options =("All","Raw","Single-ply"))
 if equpped == 'All':
     equpped = df['Equipment']
-fed = st.sidebar.radio("Sex",options =("APU","Other"))
+fed = st.sidebar.radio("Federation",options =("APU","Other"))
 if fed == 'Other':
     fed = df['Federation']
 
