@@ -113,10 +113,9 @@ df_delection = df_exec.reset_index(drop=True).sort_values(by = ['IPFGL'], ascend
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 df_delection = df_delection.head(10)
-county = len(df_delection.index)
-bleh = county
-county = 10 * 42
 
+county = 10 * 42
+county = int(county)
 if bleh == 'All':
     st.dataframe(df_delection,use_container_width=True,height=county)
     st.dataframe(df_delection,use_container_width=True,height=county)
