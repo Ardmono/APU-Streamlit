@@ -100,7 +100,7 @@ elif selected_page == 'False':
 
 #df_delection = df_delection.reset_index(drop=True)
 #df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
-df_delection = df_delection.reset_index(drop=True).sort_values(by = ['TotalKg'], ascending = [False])
+df_delection = df_delection.reset_index(drop=True).sort_values(by = ['IPFGL'], ascending = [False])
 
 #df_delection = df_delection.drop(columns=['index'])
 #df = df_delection
