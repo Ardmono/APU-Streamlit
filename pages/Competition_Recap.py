@@ -176,11 +176,11 @@ st.text('Need to add IPFGL Point Calculation/Scoring')
 
 #BW Stats -------------------- 0/10
 if bleh == 'All':
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+    st.dataframe(df_delection,use_container_width=True,height=1200)
+elif bleh == 'M':
     st.text('bleh')
-else:
-    st.text('bleh')
-#     st.dataframe(df_delection,use_container_width=True,height=1200)
-#     st.dataframe(df_delection,use_container_width=True,height=1200)
+
 # elif sex_input == 'M':
 #     pass
 # elif sex_input == 'F':
