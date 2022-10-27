@@ -112,7 +112,7 @@ data = [0,0,0]
 df_delection = df_exec.reset_index(drop=True).sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
-df_delection.head(10)
+df_delection = df_delection.head(10)
 
 if bleh == 'All':
     st.dataframe(df_delection,use_container_width=True,height=1200)
