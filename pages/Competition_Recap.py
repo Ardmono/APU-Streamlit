@@ -41,8 +41,9 @@ if len(meetName) == 0:
     meetName = df['MeetName']
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
-    sex_input = df['Sex']
     bleh = sex_input
+    sex_input = df['Sex']
+    
 eventy = st.sidebar.radio("Event",options=('SBD', 'B', 'BD', 'D','All'))
 #if len(eventy) == 0:
 #    eventy = 'SBD'
