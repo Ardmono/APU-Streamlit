@@ -115,7 +115,7 @@ df_delection.index += 1
 df_delection = df_delection.head(10)
 county = len(df_delection.index)
 bleh = county
-county = int(county) * 42
+county = 10 * 42
 
 if bleh == 'All':
     st.dataframe(df_delection,use_container_width=True,height=county)
