@@ -193,7 +193,7 @@ if sexxrr == 'M':
         st.dataframe(df_delection,use_container_width=True,height=county)
 elif sexxrr == 'F':
         st.dataframe(df_delection,use_container_width=True,height=county)
-        
+st.text(sexxrr)        
 else:
     dfm = df_delection
     dff = df_delection
