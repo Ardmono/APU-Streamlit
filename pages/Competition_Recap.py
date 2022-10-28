@@ -152,8 +152,8 @@ print(fails)
 #ails.loc[0,['Percentage']] = 0 
 #print((len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100)
 fig = go.Figure(data=[
-    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
-    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail,hovertext=fails.Percentage),
+    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed,hovertext=fails.Percentage,textposition='auto'),
+    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail,hovertext=fails.Percentage,textposition='auto'),
     
     
     
