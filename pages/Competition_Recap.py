@@ -188,10 +188,11 @@ county = 10 * 42
 county = int(county)
 # if bleh == 'All':
 #     st.dataframe(df_delection,use_container_width=True,height=county)
-if bleh == 'M':
+if bleh == 'M' | sexxrr == 'M':
         st.dataframe(df_delection,use_container_width=True,height=county)
-elif bleh == 'F':
+elif bleh == 'F' | sexxrr == 'F':
         st.dataframe(df_delection,use_container_width=True,height=county)
+        
 else:
     dfm = df_delection
     dff = df_delection
