@@ -23,7 +23,7 @@ print(df[['MeetName', 'MeetState', 'MeetTown']])
 #nan_in_col  = df[df['MeetName'].isna()]
 df1 = df[(df.MeetState == 'Unknown') | (df.MeetState == 0) | (df.MeetState == 'UNK')  
          | (df.MeetTown == 'Unknown') | (df.MeetTown == 0) | (df.MeetTown == 'UNK') 
-         | (df.WeightClassKg == 'Unknown') | (df.WeightClassKg == 0)   | (df.WeightClassKg == 'UNK')
+         
          | (df.MeetTown == 'Unknown') | (df.MeetTown == 0) | (df.MeetTown == 'UNK') 
          ]  #& (df.MeetName == 0)]
 
@@ -38,6 +38,22 @@ st.metric('Records to correct',value=len(df1['meetid'].unique()))
 #print(df1['meetid'])
 
 st.dataframe(df1,width=20000)
+
+df2 = df[(df.TotalKg == 'Unknown') | (df.TotalKg == 0) | (df.TotalKg == 'UNK')  
+         | (df.WeightClassKg == 'Unknown') | (df.WeightClassKg == 0) | (df.WeightClassKg == 'UNK') 
+         ]  #& (df.MeetName == 0)]
+
+#,'Bench1Kg', 'Bench2Kg', 'Bench3Kg' ,'Best3BenchKg' ,'Deadlift1Kg', 'Deadlift2Kg' ,'Deadlift3Kg', 'Best3DeadliftKg'
+#df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Name', 'WeightClassKg', 'BodyweightKg', 'Division', 'Squat1Kg', 'Squat2Kg', 'Squat3Kg', 'Best3SquatKg','Bench1Kg', 'Bench2Kg', 'Bench3Kg' ,'Best3BenchKg' ,'Deadlift1Kg', 'Deadlift2Kg' ,'Deadlift3Kg', 'Best3DeadliftKg','TotalKg'])
+##a = df.query('a.isnull()', engine='python')
+#df1.drop_duplicates(subset="meetid",
+  #                   keep='first', inplace=True)
+
+st.text('Records with missing or unknown data')
+st.metric('Records to correct',value=len(df2['Name'].unique()))
+#print(df1['meetid'])
+
+st.dataframe(df2,width=20000)
 
 task = ['Wilks Score', 'Dots', 'Year Fix', 'Style','Page','BestLift','Records']
 
