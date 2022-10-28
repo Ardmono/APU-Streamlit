@@ -85,7 +85,7 @@ if len(weight_input) == 0:
     #sex_input == 'F'
 # else:
 #     sex_input = df['Sex']
-set.text(sex_input)
+st.text(sex_input)
 yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
 if len(yer) == 0:
     yer = df['Year']
