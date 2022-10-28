@@ -76,8 +76,6 @@ else:
 weight_input = st.sidebar.multiselect("Weight Class",options=weightopts)
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-
-st.text(sexrr)
 yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
 if len(yer) == 0:
     yer = df['Year']
