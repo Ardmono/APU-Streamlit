@@ -129,7 +129,7 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(
 testyi = fails[fails.Percentage == fails.Percentage.min()]
 print(testyi['Lift'],testyi['Percentage'])
 print(type(testyi['Lift']))
-st.text(testyi['Lift'])
+st.text(testyi[['Lift']])
 blut = testyi[['Lift']]
 print(blut)
 
