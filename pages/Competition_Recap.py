@@ -173,8 +173,11 @@ elif bleh == 'F':
         st.dataframe(df_delection,use_container_width=True,height=county)
 else:
     dfm = df_delection
-    st.dataframe(df_delection,use_container_width=True,height=county)
-    st.dataframe(df_delection,use_container_width=True,height=county)
+    dff = df_delection
+    st.header('Female')
+    st.dataframe(dff,use_container_width=True,height=county)
+    st.header('Male')
+    st.dataframe(dfm,use_container_width=True,height=county)
 
 
 st.plotly_chart(fig, use_container_width=True)
