@@ -23,7 +23,9 @@ print(df[['MeetName', 'MeetState', 'MeetTown']])
 #nan_in_col  = df[df['MeetName'].isna()]
 df1 = df[(df.MeetState == 'Unknown') | (df.MeetState == 0) | (df.MeetState == 'UNK')  
          | (df.MeetTown == 'Unknown') | (df.MeetTown == 0) | (df.MeetTown == 'UNK') 
-         | (df.MeetState == 'Unknown') | (df.MeetState == 0)   | (df.MeetState == 'UNK')]  #& (df.MeetName == 0)]
+         | (df.WeightClassKg == 'Unknown') | (df.WeightClassKg == 0)   | (df.WeightClassKg == 'UNK')
+         | (df.MeetTown == 'Unknown') | (df.MeetTown == 0) | (df.MeetTown == 'UNK') 
+         ]  #& (df.MeetName == 0)]
 
 #,'Bench1Kg', 'Bench2Kg', 'Bench3Kg' ,'Best3BenchKg' ,'Deadlift1Kg', 'Deadlift2Kg' ,'Deadlift3Kg', 'Best3DeadliftKg'
 df1 = df1.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','Name', 'WeightClassKg', 'BodyweightKg', 'Division', 'Squat1Kg', 'Squat2Kg', 'Squat3Kg', 'Best3SquatKg','Bench1Kg', 'Bench2Kg', 'Bench3Kg' ,'Best3BenchKg' ,'Deadlift1Kg', 'Deadlift2Kg' ,'Deadlift3Kg', 'Best3DeadliftKg','TotalKg'])
