@@ -20,6 +20,10 @@ sst = time.time()
 
 st.set_page_config(page_title="Main APU Database Page",layout="wide")
 
+print(df['WeightClassKg'].value_counts())
+
+menweightclass = [59,]
+femaleweightclass = ['47', '52','57','63','69','72','76','84','84+']
 
 
 def main_page():
@@ -64,6 +68,8 @@ if sex_input == 'All':
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
+if weight_input == femaleweightclass:
+    sex_input == 'F'
 yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
 if len(yer) == 0:
     yer = df['Year']
