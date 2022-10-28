@@ -126,12 +126,11 @@ fails.loc[6,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift1',(
 fails.loc[7,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift2',(len(df_exec.query('Deadlift2Kgfail < 1'))),(len(df_exec.query('Deadlift2Kgfail > 0'))),(len(df_exec.query('Deadlift2Kgfail > -1'))),round((len(df_exec.query('Deadlift2Kgfail < 1'))) / (len(df_exec.query('Deadlift2Kgfail > -1'))) * 100,2)]
 fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1'))),round((len(df_exec.query('Deadlift3Kgfail < 1'))) / (len(df_exec.query('Deadlift3Kgfail > -1'))) * 100,2)]
 
-testyi = fails[fails.Percentage == fails.Percentage.min()]
-testyi = testyi.reset_index()
-print(testyi['Lift'],testyi['Percentage'])
-st.text(testyi[['Lift']])
-blut = testyi[['Lift']]
-print(blut)
+testyi = fails['Percentage'].min()
+print(testyi)
+failedlift = fails[fails['Percentage'] == testyi]
+print(failedlift[['Lift']])
+st.text(failedlift[['Lift']])
 
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
