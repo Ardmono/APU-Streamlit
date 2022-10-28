@@ -144,12 +144,12 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(
 #fails['Percentage'].round(decimals =2)
 #testyi = fails['Percentage']=fails.idxmin(axis=1)
 testyi = fails[fails.Percentage == fails.Percentage.min()]
-print(testyi)
-print(type(testyi))
-st.text(testyi)
+print(testyi['Lift'],testyi['Percentage'])
+print(type(testyi['Lift']))
+st.text(testyi['Lift'],testyi['Percentage'])
 #fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
-print(fails)
+#print(fails)
 #print((len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100)
 fig = go.Figure(data=[
     go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed,text=fails.Percentage,hovertext=fails.Percentage,textposition='auto'),
