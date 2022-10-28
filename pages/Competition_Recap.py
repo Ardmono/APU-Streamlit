@@ -189,6 +189,7 @@ county = int(county)
 # if bleh == 'All':
 #     st.dataframe(df_delection,use_container_width=True,height=county)
 if sexxrr == 'M':
+        df_delection = df_delection[df_delection['Sex'] == 'M']
         st.dataframe(df_delection,use_container_width=True,height=county)
 elif sexxrr == 'F':
         st.dataframe(df_delection,use_container_width=True,height=county)
