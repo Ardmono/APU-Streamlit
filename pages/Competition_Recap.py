@@ -131,9 +131,10 @@ print(testyi)
 failedlift = fails[fails['Percentage'] == testyi]
 #tester = fails.iloc[int(failedlift)]
 #print(tester)
-print(failedlift[['Lift']])
+print(failedlift[['Lift']].to_string(index=False))
+print(failedlift.to_string(index=False))
 st.text(failedlift[['Lift']])
-blut = failedlift[['Lift']]
+blut = failedlift[['Lift']].to_string(index=False)
 
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
