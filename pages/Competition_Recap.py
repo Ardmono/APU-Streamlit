@@ -34,13 +34,14 @@ for i in range(len(listy)):
     #print(listy[i]+'fail')
     df1[listy[i]+'fail'] = result
     df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
- 
+femaleweightclass = ['47', '52','57','63','69','72','76','84','84+']
 df = df1
 meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique(),default=["National Classic Sub-Junior Junior and Master Powerlifting and Bench Press Championships"])
 
 if len(meetName) == 0:
     meetName = df['MeetName']
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
+sexxrr = sex_input
 if sex_input == 'All':
     bleh = sex_input
     sex_input = df['Sex']
@@ -57,8 +58,17 @@ maxmeet = max(df.MeetName.apply(len))
 meeter = meetName
 if len(meeter) > maxmeet+1 :
     meeter = 'All Comps'
-
-weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
+if sexxrr == 'All':
+    weightopts = df['WeightClassKg'].unique()
+elif sexxrr == 'F':
+    weightopts = femaleweightclass
+elif sexxrr == 'M':
+    weightopts = list(set(df['WeightClassKg'].unique()) - set(femaleweightclass))
+else:
+    weightopts = df['WeightClassKg'].unique()
+    
+weight_input = st.sidebar.multiselect("Weight Class",options=weightopts)
+#weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
 equpped = st.sidebar.radio("Equipment",options =("Raw","Single-ply","All"))
