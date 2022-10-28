@@ -127,15 +127,16 @@ fails.loc[7,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift2',(
 fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1'))),round((len(df_exec.query('Deadlift3Kgfail < 1'))) / (len(df_exec.query('Deadlift3Kgfail > -1'))) * 100,2)]
 
 testyi = fails['Percentage'].min()
-print(testyi)
+#print(testyi)
 failedlift = fails[fails['Percentage'] == testyi]
 #tester = fails.iloc[int(failedlift)]
 #print(tester)
-print(failedlift[['Lift']].to_string(index=False))
-print(failedlift.to_string(index=False))
+#print(failedlift[['Lift']].to_string(index=False))
+#print(failedlift.to_string(index=False))
 st.text(failedlift[['Lift']])
 blut = failedlift[['Lift']].to_string(index=False)
 blut = blut[4:]
+print(blut)
 
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
