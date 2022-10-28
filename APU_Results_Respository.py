@@ -22,28 +22,8 @@ st.set_page_config(page_title="Main APU Database Page",layout="wide")
 
 print(df['WeightClassKg'].value_counts())
 
-menweightclass = [59,]
+menweightclass = ['59',]
 femaleweightclass = ['47', '52','57','63','69','72','76','84','84+']
-
-
-def main_page():
-    st.markdown("# Main page 🎈")
-    st.sidebar.markdown("# Main page 🎈")
-
-def page2():
-    st.markdown("# Page 2 ❄️")
-    st.sidebar.markdown("# Page 2 ❄️")
-
-def page3():
-    st.markdown("# Page 3 🎉")
-    st.sidebar.markdown("# Page 3 🎉")
-
-page_names_to_funcs = {
-    "Main Page": main_page,
-    "Page 2": page2,
-    "Page 3": page3,
-}
-
 
 
 st.header(body='APU Australia -     ')
