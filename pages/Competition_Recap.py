@@ -135,7 +135,7 @@ print(failedlift[['Lift']].to_string(index=False))
 print(failedlift.to_string(index=False))
 st.text(failedlift[['Lift']])
 blut = failedlift[['Lift']].to_string(index=False)
-blut = blut[:4]
+blut = blut[4:]
 
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
