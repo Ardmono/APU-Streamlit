@@ -68,8 +68,13 @@ if sex_input == 'All':
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
-elif weight_input in femaleweightclass:
-    st.text('bleh')
+elif len(weight_input) != 0:
+    if weight_input in femaleweightclass:
+        st.text('bleh')
+    elif weight_input not in femaleweightclass:
+        st.text('blehm')
+else:
+    st.text('blagh')
     #sex_input == 'F'
 # else:
 #     sex_input = df['Sex']
