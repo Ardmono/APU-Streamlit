@@ -148,11 +148,11 @@ print(testyi)
 print(type(testyi))
 st.text(testyi)
 #fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
+
 print(fails)
-#ails.loc[0,['Percentage']] = 0 
 #print((len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100)
 fig = go.Figure(data=[
-    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed,text=fails.Percentage+'%',hovertext=fails.Percentage,textposition='auto'),
+    go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed,text=fails.Percentage,hovertext=fails.Percentage,textposition='auto'),
     go.Bar(name='Fail', x=fails.Lift, y=fails.Fail,hovertext=fails.Percentage,textposition='auto'),
     
     
