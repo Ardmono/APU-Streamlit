@@ -70,11 +70,11 @@ weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg']
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
     
-if len(sexxrr) > 1:
-    if sex_input == 'F':
-        st.text('F')
-    st.text('test')
-    
+# if len(sexxrr) > 1:
+#     if sex_input == 'F':
+#         st.text('F')
+#     st.text('test')
+
 # elif len(weight_input) != 0:
 #     if weight_input in femaleweightclass:
 #         st.text('bleh')
@@ -85,6 +85,7 @@ if len(sexxrr) > 1:
     #sex_input == 'F'
 # else:
 #     sex_input = df['Sex']
+set.text(sex_input)
 yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
 if len(yer) == 0:
     yer = df['Year']
