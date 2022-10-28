@@ -130,14 +130,15 @@ testyi = fails[fails.Percentage == fails.Percentage.min()]
 print(testyi['Lift'],testyi['Percentage'])
 print(type(testyi['Lift']))
 st.text(testyi['Lift'])
-blut = testyi['Lift']
+blut = testyi[['Lift']]
+print(blut)
 
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
 col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
 col2.metric(label="Gender Ratios", value='Bleh')
 col3.metric(label="% Succesful Lifts", value='Bleh')
-col33.metric(label="Most failed lift", value='String')
+col33.metric(label="Most failed lift", value='String',delta=blut)
 col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
 col5.metric(label="Count of 9/9 Lifts",value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1 & Bench1Kg > 1 & Bench2Kg > 1 & Bench3Kg > 1 & Deadlift1Kg > 1 & Deadlift2Kg > 1 & Deadlift3Kg > 1')))
 
