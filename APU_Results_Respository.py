@@ -67,7 +67,13 @@ sexrr = sex_input
 if sex_input == 'All':
     sex_input = df['Sex']
 sexxrr = sex_input
-weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
+if sexrr == 'All':
+    weightopts = df['WeightClassKg'].unique()
+elif sexrr == 'F':
+    weightopts = femaleweightclass
+else:
+    df['WeightClassKg'].unique()
+weight_input = st.sidebar.multiselect("Weight Class",options=weightopts)
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
 
@@ -111,11 +117,10 @@ elif selected_page == 'False':
 
 #df_delection = df_delection.reset_index(drop=True)
 #df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
-df_delection = df_delection.reset_index(drop=True).sort_values(by = ['IPFGL'], ascending = [False])
+df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
-#df_delection = df_delection.drop(columns=['index'])
-#df = df_delection
+
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
 
@@ -125,6 +130,6 @@ elapsed_time = et1 - sst
 
 st.text(elapsed_time)
 
-st.text(df.dtypes)
+#st.text(df.dtypes)
 
 
