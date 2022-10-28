@@ -120,7 +120,7 @@ fails = pd.DataFrame(columns=['Lift','Succeed','Fail','Attempted','Percentage'])
 lifts = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
 #fails = fails[['Succeed','Fail','Attempted']]
 
-list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
+list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench 3rd','Deadlift1','Deadlift2','Deadlift3']
 list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail']
 
 
