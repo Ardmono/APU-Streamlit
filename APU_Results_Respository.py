@@ -65,11 +65,12 @@ st.sidebar.image(img,width=300)
 sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 if sex_input == 'All':
     sex_input = df['Sex']
+sexxrr = sex_input
 weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
     
-if sex_input != 'All':
+if len(sexxrr) > 1:
     st.text('test')
     
 # elif len(weight_input) != 0:
