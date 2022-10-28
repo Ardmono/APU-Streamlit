@@ -142,8 +142,8 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(
 
 #testyi = fails['Percentage']=fails.idxmin(axis=1)
 testyi = fails[fails.Percentage == fails.Percentage.min()]
-
-st.text(str(testyi))
+print(testyi)
+st.text(testyi)
 #fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
 #ails.loc[0,['Percentage']] = 0 
