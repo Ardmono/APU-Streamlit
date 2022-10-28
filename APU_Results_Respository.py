@@ -72,7 +72,7 @@ if sexrr == 'All':
 elif sexrr == 'F':
     weightopts = femaleweightclass
 else:
-    df['WeightClassKg'].unique()
+    weightopts = list(set(df['WeightClassKg'].unique()) - set(femaleweightclass))
 weight_input = st.sidebar.multiselect("Weight Class",options=weightopts)
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
