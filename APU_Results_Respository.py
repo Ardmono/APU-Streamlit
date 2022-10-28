@@ -11,7 +11,7 @@ df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
-df.fillna(0, inplace=True)
+#df.fillna(0, inplace=True)
 listy = ['BodyweightKg' , 'Squat1Kg' , 'Squat2Kg'  ,'Squat3Kg' , 'Best3SquatKg',  'Bench1Kg',  'Bench2Kg' ,'Bench3Kg','Best3BenchKg',  'Deadlift1Kg',  'Deadlift2Kg', 'Deadlift3Kg' ,'Best3DeadliftKg'  ,'TotalKg']
 
 df = pd.DataFrame(df)
@@ -20,7 +20,7 @@ sst = time.time()
 
 st.set_page_config(page_title="Main APU Database Page",layout="wide")
 
-print(df['WeightClassKg'].value_counts())
+#print(df['WeightClassKg'].value_counts())
 
 menweightclass = ['59',]
 femaleweightclass = ['47', '52','57','63','69','72','76','84','84+']
@@ -95,11 +95,11 @@ if selected_page == 'True':
 elif selected_page == 'False':
     df_delection = df_delection.drop(columns=['meetid','Year'])
 
-#df_delection = df_delection.reset_index(drop=True)
-#df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
-# df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
-# df_delection = df_delection.reset_index(drop=True)
-# df_delection.index += 1 
+df_delection = df_delection.reset_index(drop=True)
+df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
+df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
+df_delection = df_delection.reset_index(drop=True)
+df_delection.index += 1 
 
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
