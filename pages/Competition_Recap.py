@@ -101,18 +101,6 @@ a.metric(label="Female Lifters", value=len(dfsex[df['Sex'] =='F']))
 b.metric(label="Male Lifters", value=len(dfsex[df['Sex'] =='M']))
 c.metric(label="Total Lifters", value=lifters)
 #d.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
-st.text('Current Comp: '+str(meeter))
-col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
-col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
-col2.metric(label="Gender Ratios", value='Bleh')
-col3.metric(label="% Succesful Lifts", value='Bleh')
-col33.metric(label="Most failed lift", value=blut,delta=blut2)
-col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
-col5.metric(label="Count of 9/9 Lifts",value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1 & Bench1Kg > 1 & Bench2Kg > 1 & Bench3Kg > 1 & Deadlift1Kg > 1 & Deadlift2Kg > 1 & Deadlift3Kg > 1')))
-
-totalweight = df_exec['TotalKg'].sum()
-#print(totalweight)
-data = [0,0,0]
 
 
     
@@ -125,10 +113,6 @@ lifts = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Dead
 list1 = ['Squat1','Squat2','Squat3','Bench1','Bench2','Bench3','Deadlift1','Deadlift2','Deadlift3']
 list2 = ['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail']
 
-
-
-##Squats
-#fails.at[1,'Succeed']= len(df_exec.query('Squat1Kgfail < 1'))
 fails.loc[0,['Lift','Succeed','Fail','Attempted','Percentage']] =  ['Squat1',(len(df_exec.query('Squat1Kgfail < 1'))),(len(df_exec.query('Squat1Kgfail > 0'))),(len(df_exec.query('Squat1Kgfail > -1'))),round((len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100,2)]
 
 fails.loc[1,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Squat2',(len(df_exec.query('Squat2Kgfail < 1'))),(len(df_exec.query('Squat2Kgfail > 0'))),(len(df_exec.query('Squat2Kgfail > -1'))),round((len(df_exec.query('Squat2Kgfail < 1'))) / (len(df_exec.query('Squat2Kgfail > -1'))) * 100,2)]
@@ -142,13 +126,25 @@ fails.loc[6,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift1',(
 fails.loc[7,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift2',(len(df_exec.query('Deadlift2Kgfail < 1'))),(len(df_exec.query('Deadlift2Kgfail > 0'))),(len(df_exec.query('Deadlift2Kgfail > -1'))),round((len(df_exec.query('Deadlift2Kgfail < 1'))) / (len(df_exec.query('Deadlift2Kgfail > -1'))) * 100,2)]
 fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1'))),round((len(df_exec.query('Deadlift3Kgfail < 1'))) / (len(df_exec.query('Deadlift3Kgfail > -1'))) * 100,2)]
 
-#fails['Percentage'].round(decimals =2)
-#testyi = fails['Percentage']=fails.idxmin(axis=1)
 testyi = fails[fails.Percentage == fails.Percentage.min()]
 print(testyi['Lift'],testyi['Percentage'])
 print(type(testyi['Lift']))
 st.text(testyi['Lift'])
 blut = testyi['Lift']
+
+st.text('Current Comp: '+str(meeter))
+col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
+col1.metric(label="How Many Lifters", value=len(df_exec.query('Bench3Kgfail > 0')))
+col2.metric(label="Gender Ratios", value='Bleh')
+col3.metric(label="% Succesful Lifts", value='Bleh')
+col33.metric(label="Most failed lift", value=blut,delta=blut2)
+col4.metric(label="Total KG of all lifted weights", value=(str(df_exec['TotalKg'].sum())+' Kg'))
+col5.metric(label="Count of 9/9 Lifts",value=len(df_exec.query('Squat3Kg > 1 & Squat2Kg > 1 & Squat1Kg > 1 & Bench1Kg > 1 & Bench2Kg > 1 & Bench3Kg > 1 & Deadlift1Kg > 1 & Deadlift2Kg > 1 & Deadlift3Kg > 1')))
+
+totalweight = df_exec['TotalKg'].sum()
+#print(totalweight)
+data = [0,0,0]
+
 #fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
 #print(fails)
