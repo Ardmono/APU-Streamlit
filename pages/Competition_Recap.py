@@ -161,7 +161,7 @@ df_delection = df_exec.reset_index(drop=True).sort_values(by = ['IPFGL'], ascend
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 df_delection = df_delection.head(10)
-#df = df.drop(columns=['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail'])
+df_delection = df_delection.drop(columns=['Squat1Kgfail' , 'Squat2Kgfail'  'Squat3Kgfail'  'Bench1Kgfail'  'Bench2Kgfail'  'Bench3Kgfail'  'Deadlift1Kgfail'  'Deadlift2Kgfail'  'Deadlift3Kgfail'])
 
 county = 10 * 42
 county = int(county)
@@ -172,6 +172,8 @@ if bleh == 'M':
 elif bleh == 'F':
         st.dataframe(df_delection,use_container_width=True,height=county)
 else:
+    dfm = df_delection
+    st.dataframe(df_delection,use_container_width=True,height=county)
     st.dataframe(df_delection,use_container_width=True,height=county)
 
 
