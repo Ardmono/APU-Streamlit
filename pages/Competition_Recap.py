@@ -152,7 +152,7 @@ st.text(testyi)
 #print((len(df_exec.query('Squat1Kgfail < 1'))) / (len(df_exec.query('Squat1Kgfail > -1'))) * 100)
 fig = go.Figure(data=[
     go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
-    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail,text_auto=True),
+    go.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
     
     #go.Bar(name='Attempted', x=fails.Lift, y=fails.Attempted,),
     
