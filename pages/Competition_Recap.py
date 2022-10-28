@@ -148,6 +148,7 @@ testyi = fails[fails.Percentage == fails.Percentage.min()]
 print(testyi['Lift'],testyi['Percentage'])
 print(type(testyi['Lift']))
 st.text(testyi['Lift'])
+blut = testyi['Lift']
 #fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
 #print(fails)
