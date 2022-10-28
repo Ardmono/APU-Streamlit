@@ -71,6 +71,8 @@ if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
     
 if len(sexxrr) > 1:
+    if sex_input == 'F':
+        st.text('F')
     st.text('test')
     
 # elif len(weight_input) != 0:
