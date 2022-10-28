@@ -127,8 +127,8 @@ fails.loc[7,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift2',(
 fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(len(df_exec.query('Deadlift3Kgfail < 1'))),(len(df_exec.query('Deadlift3Kgfail > 0'))),(len(df_exec.query('Deadlift3Kgfail > -1'))),round((len(df_exec.query('Deadlift3Kgfail < 1'))) / (len(df_exec.query('Deadlift3Kgfail > -1'))) * 100,2)]
 
 testyi = fails[fails.Percentage == fails.Percentage.min()]
+testyi = testyi.reset_index()
 print(testyi['Lift'],testyi['Percentage'])
-print(type(testyi['Lift']))
 st.text(testyi[['Lift']])
 blut = testyi[['Lift']]
 print(blut)
