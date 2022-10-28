@@ -153,6 +153,7 @@ st.text(testyi)
 fig = go.Figure(data=[
     go.Bar(name='Succeed', x=fails.Lift, y=fails.Succeed),
     go.Bar(name='Fail', x=fails.Lift, y=fails.Fail),
+    title="Controlled text sizes, positions and angles"
     
     #go.Bar(name='Attempted', x=fails.Lift, y=fails.Attempted,),
     
