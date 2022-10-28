@@ -129,8 +129,8 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(
 testyi = fails['Percentage'].min()
 print(testyi)
 failedlift = fails[fails['Percentage'] == testyi]
-tester = fails.iloc[int(failedlift)]
-print(tester)
+#tester = fails.iloc[int(failedlift)]
+#print(tester)
 print(failedlift[['Lift']])
 st.text(failedlift[['Lift']])
 blut = failedlift[['Lift']]
