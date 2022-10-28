@@ -189,8 +189,7 @@ county = int(county)
 # if bleh == 'All':
 #     st.dataframe(df_delection,use_container_width=True,height=county)
 st.text(sexxrr)    
-if sexxrr == 'M':
-        df_delection = df_delection[df_delection['Sex'] == 'M']
+if sexxrr == 'M' or weightopts == list(set(df['WeightClassKg'].unique()) - set(femaleweightclass)):
         st.dataframe(df_delection,use_container_width=True,height=county)
 elif sexxrr == 'F':
         st.dataframe(df_delection,use_container_width=True,height=county)
