@@ -66,14 +66,16 @@ sex_input = st.sidebar.radio("Sex",options =("All","M","F"))
 sexrr = sex_input
 if sex_input == 'All':
     sex_input = df['Sex']
-sexxrr = sex_input
-if sexrr == 'All':
-    weightopts = df['WeightClassKg'].unique()
-elif sexrr == 'F':
-    weightopts = femaleweightclass
-else:
-    weightopts = list(set(df['WeightClassKg'].unique()) - set(femaleweightclass))
-weight_input = st.sidebar.multiselect("Weight Class",options=weightopts)
+# sexxrr = sex_input
+# if sexrr == 'All':
+#     weightopts = df['WeightClassKg'].unique()
+# elif sexrr == 'F':
+#     weightopts = femaleweightclass
+# else:
+#     weightopts = list(set(df['WeightClassKg'].unique()) - set(femaleweightclass))
+#weight_input = st.sidebar.multiselect("Weight Class",options=weightopts)
+weight_input = st.sidebar.multiselect("Weight Class",options=df['WeightClassKg'].unique())
+
 if len(weight_input) == 0:
     weight_input = df['WeightClassKg']
 yer = st.sidebar.multiselect("Year",options=df['Year'].unique())
