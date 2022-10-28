@@ -131,6 +131,7 @@ print(testyi)
 failedlift = fails[fails['Percentage'] == testyi]
 print(failedlift[['Lift']])
 st.text(failedlift[['Lift']])
+blut = failedlift[['Lift']]
 
 st.text('Current Comp: '+str(meeter))
 col1, col2, col3,col4,col5,col33 = st.columns(6,gap='Medium')
