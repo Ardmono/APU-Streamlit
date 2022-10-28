@@ -4,7 +4,7 @@ import pandas as pd
 import math
 import streamlit as st
 
-st.set_page_config(layout="wide")
+st.set_page_config(page_title='IPFGL Points Calculator',layout="wide",page_icon="🧊")
 
 selected_page = st.radio("Calculator Type: ", ["Simple", "Complicated"])
 IPF_COEFFICIENTS1 = {

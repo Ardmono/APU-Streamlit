@@ -7,6 +7,7 @@ import time
 import numpy as np
 import plotly.graph_objects as go
 
+st.set_page_config(page_title='Meet Recap',layout="wide",page_icon="🧊")
 
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
@@ -143,6 +144,7 @@ fails.loc[8,['Lift','Succeed','Fail','Attempted','Percentage']] = ['Deadlift3',(
 #testyi = fails['Percentage']=fails.idxmin(axis=1)
 testyi = fails[fails.Percentage == fails.Percentage.min()]
 print(testyi)
+print(type(testyi))
 st.text(testyi)
 #fails['Squat1'][3] = fails['Squat1'][0] / fails['Squat1'][2] * 100
 
