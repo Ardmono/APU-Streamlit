@@ -24,7 +24,7 @@ df = df1
 #     meetState = df['MeetState']
 
 st.header('Filter by')
-col1, col2, col3 = st.columns(3)
+col1, col2, col3,col4 = st.columns(3)
 with col1:
     meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     if len(meetState) == 0:
@@ -37,16 +37,18 @@ with col3:
     yer = st.multiselect("Year",options=df['Year'].unique())
     if len(yer) == 0:
         yer = df['Year']
+with col4:
+    grpst = st.radio("Group Results: ", ["All", "Year",'State','Year & State'])
+    grpst = 'False'
     #st.selectbox("Filter District", ["District1", "District2"])
 # with col4:
 #     st.selectbox("Filter c", ["c", "c"])
 # with col5:
 #     st.selectbox("Filter B", ["b", "b"])
 
-st.header('Group by')
+#st.header('Group by')
 
-grpst = st.radio("Group Results: ", ["All", "Year",'State','Year & State'])
-grpst = 'False'
+
 
 
 
