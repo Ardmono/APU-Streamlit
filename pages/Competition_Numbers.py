@@ -43,19 +43,11 @@ with col3:
 # with col5:
 #     st.selectbox("Filter B", ["b", "b"])
 
-#st.header('Group by')
-#b = st.columns(1)
-# with a:
-#     st.multiselect("Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
-#     #if len(col1) == 0:
-#     #    col1 = df['MeetState']
-#with b:
-#grpst = st.radio("Group by State: ", ["False", "True"])
-grpst = 'False'
-# with c:
-#     grpyr =st.radio("Group by Year: ", ["True", "False"])
-# with d:
-#     grpto =st.radio("Group by Town: ", ["True", "False"])
+st.header('Group by')
+b = st.columns(1)
+with b:
+        grpst = st.radio("Group Results: ", ["All", "Year",'State','Year & State'])
+#grpst = 'False'
 
 
 
@@ -110,19 +102,8 @@ elif grpst == 'False':
                      keep='first', inplace=True)
 
 #How many lifters, genders, weights, lifts, ----------------5/10
-# if grpst == 'True':
-#     if grpyr == 'True':
-#         df_exec['count'] = df_exec.groupby('State_Year')['State_Year'].transform('count')
-#         #df_exec.drop_duplicates(subset="MeetState",
-#         #                keep='first', inplace=True)
-#         df_exec.drop_duplicates(subset="State_Year",
-#                         keep='first', inplace=True)
-#         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
-#     elif grpyr == 'False':
-#         df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
-#         df_exec.drop_duplicates(subset="MeetState",keep='first', inplace=True)
-#         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
-#     #@pass
+
+    #@pass
 # elif grpst == 'False':
 #     if grpyr == 'True':
 #         df_exec['count'] = df_exec.groupby('State_Year')['State_Year'].transform('count')
@@ -142,6 +123,20 @@ county = len(df1.index)
 bleh = county
 county = int(county) * 42
 st.dataframe(df1,width=20000,height=county)
+
+# df3 = df1 
+# if grpst == 'True':
+#     if grpyr == 'True':
+#         df_exec['count'] = df_exec.groupby('State_Year')['State_Year'].transform('count')
+#         df_exec.drop_duplicates(subset="MeetState",
+#                        keep='first', inplace=True)
+#         df_exec.drop_duplicates(subset="State_Year",
+#                         keep='first', inplace=True)
+#         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
+#     elif grpyr == 'False':
+#         df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
+#         df_exec.drop_duplicates(subset="MeetState",keep='first', inplace=True)
+#         df1 =df_exec[['MeetState', 'MeetTown','Year','count','State_Year']]
 
 #Failed Lifts % Breakdown ---------------8/10 
 
