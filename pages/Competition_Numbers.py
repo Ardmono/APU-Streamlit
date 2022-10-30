@@ -24,7 +24,7 @@ df = df1
 #     meetState = df['MeetState']
 
 st.header('Filter by')
-col1, col2, col3,col4 = st.columns(3)
+col1, col2, col3,col4 = st.columns(4)
 with col1:
     meetState =st.multiselect("Filter Statey",options=(['NSW' ,'QLD' ,'WA', 'VIC' ,'ACT' , 'SA' ,'TAS']))
     if len(meetState) == 0:
