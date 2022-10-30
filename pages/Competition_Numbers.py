@@ -88,17 +88,17 @@ df_exec = df.query(
 print(df_exec)
 #df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
 
-if grpst == 'True':
-    df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
-    df_exec.drop_duplicates(subset="MeetState",
-                     keep='first', inplace=True)
-    df1 =df_exec[['MeetState', 'MeetTown','Year','count']]
-    #@pass
-elif grpst == 'False':
-    df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
-    df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
-    df1.drop_duplicates(subset="MeetName",
-                     keep='first', inplace=True)
+# if grpst == 'True':
+#     df_exec['count'] = df_exec.groupby('MeetState')['meetid'].transform('count')
+#     df_exec.drop_duplicates(subset="MeetState",
+#                      keep='first', inplace=True)
+#     df1 =df_exec[['MeetState', 'MeetTown','Year','count']]
+#     @pass
+# elif grpst == 'False':
+#     df_exec['count'] = df_exec.groupby('meetid')['meetid'].transform('count')
+#     df1 =df_exec[['MeetName', 'MeetState', 'MeetTown','Year','count']]
+#     df1.drop_duplicates(subset="MeetName",
+#                      keep='first', inplace=True)
 
 #How many lifters, genders, weights, lifts, ----------------5/10
 
