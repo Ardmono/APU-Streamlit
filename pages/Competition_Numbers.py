@@ -44,9 +44,8 @@ with col3:
 #     st.selectbox("Filter B", ["b", "b"])
 
 st.header('Group by')
-b = st.columns(1)
-with b:
-        grpst = st.radio("Group Results: ", ["All", "Year",'State','Year & State'])
+
+grpst = st.radio("Group Results: ", ["All", "Year",'State','Year & State'])
 #grpst = 'False'
 
 
