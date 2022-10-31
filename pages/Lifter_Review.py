@@ -20,7 +20,7 @@ df['Date'] = pd.to_datetime(df['Date'])
 lifteroptions = df['Name'].unique().tolist()
 dateoptions = df['Date'].unique().tolist()
 maxipfgl = df['IPFGL'].max()
-
+maxipfgl = int(maxipfgl)
 liftername = st.selectbox('What is the listers name', lifteroptions, 100)
 liftername = 'Louise Sutton'
 # liftername = st.multiselect("Lifter Name",options=df['Name'].unique())
@@ -31,7 +31,7 @@ df = df[df['Name'] == liftername]
 
 dateoptions = df['Date'].unique().tolist()
 
-fig2 = px.bar(df, x='Name', y='IPFGL', animation_frame=dateoptions, range_y=maxipfgl)
+fig2 = px.bar(df, x='Name', y='IPFGL', animation_frame=dateoptions, range_y=[0,maxipfgl])
 
 
 
