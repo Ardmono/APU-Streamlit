@@ -28,10 +28,10 @@ df = df[df['Name'] == liftername]
 
 dateoptions = df['Date'].unique().tolist()
 
-fig2 = px.bar(df, x='IPFGL', y='Date', animation_frame='Date', animation_group='IPFGL',orientation='h')
+fig2 = px.bar(df, x='IPFGL', y='Date', animation_frame='Date', animation_group='IPFGL')
 
 
-#fig2.update_layout(width=800)
+fig2.update_layout(width=800)
 st.write(fig2)
 #print(df['Name'].value_counts())
 
