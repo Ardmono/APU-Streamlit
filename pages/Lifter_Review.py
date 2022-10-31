@@ -27,7 +27,7 @@ liftername = 'Louise Sutton'
 #     liftername = df['Name']
 
 df = df[df['Name'] == liftername]
-maxipfgl = df['IPFGL'].max()
+maxipfgl = df['TotalKg'].max()
 maxipfgl = int(maxipfgl)
 maxipfgl = maxipfgl + 10
 dateoptions = df['Date'].unique().tolist()
