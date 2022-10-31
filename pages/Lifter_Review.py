@@ -29,7 +29,7 @@ df = df[df['Name'].isin(liftername)]
 fig2 = px.bar(df, x='IPFGL', y='Date')
 
 
-fig2.update_layout(width=800)
+#fig2.update_layout(width=800)
 st.write(fig2)
 #print(df['Name'].value_counts())
 
