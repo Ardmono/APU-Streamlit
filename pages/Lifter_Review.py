@@ -26,7 +26,7 @@ liftername = st.selectbox('What is the listers name', lifteroptions, 100)
 df = df[df['Name'] == liftername]
 
 
-fig2 = px.bar(df, x='IPFGL', y='Date')
+fig2 = px.bar(df, x='IPFGL', y='Date', animation_frame='Date', animation_group='IPFGL',orientation='h')
 
 
 #fig2.update_layout(width=800)
