@@ -44,8 +44,9 @@ for step in fig2.layout.sliders[0].steps:
     
 fig2.update_layout(width=800, height=800)
 print(df.columns)
-fig2 = fig2.write_html("test.html")
-st.write(fig2)
+fig2.write_html("test.html")
+url = 'test.html'
+st.write(url)
 #print(df['Name'].value_counts())
 
 # Max Bristow, Abbas Pordel
