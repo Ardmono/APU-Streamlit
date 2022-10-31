@@ -28,7 +28,7 @@ df = df[df['Name'] == liftername]
 
 dateoptions = df['Date'].unique().tolist()
 
-fig2 = px.bar(df, x='IPFGL', y='Date', animation_frame='Date', animation_group='IPFGL')
+fig2 = px.bar(df, x='Name', y='IPFGL', animation_frame='Date', animation_group='Name')
 
 
 fig2.update_layout(width=800)
