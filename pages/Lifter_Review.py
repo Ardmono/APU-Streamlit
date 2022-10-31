@@ -33,22 +33,13 @@ maxipfgl = maxipfgl + 10
 dateoptions = df['Date'].unique().tolist()
 print(dateoptions)
 text = df['Date'].unique().tolist()
-ipfgl = df['IPFGL'].unique().tolist()
-meetname = df['MeetName'].unique().tolist()
 fig2 = px.bar(df, x='Name', y=['Best3BenchKg', 'Best3SquatKg', 'Best3DeadliftKg','TotalKg'], animation_frame=dateoptions, range_y=[0,maxipfgl],barmode='group',text_auto=True)
 
 for i, frame in enumerate(fig2.frames):
-    frame.layout.title = "Competition Date: {}".format(text[i])
+    frame.layout.title = "Avg Population: {}".format(text[i])
+    
 for step in fig2.layout.sliders[0].steps:
     step["args"][1]["frame"]["redraw"] = True
-for i, frame in enumerate(fig2.frames):
-    frame.layout.title = "Competition Date: {}".format(ipfgl[i])
-for step in fig2.layout.sliders[0].steps:
-    step["args"][1]["frame"]["redraw"] = True
-# for i, frame in enumerate(fig2.frames):
-#     frame.layout.title = "Competition Date: {}".format(meetname[i])
-# for step in fig2.layout.sliders[0].steps:
-#     step["args"][1]["frame"]["redraw"] = True
 
     
 fig2.update_layout(width=800, height=800)
