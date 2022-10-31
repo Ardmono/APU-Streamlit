@@ -32,7 +32,7 @@ maxipfgl = int(maxipfgl)
 maxipfgl = maxipfgl + 10
 dateoptions = df['Date'].unique().tolist()
 print(dateoptions)
-fig2 = px.bar(df, x='Name', y=['Best3BenchKg', 'Best3SquatKg', 'Best3DeadliftKg','TotalKg'], animation_frame=dateoptions, range_y=[0,maxipfgl],barmode='group')
+fig2 = px.bar(df, x='Name', y=['Best3BenchKg', 'Best3SquatKg', 'Best3DeadliftKg','TotalKg'], animation_frame=dateoptions, range_y=[0,maxipfgl],barmode='group',text_auto=True)
 
 
     
