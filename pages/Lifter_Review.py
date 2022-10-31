@@ -21,7 +21,7 @@ lifteroptions = df['Name'].unique().tolist()
 #dateoptions = df['Date'].unique()#.tolist()
 
 liftername = st.selectbox('What is the listers name', lifteroptions, 100)
-liftername = 'Louise Sutton'
+#liftername = 'Louise Sutton'
 if len(liftername) > 0:
     df = df[df['Name'] == liftername]
     maxipfgl = df['TotalKg'].max()
