@@ -16,9 +16,11 @@ df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
 df['Date'] = pd.to_datetime(df['Date'])
+
 #Years/comps in review for athletes 
 
 lifteroptions = df['Name'].unique().tolist()
+dateoptions = df['Date'].unique().tolist()
 
 liftername = st.selectbox('What is the listers name', lifteroptions, 100)
 liftername = 'Louise Sutton'
@@ -30,7 +32,7 @@ df = df[df['Name'] == liftername]
 
 dateoptions = df['Date'].unique().tolist()
 
-fig2 = px.bar(df, x='Name', y='IPFGL', animation_frame='Date', animation_group='Name')
+fig2 = px.bar(df, x='Name', y='IPFGL', animation_frame=dateoptions)
 
 
 
