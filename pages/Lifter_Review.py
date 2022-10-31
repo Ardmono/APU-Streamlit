@@ -36,7 +36,7 @@ fig2 = px.bar(df, x='Name', y=['Best3BenchKg', 'Best3SquatKg', 'Best3DeadliftKg'
 
 
     
-fig2.update_layout(width=500)
+fig2.update_layout(width=2000)
 print(df.columns)
 
 st.write(fig2)
