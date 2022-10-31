@@ -13,12 +13,12 @@ df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State',
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 df.fillna(0, inplace=True)
 
-df['Date'] = pd.to_datetime(df['Date'])
+#df['Date'] = pd.to_datetime(df['Date'])
 
 #Years/comps in review for athletes 
 
 lifteroptions = df['Name'].unique().tolist()
-dateoptions = df['Date'].unique()#.tolist()
+#dateoptions = df['Date'].unique()#.tolist()
 
 liftername = st.selectbox('What is the listers name', lifteroptions, 100)
 liftername = 'Louise Sutton'
@@ -31,7 +31,7 @@ maxipfgl = df['IPFGL'].max()
 maxipfgl = int(maxipfgl)
 maxipfgl = maxipfgl + 10
 dateoptions = df['Date'].unique().tolist()
-
+print(dateoptions)
 fig2 = px.bar(df, x='Name', y='IPFGL', animation_frame=dateoptions, range_y=[0,maxipfgl])
 
 
@@ -44,4 +44,4 @@ st.write(fig2)
 
 # Max Bristow, Abbas Pordel
 #print(df)
-print(df[df['Name'] == 'Louise Sutton'])
+#print(df[df['Name'] == 'Louise Sutton'])
