@@ -43,7 +43,7 @@ for step in fig2.layout.sliders[0].steps:
     step["args"][1]["frame"]["redraw"] = True
 for i, frame in enumerate(fig2.frames):
     frame.layout.title = "Competition Date: {}".format(ipfgl[i])
-for step in fig2.layout.sliders[1].steps:
+for step in fig2.layout.sliders[0].steps:
     step["args"][1]["frame"]["redraw"] = True
 # for i, frame in enumerate(fig2.frames):
 #     frame.layout.title = "Competition Date: {}".format(meetname[i])
