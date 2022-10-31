@@ -19,6 +19,7 @@ df['Date'] = pd.to_datetime(df['Date'])
 lifteroptions = df['Name'].unique().tolist()
 
 liftername = st.selectbox('What is the listers name', lifteroptions, 100)
+liftername = 'Louise Sutton'
 # liftername = st.multiselect("Lifter Name",options=df['Name'].unique())
 # if len(liftername) == 0:
 #     liftername = df['Name']
