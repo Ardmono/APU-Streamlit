@@ -23,7 +23,7 @@ liftername = st.selectbox('What is the listers name', lifteroptions, 100)
 # if len(liftername) == 0:
 #     liftername = df['Name']
 
-df = df[df['Name'].isin(liftername)]
+df = df[df['Name'] == liftername]
 
 
 fig2 = px.bar(df, x='IPFGL', y='Date')
