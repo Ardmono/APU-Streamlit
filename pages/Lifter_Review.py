@@ -32,12 +32,12 @@ maxipfgl = int(maxipfgl)
 maxipfgl = maxipfgl + 10
 dateoptions = df['Date'].unique().tolist()
 print(dateoptions)
-fig2 = px.bar(df, x='Name', y=['Best3SquatKg'], animation_frame=dateoptions, range_y=[0,maxipfgl])
+fig2 = px.bar(df, x='Name', y=['Best3SquatKg', 'Best3BenchKg'], animation_frame=dateoptions, range_y=[0,maxipfgl])
 
 
     
 fig2.update_layout(width=500)
-
+print(df.columns)
 
 st.write(fig2)
 #print(df['Name'].value_counts())
