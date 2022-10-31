@@ -32,18 +32,14 @@ maxipfgl = int(maxipfgl)
 maxipfgl = maxipfgl + 10
 dateoptions = df['Date'].unique().tolist()
 print(dateoptions)
+text = df['Date'].unique().tolist()
 fig2 = px.bar(df, x='Name', y=['Best3BenchKg', 'Best3SquatKg', 'Best3DeadliftKg','TotalKg'], animation_frame=dateoptions, range_y=[0,maxipfgl],barmode='group',text_auto=True)
-fig2.add_annotation(
-    xref="x domain",
-    yref="y domain",
-    # The arrow head will be 25% along the x axis, starting from the left
-    x=0.25,
-    # The arrow head will be 40% along the y axis, starting from the bottom
-    y=0.4,
-    text="An annotation referencing the axes",
-    arrowhead=2,
-)
 
+for i, frame in enumerate(fig2.frames):
+    frame.layout.title = "Avg Population: {}".format(text[i])
+    
+for step in fig2.layout.sliders[0].steps:
+    step["args"][1]["frame"]["redraw"] = True
 
     
 fig2.update_layout(width=800, height=800)
