@@ -148,11 +148,7 @@ if 'bw' in globals():
             else:
                 if tot > 1:
                     aa, bb, cc = st.columns(3)
-                    aa = st.metric('Overall',1)
-                    with bb:
-                        st.metric('Gender',1)
-                    with cc:
-                        st.metric('Gender & Weightclass',1)
+                    
                     
                 
         
