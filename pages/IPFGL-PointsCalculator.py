@@ -9,7 +9,7 @@ df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
-
+ipfglp = 0
 selected_page = st.radio("Calculator Type: ", ["Simple", "Complicated"])
 IPF_COEFFICIENTS1 = {
     'M': {
@@ -127,6 +127,7 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
+
 st.text(ipfglp)
 
 ranker = int(df_delection.loc[df_delection['IPFGL'] <= ipfglp].index[0])
