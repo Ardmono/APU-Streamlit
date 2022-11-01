@@ -116,9 +116,9 @@ elif selected_page == 'Complicated':
             ipfglp = round(ipf1(sex,equip,event,bw,tot),3) 
             #ipfglp = ipf1(sex,equip,event,bw,tot)
         
-
+fed = 'APU'
 #df_delection = df
-df_delection = df.query("Event == @event & Equipment == @equip")
+df_delection = df.query("Event == @event & Equipment == @equip & Federation == @fed")
 
 st.text('IPFGL Points coeficient information can be found here - https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf')
 df_delection = df_delection.reset_index(drop=True)
@@ -135,19 +135,19 @@ df_delection2.index += 1
 ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
 
 skip = 0
-#wc = '0'
+wc = '0'
 df_delection3 = df_delection[df_delection['Sex'] == sex]
 if sex == 'M':
     if bw >= 66 and  bw <= 74:
         wc = '74'
     else:
         skip = 1
-        #######
-    # if wc ==  '0':
-    #     pass
-    # else:
-    #     pass
-    #     #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
+        
+    if wc ==  '0':
+        pass
+    else:
+        pass
+        df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
 ##
 if sex == 'F':
     if bw >= 57 and  bw <= 63:
@@ -159,11 +159,10 @@ if sex == 'F':
        
     else:
         skip = 1
-    # if wc ==  '0':
-    #     pass
-    # else:
-    #     pass
-        #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
+    if wc ==  '0':
+        pass
+    else:
+        df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     #    wc = df['WeightClassKg'].unique()
     #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
 
@@ -182,10 +181,7 @@ df_delection3.index += 1
 # df_delection.index += 1 
 ranker3 = int(df_delection3.loc[df_delection3['IPFGL'] <= ipfglp].index[0])
 
-#st.dataframe(df_delection)
 
-st.dataframe(df_delection2)
-st.dataframe(df_delection3)
 
 aa = st.metric('Overall Placement: ',ranker)
 bb = st.metric('Placement by Gender:',ranker2)
@@ -205,4 +201,7 @@ if 'bw' in globals():
                     
                     
                 
-        
+
+# st.dataframe(df_delection)
+# st.dataframe(df_delection2)
+# st.dataframe(df_delection3)
