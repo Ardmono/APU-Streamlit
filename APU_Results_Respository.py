@@ -105,7 +105,7 @@ df_delection.index += 1
 st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
 
-   
+st.dataframe(df.style.format("{:.2%}"))  
 et1 = time.time()
 elapsed_time = et1 - sst
 
