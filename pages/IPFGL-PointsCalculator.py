@@ -113,7 +113,7 @@ elif selected_page == 'Complicated':
             st.metric(label='Total',value=str(tot)+'Kg')
     if tot > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
-            ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
+            ipfglp = round(ipf1(sex,equip,event,bw,tot),3) 
             #ipfglp = ipf1(sex,equip,event,bw,tot)
         
 
