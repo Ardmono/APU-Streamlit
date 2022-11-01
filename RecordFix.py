@@ -40,7 +40,8 @@ df.loc[df["meetid"] == 2130, "MeetState"] = 'Collate'
 
 
 df['IPFGL'] = df.apply(lambda row: ipf1(row['Sex'],row['Equipment'],row['Event'],row['BodyweightKg'],row['TotalKg']),axis=1)
-#print(df)
+#df['IPFGL'] = round(df['IPFGL'],3)
+print(df)
 
 #ipfpoints = ipf(sex, row[indexEquipment], row[indexEvent], bodyweight, total)
 df.to_csv('C:\\Users\\Callum\\Documents\\Python\\APU-Streamlit\\filename.csv',index=False)

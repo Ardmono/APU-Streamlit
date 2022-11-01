@@ -60,6 +60,6 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     e_pow = math.exp(-c * bwt)
     denominator = a - b * e_pow
     
-    return (round(p*(100/denominator),3))
+    return (round(p*(100/denominator),2))
    
 
