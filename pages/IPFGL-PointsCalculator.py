@@ -122,14 +122,14 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
+if tot > 1 and bw > 1:
+    indexer = df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0]
 
-indexer = df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0]
-
-a, b = st.columns(2)
-with a:
-    st.text('hello')
-with b:
-    st.metric(indexer)
+    a, b = st.columns(2)
+    with a:
+        st.text('hello')
+    with b:
+        st.metric(indexer)
 
 
 # st.markdown('##')
