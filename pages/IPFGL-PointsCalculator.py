@@ -122,7 +122,7 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
-if bw > 1:
+if tot in globals():
     indexer = df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0]
 
     a, b = st.columns(2)
