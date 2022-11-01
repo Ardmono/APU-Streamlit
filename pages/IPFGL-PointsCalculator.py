@@ -155,7 +155,7 @@ if sex == 'F':
     #if df_delection[df_delection['WeightClassKg'] == sex]
 else:
     pass
-st.text(wc)
+
 df_delection3 = df_delection3.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection3 = df_delection3.reset_index(drop=True)
 df_delection3.index += 1 
