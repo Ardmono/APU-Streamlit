@@ -135,7 +135,8 @@ if 'bw' in globals():
                 if tot > 1 and sq > 1 and be > 1 and de > 1:
                     ranker = int(df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0])
                     aa, bb, cc = st.columns(3)
-                    aa = st.metric('Overall',1)
+                    with aa:
+                        st.metric('Overall',ranker)
                     with bb:
                         st.metric('Gender',1)
                     with cc:
@@ -143,7 +144,8 @@ if 'bw' in globals():
             else:
                 if tot > 1:
                     aa, bb, cc = st.columns(3)
-                    aa = st.metric('Overall',1)
+                    with aa:
+                        st.metric('Overall',1)
                     with bb:
                         st.metric('Gender',1)
                     with cc:
