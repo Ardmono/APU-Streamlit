@@ -130,6 +130,8 @@ df_delection.index += 1
 st.text(ipfglp)
 
 ranker = int(df_delection.loc[df_delection['IPFGL'] <= ipfglp].index[0])
+st.text(ranker)
+
 aa = st.metric('Overall',ranker)
 bb = st.metric('Gender',1)
 cc = st.metric('Gender & Weightclass',1)
