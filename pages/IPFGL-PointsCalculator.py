@@ -127,6 +127,8 @@ elif selected_page == 'Complicated':
                     st.text('hello')
                 with b:
                     st.metric(indexer)
+            else:
+                pass
         
 
         
