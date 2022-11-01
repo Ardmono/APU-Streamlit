@@ -126,12 +126,13 @@ df_delection.index += 1
 
 if 'bw' in globals():
     if all(var in globals() for var in ('totalkg', 'ipfglp')):
-        if totalkg > 1 and bw > 1:
-            aa, bb, cc = st.columns(3)
-            with aa:
-                st.metric('Overall',1)
-            with bb:
-                st.metric('Gender',1)
-            with cc:
-                st.metric('Gender & Weightclass',1)
+        if bw > 1:
+            if totalkg > 1 or tot > 1:
+                aa, bb, cc = st.columns(3)
+                with aa:
+                    st.metric('Overall',1)
+                with bb:
+                    st.metric('Gender',1)
+                with cc:
+                    st.metric('Gender & Weightclass',1)
         
