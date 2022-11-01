@@ -128,7 +128,7 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
 ranker = int(df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0])
-aa = st.metric('Overall',1)
+aa = st.metric('Overall',ranker)
 bb = st.metric('Gender',1)
 cc = st.metric('Gender & Weightclass',1)
 if 'bw' in globals():
