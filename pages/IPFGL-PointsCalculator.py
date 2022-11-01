@@ -174,8 +174,10 @@ df_delection3.index += 1
 ranker3 = int(df_delection3.loc[df_delection3['IPFGL'] <= ipfglp].index[0])
 
 #st.dataframe(df_delection)
+
 st.dataframe(df_delection2)
 st.dataframe(df_delection3)
+
 aa = st.metric('Overall Placement: ',ranker)
 bb = st.metric('Placement by Gender:',ranker2)
 if skip == 0:
