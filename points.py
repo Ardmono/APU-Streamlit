@@ -59,69 +59,7 @@ def ipf1(sex, equipment, event, bodyweightKg, totalKg):
     p = totalKg
     e_pow = math.exp(-c * bwt)
     denominator = a - b * e_pow
-    #print(denominator)
-    return (p*(100/denominator))
+    
+    return (round(p*(100/denominator),3))
    
 
-
-#print(ipf1('F','Raw','SBD',70.2,440))
-#print(p*(100/a-(b*)))
-#385 @75.1
-#print(ipf1('M','Raw','SBD',73.5,742.5))
-
-#print(round(ipf1('F','Raw','SBD',70.5,452.5),2))
-#print(round(ipf1('F','Raw','SBD',70.2,440),3)).
-#print(round(ipf1('F','Raw','SBD',70.2,440),3))
-#print(ipf1('F','Raw','SBD',70.2,440))
-
-#s = a - (b * e **(-c*bwt)
-#print(p*(100/denominator))
-
-
-# ) -> Points {
-#     // Look up parameters.
-#     let (a, b, c) = parameters(sex, equipment, event);
-
-#     // Exit early for undefined cases.
-#     if a == 0.0 || bodyweight < WeightKg::from_i32(35) || total.is_zero() {
-#         return Points::from_i32(0);
-#     }
-#A - B * e^(-C * Bwt)
-#     // A - B * e^(-C * Bwt).
-#     let e_pow = (-1.0 * c * f64::from(bodyweight)).exp();
-#     let denominator = a - (b * e_pow);
-
-#     // Prevent division by zero.
-#     if denominator == 0.0 {
-#         return Points::from_i32(0);
-#     }
-
-#     // Calculate GOODLIFT points.
-#     // We add the requirement that the value be non-negative.
-#     let points: f64 = f64::from(total) * (0.0_f64).max(100.0 / denominator);
-#     Points::from(points)
-# }
-
-# #[cfg(test)]
-# mod tests {
-#     use super::*;
-
-#     #[test]
-#     fn published_examples() {
-#         // Dmitry Inzarkin from 2019 IPF World Open Men's Championships.
-#         let weight = WeightKg::from_f32(92.04);
-#         let total = WeightKg::from_f32(1035.0);
-#         assert_eq!(
-#             goodlift(Sex::M, Equipment::Single, Event::sbd(), weight, total),
-#             Points::from(112.85)
-#         );
-
-#         // Susanna Torronen from 2019 World Open Classic Bench Press Championships.
-#         let weight = WeightKg::from_f32(70.50);
-#         let total = WeightKg::from_f32(122.5);
-#         assert_eq!(
-#             goodlift(Sex::F, Equipment::Raw, Event::b(), weight, total),
-#             Points::from(96.78)
-#         );
-#     }
-# }
