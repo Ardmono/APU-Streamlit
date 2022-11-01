@@ -170,7 +170,8 @@ ranker3 = int(df_delection3.loc[df_delection3['IPFGL'] <= ipfglp].index[0])
 st.dataframe(df_delection3)
 aa = st.metric('Overall Placement: ',ranker)
 bb = st.metric('Placement by Gender:',ranker2)
-cc = st.metric('Placement by Weight Class: ', ranker3)
+if 'wc' in globals():
+    cc = st.metric('Placement by Weight Class: ', ranker3)
 #cc = st.metric('Gender & Weightclass',1)
 if 'bw' in globals():
     if 'tot' in globals(): 
