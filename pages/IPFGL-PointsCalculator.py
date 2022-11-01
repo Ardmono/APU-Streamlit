@@ -126,9 +126,9 @@ df_delection.index += 1
 
 aa, bb, cc = st.columns(3)
 with aa:
-    st.metric('Hello')
+    st.metric('Hello',1)
 with bb:
-    st.metric('Hello')
+    st.metric('Hello',1)
 with bb:
-    st.metric('Hello')
+    st.metric('Hello',1)
     
