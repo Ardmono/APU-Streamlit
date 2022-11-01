@@ -134,22 +134,24 @@ df_delection2 = df_delection2.reset_index(drop=True)
 df_delection.index += 1 
 ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
 
-
+skip = 0
 df_delection3 = df_delection[df_delection['Sex'] == sex]
 if sex == 'M':
     if bw > 66 and  bw < 74:
         wc = '74'
         #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     else:
-        pass
+        skip = 1
     df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     #if df_delection[df_delection['WeightClassKg'] == sex]
 if sex == 'F':
     if bw > 57 and  bw < 63:
         wc = '63'
+    if bw > 57 and  bw < 63:
+        wc = '63'
         #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     else:
-        pass
+        skip = 1
     df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     #    wc = df['WeightClassKg'].unique()
     #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
@@ -172,7 +174,7 @@ ranker3 = int(df_delection3.loc[df_delection3['IPFGL'] <= ipfglp].index[0])
 #st.dataframe(df_delection3)
 aa = st.metric('Overall Placement: ',ranker)
 bb = st.metric('Placement by Gender:',ranker2)
-if 'wc' in globals():
+if skip == 0:
     cc = st.metric('Placement by Weight Class: ', ranker3)
 #cc = st.metric('Gender & Weightclass',1)
 if 'bw' in globals():
