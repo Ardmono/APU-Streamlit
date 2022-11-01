@@ -84,6 +84,7 @@ if selected_page == 'Simple':
     #   result = st.button('Go')
     if totalkg > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
+            
 
     #if result:
         #st.write(ipf1(sex,equip,event,bw,totalkg))
@@ -111,8 +112,9 @@ elif selected_page == 'Complicated':
             st.metric(label='Total',value=str(tot)+'Kg')
     if tot > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
+            ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
         
-ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
+
 df_delection = df
 st.text('IPFGL Points coeficient information can be found here - https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf')
 df_delection = df_delection.reset_index(drop=True)
