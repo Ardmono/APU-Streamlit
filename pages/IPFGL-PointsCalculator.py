@@ -123,12 +123,12 @@ df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
-
-aa, bb, cc = st.columns(3)
-with aa:
-    st.metric('Overall',1)
-with bb:
-    st.metric('Gender',1)
-with cc:
-    st.metric('Gender & Weightclass',1)
+if 'ipfglp' in globals():
+    aa, bb, cc = st.columns(3)
+    with aa:
+        st.metric('Overall',1)
+    with bb:
+        st.metric('Gender',1)
+    with cc:
+        st.metric('Gender & Weightclass',1)
     
