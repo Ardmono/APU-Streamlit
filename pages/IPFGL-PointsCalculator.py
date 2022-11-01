@@ -147,7 +147,7 @@ if sex == 'M':
         pass
     else:
         df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
-#
+##
 if sex == 'F':
     if bw >= 57 and  bw <= 63:
         wc = '63'
