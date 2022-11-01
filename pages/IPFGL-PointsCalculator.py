@@ -84,6 +84,7 @@ if selected_page == 'Simple':
     #   result = st.button('Go')
     if totalkg > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
+            ipfglp = round(ipf1(sex,equip,event,bw,totalkg),2) 
             
 
     #if result:
@@ -123,12 +124,14 @@ df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
-if all(var in globals() for var in ('sq', 'be', 'de','tot', 'bw')):
-    aa, bb, cc = st.columns(3)
-    with aa:
-        st.metric('Overall',1)
-    with bb:
-        st.metric('Gender',1)
-    with cc:
-        st.metric('Gender & Weightclass',1)
-    
+if 'bw' in globals():
+    if all(var in globals() for var in ('totalkg', 'ipfglp')):
+        if totalkg > 1 and bw > 1:
+            aa, bb, cc = st.columns(3)
+            with aa:
+                st.metric('Overall',1)
+            with bb:
+                st.metric('Gender',1)
+            with cc:
+                st.metric('Gender & Weightclass',1)
+        
