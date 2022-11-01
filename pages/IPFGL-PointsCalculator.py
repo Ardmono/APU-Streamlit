@@ -130,9 +130,9 @@ df_delection.index += 1
 st.text(ipfglp)
 
 ranker = int(df_delection.loc[df_delection['IPFGL'] <= ipfglp].index[0])
-
-df_delection2 = df_delection[df_delection['Sex' == sex]]
 st.text(sex)
+df_delection2 = df_delection[df_delection['Sex' == sex]]
+
 ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
 st.text(ranker)
 
