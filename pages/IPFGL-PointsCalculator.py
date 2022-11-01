@@ -146,7 +146,8 @@ if sex == 'M':
     if wc ==  '0':
         pass
     else:
-        df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
+        pass
+        #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
 ##
 if sex == 'F':
     if bw >= 57 and  bw <= 63:
@@ -161,7 +162,8 @@ if sex == 'F':
     if wc ==  '0':
         pass
     else:
-        df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
+        pass
+        #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     #    wc = df['WeightClassKg'].unique()
     #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
 
