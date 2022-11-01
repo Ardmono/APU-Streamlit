@@ -134,18 +134,19 @@ df_delection2 = df_delection2.reset_index(drop=True)
 df_delection.index += 1 
 ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
 
+
+df_delection3 = df_delection[df_delection['Sex'] == sex]
 if sex == 'M':
-    df_delection3 = df_delection[df_delection['Sex'] == sex]
     if bw > 66 and  bw < 74:
         wc = '74'
-        df_delection3 = df_delection[df_delection['WeightClassKg'] == wc]
+        df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
 
     #if df_delection[df_delection['WeightClassKg'] == sex]
 if sex == 'F':
-    df_delection3 = df_delection[df_delection['Sex'] == sex]
+
     if bw > 57 and  bw < 63:
         wc = '63'
-        df_delection3 = df_delection[df_delection['WeightClassKg'] == wc]
+        df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
 
     #if df_delection[df_delection['WeightClassKg'] == sex]
 else:
@@ -160,7 +161,7 @@ df_delection3.index += 1
 # df_delection3 = df_delection3.sort_values(by = ['IPFGL'], ascending = [False])
 # df_delection3 = df_delection3.reset_index(drop=True)
 # df_delection.index += 1 
-ranker3 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
+ranker3 = int(df_delection3.loc[df_delection3['IPFGL'] <= ipfglp].index[0])
 
 
 aa = st.metric('Overall Placement: ',ranker)
