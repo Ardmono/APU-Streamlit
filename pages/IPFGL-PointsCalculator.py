@@ -9,6 +9,13 @@ df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
 df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','Place','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
+df_delection = df
+st.text('IPFGL Points coeficient information can be found here - https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf')
+df_delection = df_delection.reset_index(drop=True)
+#df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
+df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
+df_delection = df_delection.reset_index(drop=True)
+df_delection.index += 1 
 
 selected_page = st.radio("Calculator Type: ", ["Simple", "Complicated"])
 IPF_COEFFICIENTS1 = {
@@ -113,25 +120,18 @@ elif selected_page == 'Complicated':
     if tot > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
             ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
+            indexer = df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0]
+            a, b = st.columns(2)
+            with a:
+                st.text('hello')
+            with b:
+                st.metric(indexer)
+       
+
         
 
-df_delection = df
-st.text('IPFGL Points coeficient information can be found here - https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf')
-df_delection = df_delection.reset_index(drop=True)
-#df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
-df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
-df_delection = df_delection.reset_index(drop=True)
-df_delection.index += 1 
-if tot in globals():
-    indexer = df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0]
 
-    a, b = st.columns(2)
-    with a:
-        st.text('hello')
-    with b:
-        st.metric(indexer)
-else:
-    pass
+
 
 # st.markdown('##')
 
