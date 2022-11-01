@@ -136,10 +136,8 @@ if 'bw' in globals():
                     ranker = int(df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0])
                     aa, bb, cc = st.columns(3)
                     aa = st.metric('Overall',1)
-                    with bb:
-                        st.metric('Gender',1)
-                    with cc:
-                        st.metric('Gender & Weightclass',1)
+                    bb = st.metric('Gender',1)
+                    cc = st.metric('Gender & Weightclass',1)
             else:
                 if tot > 1:
                     aa, bb, cc = st.columns(3)
