@@ -130,7 +130,7 @@ df_delection.index += 1
 
 st.text(ipfglp)
 
-ranker = round(df_delection.loc[df_delection['IPFGL'], 2 <= ipfglp].index[0])
+ranker = int(df_delection.loc[df_delection['IPFGL'] <= ipfglp].index[0])
 st.text(ranker)
 
 aa = st.metric('Overall',ranker)
