@@ -114,7 +114,7 @@ elif selected_page == 'Complicated':
     if tot > 1 and bw > 1:
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
             ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
-            ipfglp = ipf1(sex,equip,event,bw,tot)
+            #ipfglp = ipf1(sex,equip,event,bw,tot)
         
 
 #df_delection = df
