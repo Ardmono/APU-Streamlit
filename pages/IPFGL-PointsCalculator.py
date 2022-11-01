@@ -126,16 +126,14 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
-
-st.text(ipfglp)
-
 ranker = int(df_delection.loc[df_delection['IPFGL'] <= ipfglp].index[0])
-st.text(sex)
+
 df_delection2 = df_delection[df_delection['Sex'] == sex]
 df_delection2 = df_delection2.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection2 = df_delection2.reset_index(drop=True)
+df_delection.index += 1 
 ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
-st.text(ranker)
+
 
 aa = st.metric('Overall',ranker)
 bb = st.metric('Gender',ranker2)
