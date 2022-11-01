@@ -135,16 +135,16 @@ df_delection.index += 1
 ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
 
 if sex == 'M':
+    df_delection3 = df_delection[df_delection['Sex'] == sex]
     if bw > 66 and  bw < 74:
         wc = '74'
-        df_delection3 = df_delection[df_delection['Sex'] == sex]
         df_delection3 = df_delection[df_delection['WeightClassKg'] == sex]
 
     #if df_delection[df_delection['WeightClassKg'] == sex]
 if sex == 'F':
+    df_delection3 = df_delection[df_delection['Sex'] == sex]
     if bw > 57 and  bw < 63:
         wc = '63'
-        df_delection3 = df_delection[df_delection['Sex'] == sex]
         df_delection3 = df_delection[df_delection['WeightClassKg'] == sex]
 
     #if df_delection[df_delection['WeightClassKg'] == sex]
