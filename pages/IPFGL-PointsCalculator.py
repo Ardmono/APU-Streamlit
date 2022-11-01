@@ -125,7 +125,7 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
 if 'bw' in globals():
-    if all(var in globals() for var in ('totalkg', 'ipfglp')):
+    if 'tot' in globals() or 'totalkg' in globals(): 
         if bw > 1:
             if totalkg > 1 or tot > 1:
                 aa, bb, cc = st.columns(3)
