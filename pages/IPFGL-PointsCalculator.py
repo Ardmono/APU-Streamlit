@@ -139,15 +139,21 @@ if sex == 'M':
         wc = '74'
         df_delection3 = df_delection[df_delection['Sex'] == sex]
         df_delection3 = df_delection[df_delection['WeightClassKg'] == sex]
+
     #if df_delection[df_delection['WeightClassKg'] == sex]
 if sex == 'F':
     if bw > 57 and  bw < 63:
         wc = '63'
         df_delection3 = df_delection[df_delection['Sex'] == sex]
         df_delection3 = df_delection[df_delection['WeightClassKg'] == sex]
+
     #if df_delection[df_delection['WeightClassKg'] == sex]
 else:
     pass
+
+df_delection3 = df_delection3.sort_values(by = ['IPFGL'], ascending = [False])
+df_delection3 = df_delection3.reset_index(drop=True)
+df_delection3.index += 1 
 # else:
 #     pass
 # df_delection3 = df_delection[df_delection['WeightClassKg'] == sex]
