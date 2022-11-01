@@ -127,12 +127,24 @@ df_delection.index += 1
 if 'bw' in globals():
     if 'tot' in globals(): 
         if bw > 1:
-            if tot > 1:
-                aa, bb, cc = st.columns(3)
-                with aa:
-                    st.metric('Overall',1)
-                with bb:
-                    st.metric('Gender',1)
-                with cc:
-                    st.metric('Gender & Weightclass',1)
+            if 'be' in globals(): 
+                if tot > 1 and sq > 1 and be > 1 and de > 1:
+                    aa, bb, cc = st.columns(3)
+                    with aa:
+                        st.metric('Overall',1)
+                    with bb:
+                        st.metric('Gender',1)
+                    with cc:
+                        st.metric('Gender & Weightclass',1)
+            else:
+                if tot > 1:
+                    aa, bb, cc = st.columns(3)
+                    with aa:
+                        st.metric('Overall',1)
+                    with bb:
+                        st.metric('Gender',1)
+                    with cc:
+                        st.metric('Gender & Weightclass',1)
+                    
+                
         
