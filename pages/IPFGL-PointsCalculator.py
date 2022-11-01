@@ -123,7 +123,7 @@ df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
-if 'ipfglp' in globals():
+if all(var in globals() for var in ('sq', 'be', 'de','tot', 'bw')):
     aa, bb, cc = st.columns(3)
     with aa:
         st.metric('Overall',1)
