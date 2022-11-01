@@ -73,7 +73,7 @@ if selected_page == 'Simple':
     with col1:
         bw = st.number_input('Bodyweight')
     with col2:
-        totalkg = st.number_input('Total(KG)',step=0.25)
+        tot = st.number_input('Total(KG)',step=0.25)
     with col3:
         sex = st.radio(label='Gender',options=('M','F'))
     with col5:
@@ -82,9 +82,9 @@ if selected_page == 'Simple':
         event = st.radio(label='Event',options=('SBD',  'B'))
     #with col4:
     #   result = st.button('Go')
-    if totalkg > 1 and bw > 1:
-            st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,totalkg),2))
-            ipfglp = round(ipf1(sex,equip,event,bw,totalkg),2) 
+    if tot > 1 and bw > 1:
+            st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
+            ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
             
 
     #if result:
@@ -125,9 +125,9 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
 if 'bw' in globals():
-    if 'tot' in globals() or 'totalkg' in globals(): 
+    if 'tot' in globals(): 
         if bw > 1:
-            if totalkg > 1 or tot > 1:
+            if tot > 1:
                 aa, bb, cc = st.columns(3)
                 with aa:
                     st.metric('Overall',1)
