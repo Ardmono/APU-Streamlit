@@ -102,7 +102,7 @@ df_delection = df_delection.sort_values(by = ['IPFGL'], ascending = [False])
 df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
-st.dataframe(df_delection.style.format({"IPFGL": "{:.2f}"}),use_container_width=True,height=1200)
+st.dataframe(df_delection,use_container_width=True,height=1200)
 print(df_delection)
 
 
