@@ -124,11 +124,11 @@ df_delection = df_delection.reset_index(drop=True)
 df_delection.index += 1 
 
 
-a, b, c = st.columns(3)
-with a:
+aa, bb, cc = st.columns(3)
+with aa:
     st.metric('Hello')
-with b:
+with bb:
     st.metric('Hello')
-with c:
+with bb:
     st.metric('Hello')
     
