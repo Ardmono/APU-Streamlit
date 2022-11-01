@@ -118,9 +118,8 @@ elif selected_page == 'Complicated':
         
 
 #df_delection = df
-df_delection = df.query(
-   "Event == @event & Equipment == @equip & Sex==@sex"
- )
+df_delection = df.query("Event == @event & Equipment == @equip")
+
 st.text('IPFGL Points coeficient information can be found here - https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf')
 df_delection = df_delection.reset_index(drop=True)
 #df_delection = df_delection.sort_values(by = ['TotalKg'], ascending = [False])
@@ -131,10 +130,12 @@ df_delection.index += 1
 st.text(ipfglp)
 
 ranker = int(df_delection.loc[df_delection['IPFGL'] <= ipfglp].index[0])
+df_delection2 = df_delection[df_delection[Sex == @sex]]
+ranker2 = int(df_delection2.loc[df_delection2['IPFGL'] <= ipfglp].index[0])
 st.text(ranker)
 
 aa = st.metric('Overall',ranker)
-bb = st.metric('Gender',1)
+bb = st.metric('Gender',ranker2)
 cc = st.metric('Gender & Weightclass',1)
 if 'bw' in globals():
     if 'tot' in globals(): 
