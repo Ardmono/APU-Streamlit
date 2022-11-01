@@ -119,7 +119,7 @@ elif selected_page == 'Complicated':
 
 #df_delection = df
 df_delection = df.query(
-   "Event == @event & Equipment == @equip" # Sex==@sex_input &  
+   "Event == @event & Equipment == @equip & Sex==@sex"
  )
 st.text('IPFGL Points coeficient information can be found here - https://www.powerlifting.sport/fileadmin/ipf/data/ipf-formula/IPF_GL_Coefficients-2020.pdf')
 df_delection = df_delection.reset_index(drop=True)
