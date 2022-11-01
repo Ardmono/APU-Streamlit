@@ -149,6 +149,8 @@ if sex == 'F':
         wc = '63'
     if bw >= 63 and  bw <= 69:
         wc = '69'
+    if bw >= 69 and  bw <= 76:
+        wc = '76'
         #df_delection3 = df_delection3[df_delection3['WeightClassKg'] == wc]
     else:
         skip = 1
