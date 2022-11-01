@@ -121,12 +121,13 @@ elif selected_page == 'Complicated':
             st.write('Your IPFGL Points are',round(ipf1(sex,equip,event,bw,tot),2))
             ipfglp = round(ipf1(sex,equip,event,bw,tot),2) 
             indexer = df_delection.loc[df_delection['IPFGL'] < ipfglp].index[0]
-            a, b = st.columns(2)
-            with a:
-                st.text('hello')
-            with b:
-                st.metric(indexer)
-       
+            if 'indexer' in globals():
+                a, b = st.columns(2)
+                with a:
+                    st.text('hello')
+                with b:
+                    st.metric(indexer)
+        
 
         
 
