@@ -49,6 +49,7 @@ for i in range(500):
             start += 1
             
         except:
+            elapsed_time = et - st
             print('APU '+str(start)+' does not exist CSV -  Execution time:', elapsed_time, 'seconds')
             start += 1
 #print(df1)
@@ -79,3 +80,6 @@ def apu_compile_csv():
 
 #apu_compile_csv()
 #print(df1)
+et1 = time.time()
+elapsed_time = et1 - st
+print('Execution time:', elapsed_time, 'seconds')
