@@ -12,7 +12,7 @@ st.set_page_config(page_title='Meet Recap',layout="wide",page_icon="🧊")
 
 df = 'https://raw.githubusercontent.com/Ardmono/APU-Streamlit/main/filename.csv'
 df = pd.read_csv(df)
-df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','meetid','MeetCountry'])
+df = df.drop(columns=['Age', 'Team', 'BirthYear', 'BirthDate','Country','State','MeetCountry'])
 df['Year'] = pd.DatetimeIndex(df['Date']).year
 #df.fillna(0, inplace=True)
 df1 = df
@@ -36,6 +36,9 @@ for i in range(len(listy)):
     df1[listy[i]+'fail'] = df1[listy[i]+'fail'].abs()
 femaleweightclass = ['47', '52','57','63','69','72','76','84','84+']
 df = df1
+latest = df['meetid'].max()
+st.text(latest)
+#Drop MeetTown,MeetName, Year, Date and Federation and MeetState and drop all fails too
 meetName = st.sidebar.multiselect("Meet Name",options=df['MeetName'].unique(),default=["National Classic Sub-Junior Junior and Master Powerlifting and Bench Press Championships"])
 
 if len(meetName) == 0:
